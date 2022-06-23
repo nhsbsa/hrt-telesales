@@ -1,0 +1,130 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      
+        
+          
+            <ul class="nhsuk-secondary-navigation__list">
+              
+
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="#">Access Keys: ON</a>
+              </li>
+              
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li> 
+            </ul>
+          
+       
+      
+          </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page heading -->
+      <form action="access-keys">
+      <h1>
+          Certificate Manager
+      
+
+    
+      <button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button></h1></form>
+
+      <!-- ==================================================================================== -->
+      <!-- SEARCH BOX -->
+      <!-- ==================================================================================== -->
+      
+      <div id="search">
+        <h2>Search users</h2>
+        <div class="nhsuk-grid-column-one-half">
+          
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="select-1">
+              Search by:
+            </label>
+            <select class="nhsuk-select" id="select-1" name="select-1" style="height:85px; width: 250px;" multiple>
+              <option value="1">Name</option>
+              <option value="2">D.O.B</option>
+              <option value="3">Certificate Number</option>
+            </select>
+          </div>
+          <button class="nhsuk-button" type="submit">
+            Search
+          </button>
+      
+        </div>
+        <div class="nhsuk-grid-column-one-half">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+              Keywords:
+            </label>
+            <textarea class="nhsuk-textarea" id="example" name="example" rows="3" aria-describedby="example-hint"></textarea>
+          </div>
+        </div>
+
+       
+        
+       
+      </div>
+      
+      <br>
+
+      <div><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+        Submit (I)
+      </button>&nbsp;&nbsp;&nbsp;
+      <button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+       Cancel (M)
+      </button></div>
+
+      
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  </div>
+
+</div>
+
+{% endblock %}

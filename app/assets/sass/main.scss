@@ -11,3 +11,562 @@
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
   
+// SEARCH
+#search {
+    background-color: #dee0e2;
+    margin: 20px 0 30px 0;
+    padding: 20px 25px 0px 25px;
+    display: inline-block;
+    width: 100%;
+}
+
+[aria-sort] button,
+[aria-sort] button:hover {
+  background-color: transparent;
+  border-width: 0;
+  white-space: nowrap;
+  -webkit-box-shadow: 0 0 0 0;
+  -moz-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+  color: #005ea5;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0 10px 0 0;
+  position: relative;
+  text-align: inherit;
+  font-size: 1em;
+  margin: 0; }
+
+[aria-sort] button:focus,
+[aria-sort] button:hover:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 0;
+  white-space: nowrap; }
+
+[aria-sort]:first-child button {
+  right: auto; }
+
+[aria-sort] button:before {
+  content: " \25bc";
+  position: absolute;
+  right: -1px;
+  top: 9px;
+  font-size: 0.5em; }
+
+[aria-sort] button:after {
+  content: " \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.5em; }
+
+//   =====================
+//   TAGS
+//   =====================
+.nhsuk-tag {
+    font-weight: 600;
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1;
+    background-color: #0055a6;
+    border: 1px solid #0055a6;
+    color: #ffffff;
+    display: inline-block;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 4px;
+    text-decoration: none; }
+    @media (min-width: 40.0625em) {
+      .nhsuk-tag {
+        font-size: 16px;
+        font-size: 1rem;
+        line-height: 1; } }
+    @media print {
+      .nhsuk-tag {
+        font-size: 14pt;
+        line-height: 1; } }
+  
+  .nhsuk-tag--no-border {
+    border: 0; }
+  
+  .nhsuk-tag--white {
+    background-color: #ffffff;
+    border-color: #212b32;
+    color: #212b32; }
+  
+  .nhsuk-tag--grey {
+    background-color: #dbe0e3;
+    border-color: #354550;
+    color: #354550; }
+  
+  .nhsuk-tag--green {
+    background-color: #cce5d8;
+    border-color: #004c23;
+    color: #004c23; }
+  
+  .nhsuk-tag--aqua-green {
+    background-color: #ccedeb;
+    border-color: #00524d;
+    color: #00524d; }
+  
+  .nhsuk-tag--blue {
+    background-color: #ccdff1;
+    border-color: #004281;
+    color: #004281; }
+  
+  .nhsuk-tag--purple {
+    background-color: #d6cce3;
+    border-color: #240050;
+    color: #240050; }
+  
+  .nhsuk-tag--pink {
+    background-color: #efd3e3;
+    border-color: #57133a;
+    color: #57133a; }
+  
+  .nhsuk-tag--red {
+    background-color: #f7d4d1;
+    border-color: #6b140e;
+    color: #6b140e; }
+  
+  .nhsuk-tag--orange {
+    background-color: #ffdc8e;
+    border-color: #4d3708;
+    color: #4d3708; }
+  
+  .nhsuk-tag--yellow {
+    background-color: #fff59d;
+    border-color: #4d4712;
+    color: #4d4712; }
+    /* ==========================================================================
+   SECONDARY NAV
+  ========================================================================== */
+.nhsuk-secondary-navigation {
+  background-color: #ffffff; }
+
+.nhsuk-secondary-navigation__container {
+  text-align: justify;
+  margin: 0 30px; }
+
+.nhsuk-secondary-navigation__nav {
+  text-align: left;
+  display: inline-block;
+  vertical-align: middle; }
+
+.nhsuk-secondary-navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.nhsuk-secondary-navigation__item {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-block;
+  margin-right: 24px;
+  margin-top: 0;
+  margin-bottom: 0; }
+  @media (min-width: 40.0625em) {
+    .nhsuk-secondary-navigation__item {
+      font-size: 19px;
+      font-size: 1.1875rem;
+      line-height: 1.47368; } }
+  @media print {
+    .nhsuk-secondary-navigation__item {
+      font-size: 14pt;
+      line-height: 1.15; } }
+  .nhsuk-secondary-navigation__item:last-child {
+    margin-right: 0; }
+
+.nhsuk-secondary-navigation__link {
+  display: block;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  text-decoration: none;
+  font-weight: bold; }
+  .nhsuk-secondary-navigation__link:link, .nhsuk-secondary-navigation__link:visited {
+    color: #005eb8; }
+  .nhsuk-secondary-navigation__link:focus {
+    color: black;
+    position: relative;
+    z-index: 1;
+    box-shadow: none; }
+  .nhsuk-secondary-navigation__link[aria-current] {
+    color: #005eb8;
+    position: relative;
+    text-decoration: none;
+    font-weight: bold; }
+    .nhsuk-secondary-navigation__link[aria-current]:before {
+      background-color: #005eb8;
+      content: "";
+      display: block;
+      height: 5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%; }
+    .nhsuk-secondary-navigation__link[aria-current]:focus {
+      color: black;
+      position: relative;
+      border: none; }
+      .nhsuk-secondary-navigation__link[aria-current]:focus:before {
+        background-color: black; }
+
+.hmcts-page-heading {
+  margin-bottom: 48px;
+  min-height: 48px;
+  text-align: justify; }
+  .hmcts-page-heading:after {
+    content: "";
+    display: inline-block;
+    width: 100%; }
+
+.hmcts-page-heading__title [class^="govuk-heading-"] {
+  margin-bottom: 8px;
+  text-align: left; }
+
+.hmcts-page-heading__actions {
+  display: inline-block;
+  vertical-align: middle; }
+
+.hmcts-page-heading__action:last-child {
+  margin-bottom: 0; }
+  .login-details {
+    float: right;
+    padding-left: 20px;
+}
+
+// layout styles
+.border-box {
+  border: 10px solid #DEE0E2;
+  background-color: #F8F8F8;
+  display:block;
+  padding: 20px;
+}
+.highlight1 {
+  border: 10px solid #DEE0E2;
+  background-color: #F8F8F8;
+  padding: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+  margin-left: 1px;
+  min-height: 220px;
+  margin-bottom:26px;
+}
+ul.tabs {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+  ul.tabs li.current {
+    border: 1px solid #bfc1c3;
+    border-bottom: 1px solid transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0.6842105263em 0.9473684211em 0.7368421053em;
+    background: #fff;
+}
+ul.tabs li {
+  background: #dee0e2;
+  color: #005ea5;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+ul.tabs1 {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+ul.tabs1 li.current1 {
+  border: 1px solid #bfc1c3;
+  border-bottom: 1px solid transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.6842105263em 0.9473684211em 0.7368421053em;
+  background: #fff;
+}
+ul.tabs1 li {
+  background: #dee0e2;
+  color: #005ea5;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.tab-content {
+  display: none;
+  margin: 10px 0 0 0;
+}
+.tab-content.current {
+  display: inherit;
+}
+
+.tab1-content {
+  display: none;
+  margin: 10px 0 0 0;
+}
+.tab1-content.current1 {
+  display: inherit;
+}
+.reset-button{
+  float:right;
+}
+.nhsuk-textarea {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  border: 2px solid #4c6272;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  min-height: 40px;
+  padding: 4px;
+  resize: vertical;
+  width: 100%;
+}
+
+.nhsuk-textarea-error {
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  border: 4px solid #d5281b;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  min-height: 40px;
+  padding: 4px;
+  resize: vertical;
+  width: 100%;
+}
+.nhsbsa-pagination__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nhsbsa-pagination__list {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+// table filter PECS / DECS
+tr.pecs-row.show, tr.decs-row.show {
+  display: table-row;
+}
+tr.pecs-row.hide, tr.decs-row.hide {
+  display: none;
+}
+
+.show {
+  display: table-row!important;
+}
+.hide {
+  display: none!important;
+}
+.nhsuk-warning-text {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+.nhsuk-warning-text__icon {
+  font-weight: 700;
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  min-width: 35px;
+  min-height: 35px;
+  margin-top: -7px;
+  border: 3px solid #0b0c0c;
+  border-radius: 50%;
+  color: #fff;
+  background: #0b0c0c;
+  font-size: 30px;
+  line-height: 29px;
+  text-align: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.nhsuk-warning-text__text {
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.25;
+  color: #0b0c0c;
+  display: block;
+  padding-left: 45px;
+}
+.nhsuk-warning-text__assistive {
+  position: absolute !important;
+  width: 1px!important;
+  height: 1px!important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+// style for cheque number and date (inline inputs / errors)
+.cheque {
+  width: 45%;
+  display: inline-block;
+}
+.inline-error {
+  display: inline;
+}
+
+// sign out link in header
+.sign-out-link {
+  float: right;
+  padding-top: 15px;
+  position: absolute;
+  right: 49px;
+}
+
+.nhsuk-input-grey {
+  @include nhsuk-font(19);
+
+  -moz-appearance: none; /* 1 */
+  -webkit-appearance: none; /* 1 */
+  appearance: none; /* 1 */
+  border: $nhsuk-border-width-form-element solid $nhsuk-form-border-color; /* 2 */
+  border-radius: 0;
+  box-sizing: border-box;
+  height: 40px;
+  margin-top: 0;
+  padding: nhsuk-spacing(1);
+  width: 100%;
+  background-color: rgb(216, 215, 215);
+
+  &:focus {
+    @include nhsuk-focused-input;
+  }
+}
+
+//Blue button
+
+@media (min-width: 40.0625em)
+.nhsuk-button-blue {
+    margin-bottom: 36px;
+}
+@media (min-width: 40.0625em)
+.nhsuk-button-blue {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.47368;
+}
+.nhsuk-button-blue {
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    -webkit-appearance: none;
+    background-color: #007f3b;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #00401e;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 0;
+    padding: 12px 16px;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+    width: auto;
+}
+button, input, select, textarea {
+    font-family: inherit;
+}
+*, *:before, *:after {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+user agent stylesheet
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+body {
+    background-color: #f0f4f5;
+    color: #212b32;
+    font-size: 16px;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100%;
+}
+html {
+    background-color: #d8dde0;
+    overflow-y: scroll;
+    font-family: Frutiger W01, Arial, Sans-serif;
+}
+.nhsuk-button-blue: transparent;
+    bottom: -6px;
+    content: "";
+    display: block;
+    left: -2px;
+    position: absolute;
+    right: -2px;
+    top: -2px;
+}
+*, *:before, *:after {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+*, *:before, *:after {
+    -moz-box-sizing: inherit;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}

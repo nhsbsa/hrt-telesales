@@ -1,0 +1,136 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+        Alpha Prototype Pages
+      </h1>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      {{ warningCallout({
+        "heading": "Prototype code only",
+        "HTML": "<p>Do not use this code in any production code or services. It does not adhere to development standards.</p>"
+      }) }}
+
+      <h2>HRT Telesales - Iteration 1 page list</h2><hr>
+      <h3>Prototype versions</h3>
+      <table class="nhsuk-table">
+        
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Version 1</td>
+            <td class="nhsuk-table__cell "><a href="/v1/start">Telesales</a></td>
+            
+          </tr>
+          
+        </tbody>
+        
+      </table>
+      <hr>
+      <h3>Journeys for usability testing</h3>
+      <table class="nhsuk-table">
+        
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Test</td>
+            <td class="nhsuk-table__cell ">Test</td>
+            <td class="nhsuk-table__cell ">Test</td>
+          </tr>
+          
+        </tbody>
+        
+      </table>
+      <hr>
+      <h3>Experimental pages</h3>
+      <table class="nhsuk-table">
+        
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Description
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Prototype Link
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Jira Story
+            </th>
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Test</td>
+            <td class="nhsuk-table__cell ">Test</td>
+            <td class="nhsuk-table__cell ">Test</td>
+          </tr>
+          
+        </tbody>
+        
+      </table>
+    
+      
+
+      
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
