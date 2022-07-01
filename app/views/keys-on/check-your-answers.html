@@ -1,0 +1,308 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-narrow.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Search Results
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      
+        
+          
+            <ul class="nhsuk-secondary-navigation__list">
+              
+
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="#">Access Keys: ON</a>
+              </li>
+              
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li> 
+            </ul>
+          
+       
+      
+          </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page heading -->
+      <form action="access-keys">
+      
+    
+      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button>--></form>
+
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Check their answers
+        </h1>
+      </legend>
+      
+
+      <!-- ==================================================================================== -->
+      <!-- SEARCH BOX -->
+      <!-- ==================================================================================== -->
+      
+
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Reminder:
+            </span>
+          </h3>
+          <p>This is an HRT PPC which only covers certain HRT drugs. If the customer requires drugs outside of HRT then a standard PPC may be more beneficial for them.</p>
+        </div>
+  
+        <h3 class="heading">
+          Customer details
+        </h3>
+  
+        {{ summaryList({
+          rows: [
+            
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Jane Doe"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "name",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                html: "1 January 1999"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },{
+              key: {
+                text: "Do you know your NHS number?"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "nhs-number",
+                    text: "Change",
+                    visuallyHiddenText: "NHS number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "NHS number"
+              },
+              value: {
+                text: "1111111111"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "nhs-number",
+                    text: "Change",
+                    visuallyHiddenText: "NHS number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: '1 Test Road<br>Town<br>NE1 0LD'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "new-application",
+                    text: "Change",
+                    visuallyHiddenText: "NHS number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Receive certificate and reminder by email or post?"
+              },
+              value: {
+                text: "Email"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "email-post",
+                    text: "Change",
+                    visuallyHiddenText: "NHS number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                html: 'Jane.doe@nhs.net'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "email",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+  
+        <h3>
+          Customer certificate
+        </h3>
+  
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Length"
+              },
+              value: {
+                text: "12 months"
+              }
+            },
+            {
+              key: {
+                text: "Starts on"
+              },
+              value: {
+                html: "1 January 2022 (Today)"
+              }
+            },{
+              key: {
+                text: "Ends on"
+              },
+              value: {
+                html: "1 January 2023"
+              }
+            },{
+              key: {
+                text: "Total cost"
+              },
+              value: {
+                html: "£18.70"
+              }
+            },{
+              key: {
+                text: "Payment method"
+              },
+              value: {
+                html: "Card payment"
+              }
+            }
+            ,{
+              key: {
+                text: "Certificate number"
+              },
+              value: {
+                html: "11124500001"
+              }
+            }
+          ]
+        }) }}
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="example">
+          Notes (B)
+        </label>
+        
+        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+      </div>
+      
+      
+      <br><br>
+
+      <div>
+        
+       
+        <a href="payment-ref"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Card payment call (I)
+        </button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Cancel (M)
+        </button></a>
+
+    </div>
+
+      
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  </div>
+
+</div>
+
+{% endblock %}

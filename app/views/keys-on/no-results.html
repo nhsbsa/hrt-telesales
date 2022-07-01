@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-narrow.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Content page example - NHS.UK prototype kit
+  Search Results
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -25,7 +25,7 @@
               
 
               <li class="nhsuk-secondary-navigation__item">
-                <a class="nhsuk-secondary-navigation__link" href="#">Access Keys: ON</a>
+                <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
               </li>
               
               <li class="nhsuk-secondary-navigation__item login-details">
@@ -63,55 +63,40 @@
       
 
     
-      <button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8; float: right;">
+      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
         Access Keys
-      </button></h1></form>
+      </button>--></h1></form>
 
       <!-- ==================================================================================== -->
       <!-- SEARCH BOX -->
       <!-- ==================================================================================== -->
       
-      <div id="search">
-        <h2>Search users</h2>
-        <div class="nhsuk-grid-column-one-half">
-          
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="select-1">
-              Search by:
-            </label>
-            <select class="nhsuk-select" id="select-1" name="select-1" style="height:85px; width: 250px;" multiple>
-              <option value="1">Name</option>
-              <option value="2">D.O.B</option>
-              <option value="3">Certificate Number</option>
-            </select>
-          </div>
-          <button class="nhsuk-button" type="submit">
-            Search
-          </button>
-      
-        </div>
-        <div class="nhsuk-grid-column-one-half">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-              Keywords:
-            </label>
-            <textarea class="nhsuk-textarea" id="example" name="example" rows="3" aria-describedby="example-hint"></textarea>
-          </div>
-        </div>
+      <div>
+        
+        
+        
+  <p><strong>No results were found for the specified search criteria</strong></p>
+  
+<br><br><br><br><br><br><br><br><br>
+
+
 
        
         
        
       </div>
       
-      <br>
+      <br><br>
 
-      <div><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-        Submit (I)
-      </button>&nbsp;&nbsp;&nbsp;
-      <button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-       Cancel (M)
-      </button></div>
+      <div>
+        
+          <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            Back (I)
+          </button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="new-application"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            New application (Y)
+          </button></a>
+      </div>
 
       
       

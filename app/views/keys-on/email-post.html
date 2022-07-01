@@ -1,0 +1,146 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-narrow.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Search Results
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      
+        
+          
+            <ul class="nhsuk-secondary-navigation__list">
+              
+
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="#">Access Keys: ON</a>
+              </li>
+              
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li> 
+            </ul>
+          
+       
+      
+          </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-full">
+
+      <!-- Change the page heading -->
+      <form action="access-keys">
+      
+      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button>--></form>
+
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Certificate fulfillment
+        </h1>
+      </legend><br>
+      <p>We will send the new certificate by email within 24 hours, and a convenient reminder 1 month before their renewal date. If the customer chooses the postal option, the certificate and reminder can be delayed by up to 10 working days.</p>
+
+      <!-- ==================================================================================== -->
+      <!-- SEARCH BOX -->
+      <!-- ==================================================================================== -->
+      <form action="email-handler" method="get" class="form">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset">
+          
+      
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="yes" name="email" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Email (L)
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="no" name="email" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Post (M)
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      
+      </div>
+      
+      </div><br>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="example">
+          Notes (B)
+        </label>
+        
+        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+      </div>
+      
+      
+      <br><br>
+
+      <div>
+        
+        <button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+          Submit (I)
+        </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      </form>
+        <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Back (O)
+        </button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Cancel (M)
+        </button></a>
+
+    </div>
+
+      
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  </div>
+
+</div>
+
+{% endblock %}

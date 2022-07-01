@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-narrow.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -14,10 +14,31 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
+  
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      
+        
+          
+            <ul class="nhsuk-secondary-navigation__list">
+              
+
+              
+              
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li> 
+            </ul>
+          
+       
+      
+          </div>
+  </div>
+</div>
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -29,7 +50,8 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-  <div class="nhsuk-grid-row">
+
+  <div class="">
 
    
 
@@ -49,21 +71,24 @@
         
           
           <div class="nhsuk-hint" style="color:red ;">
-            Select 'yes' if you want to use access keys          </div>
-        
+            Select 'yes' if you want to use access keys          
+          </div>
+
+
+        <form action="access-handler" method="get" class="form">
           <div class="nhsuk-form-group">
         
             <div class="nhsuk-radios">
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes">
+                <input class="nhsuk-radios__input" id="yes" name="keys" type="radio" value="yes">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
                   Yes
                 </label>
               </div>
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="no">
+                <input class="nhsuk-radios__input" id="no" name="keys" type="radio" value="no">
                 <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
                   No
                 </label>
@@ -76,12 +101,14 @@
         
         </fieldset><br>
 
-        <div><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+        <div><button class="nhsuk-button" type="submit"  style="background-color: #025eb8;">
           Submit (I)
         </button>&nbsp;&nbsp;&nbsp;
-        <button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+        
+        <button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
          Cancel (M)
         </button></div>
+      </form>
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
