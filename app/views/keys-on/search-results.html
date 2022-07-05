@@ -17,28 +17,28 @@
 
 <div class="nhsuk-secondary-navigation">
   <div class="nhsuk-grid-row">
-     <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-secondary-navigation__container">
-           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
-              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
-                 <ul class="nhsuk-secondary-navigation__list">
-                  <li class="nhsuk-secondary-navigation__item">
-                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
-                  </li>
-                  
-                  <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
-                  </li>
-                  <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
-                  </li> 
-     
-                  
-                 </ul>
-              </nav>
-           </div>
-        </div>
-     </div>
+    <div class="nhsuk-width-container">
+      
+        
+          
+            <ul class="nhsuk-secondary-navigation__list">
+              
+
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="#">Access Keys: ON</a>
+              </li>
+              
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li> 
+            </ul>
+          
+       
+      
+          </div>
   </div>
 </div>
 {% endblock %}
@@ -57,21 +57,32 @@
   <div class="nhsuk-grid-column-full">
 
       <!-- Change the page heading -->
-      
-      <h1>
-      Certificate Manager
-      
 
-    
-      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
-        Access Keys
-      </button>--></h1>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-width-container">
+          
+            
+          <h1>
+            Certificate Manager
+            
+      
+          
+            <button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+              Access Keys
+            </button></h1>
+                
+            <h3>50 results found</h3>
+          
+              </div>
+      </div>
+
+      
+      
 
       <!-- ==================================================================================== -->
       <!-- SEARCH BOX -->
       <!-- ==================================================================================== -->
-      <h3>50 results found
-      <div id="border" style="padding: 20px ;">
+     <div id="border" style="padding: 20px ;">
         
         
         <table role="table" class="nhsuk-table-responsive">
@@ -133,9 +144,9 @@
         <span class="nhsuk-table-responsive__heading"></span>15/03/1984
       </td>
       <td role="cell" class="nhsuk-table__cell">
-        <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--red">
+        <span class="nhsuk-table-responsive__heading"></span>
           PPC
-        </strong>
+        
       </td>
       <td role="cell" class="nhsuk-table__cell">
         <span class="nhsuk-table-responsive__heading"></span>Issued
@@ -169,9 +180,7 @@
         <span class="nhsuk-table-responsive__heading"></span>15/03/1984
       </td>
       <td role="cell" class="nhsuk-table__cell">
-        <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--red">
-          PPC
-        </strong>
+        <span class="nhsuk-table-responsive__heading"></span>PPC
       </td>
       <td role="cell" class="nhsuk-table__cell">
         <span class="nhsuk-table-responsive__heading"></span>Issued
@@ -205,9 +214,8 @@
         <span class="nhsuk-table-responsive__heading"></span>15/03/1984
       </td>
       <td role="cell" class="nhsuk-table__cell">
-        <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--green">
-          HRT PPC
-        </strong>
+        <span class="nhsuk-table-responsive__heading"></span>
+        HRT PPC
       </td>
       <td role="cell" class="nhsuk-table__cell">
         <span class="nhsuk-table-responsive__heading"></span>Issued
@@ -241,9 +249,8 @@
         <span class="nhsuk-table-responsive__heading"></span>15/03/1984
       </td>
       <td role="cell" class="nhsuk-table__cell">
-        <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--blue">
+        <span class="nhsuk-table-responsive__heading"></span>
         MED
-        </strong>
       </td>
       <td role="cell" class="nhsuk-table__cell">
         <span class="nhsuk-table-responsive__heading"></span>Issued
@@ -277,9 +284,7 @@
         <span class="nhsuk-table-responsive__heading"></span>15/03/1984
       </td>
       <td role="cell" class="nhsuk-table__cell">
-        <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--yellow">
-        TAX
-        </strong>
+        <span class="nhsuk-table-responsive__heading"></span>TAX
       </td>
       <td role="cell" class="nhsuk-table__cell">
         <span class="nhsuk-table-responsive__heading"></span>Issued
@@ -298,6 +303,7 @@
   <p><strong style="float: left;"><  Previous 1 2 3 Next ></strong>
 <strong style="float: right;">Showing 1 to 10 of 50 results</strong></p>
 <br><br>
+
 </div>
 
 
@@ -308,16 +314,21 @@
       
       <br><br>
 
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-width-container">
+
       <div>
         <a href="exemption-information"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
           Submit (I)
-        </button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </button></a>
           <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
             Back (0)
-          </button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button></a>
           <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
             Cancel (M)
           </button></a>
+      </div>
+      </div>
       </div>
 
       

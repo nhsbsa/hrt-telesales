@@ -83,8 +83,8 @@
             </label>
             <select class="nhsuk-select" id="select-1" name="select-1">
               <option value="1">Name</option>
-              <option value="2" selected>Date of birth</option>
-              <option value="3" disabled>Certificate number</option>
+              <option value="2">Date of birth</option>
+              <option value="3">Certificate number</option>
             </select>
           </div>
           
@@ -108,14 +108,28 @@
 
       <div>
         
-          <a href="no-results"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
             Search (I)
-          </button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </button></a>
           <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
             Cancel (M)
           </button></a>
       </div>
 
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Prototype: Search options
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          
+          <ul>
+            <li><a href="no-results">No results found</a></li>
+            <li><a href="search-results">Results found - table</a></li>
+          </ul>
+        </div>
+      </details>
       
       
       <!-- ==================================================================================== -->

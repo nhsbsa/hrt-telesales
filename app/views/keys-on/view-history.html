@@ -303,142 +303,63 @@ margin-bottom: -15px;
     
     <div class="column bg-alt">
       <div class="container">
-        <ul class="tabs">
-           <li class="tab-link current" data-tab="tab-3">Full payment history</li>
-           <li class="tab-link" data-tab="tab-4">Customer history</li>
-           <li class="tab-link" data-tab="tab-5">Notes</li>
-        </ul>
-        <div id="tab-3" class="tab-content current">
-           <div class="makeScrollable2">
-            <table class="nhsuk-table">
-    
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Date
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Type
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Amount
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Description
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">Card payment failed</td>
-                  <td class="nhsuk-table__cell " style="color: red;">£18.70</td>
-                  <td class="nhsuk-table__cell ">Aborted credit card payment</td>
-                  <td class="nhsuk-table__cell "><a href="view-history">View</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">Card payment</td>
-                  <td class="nhsuk-table__cell ">£18.70</td>
-                  <td class="nhsuk-table__cell ">Awaiting authorization</td>
-                  <td class="nhsuk-table__cell "><a href="view-history">View</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">Card payment</td>
-                  <td class="nhsuk-table__cell ">£18.70</td>
-                  <td class="nhsuk-table__cell ">Cleared</td>
-                  <td class="nhsuk-table__cell "><a href="view-history">View</td>
-                </tr>
-                
-              </tbody>
-            </table>
-           </div>
-        </div>
-        <div id="tab-4" class="tab-content">
-           <div class="makeScrollable2">
-            <table class="nhsuk-table">
-    
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Date
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    User
-                  </th>
-                  
-                  <th role="columnheader" class="" scope="col">
-                    Description
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">AUTORENEW</td>
-                  
-                  <td class="nhsuk-table__cell ">Initial values</td>
-                  <td class="nhsuk-table__cell "><a href="view-cust-history">View</td>
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">AUTORENEW</td>
-                  
-                  <td class="nhsuk-table__cell ">Initial values</td>
-                  <td class="nhsuk-table__cell "><a href="view-cust-history">View</td>
-                </tr>
-                
-              </tbody>
-            </table>
-           </div>
-        </div>
-        <div id="tab-5" class="tab-content">
-          <div class="makeScrollable2">
-            <table class="nhsuk-table">
+        
+        <dl class="nhsuk-summary-list">
 
-              <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                  <th role="columnheader" class="" scope="col">
-                    Date
-                  </th>
-                  <th role="columnheader" class="" scope="col">
-                    Notes
-                  </th>
-                  
-                  <th role="columnheader" class="" scope="col">
-                    User
-                  </th>
-                  
-                </tr>
-              </thead>
-              <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">Unable to get pin for transaction: 100007546-2 HTTP Error. see log for details</td>
-                  
-                  <td class="nhsuk-table__cell "><strong>PPCTELE1</strong></td>
-                  
-                </tr>
-                <tr role="row" class="nhsuk-table__row">
-                  <td class="nhsuk-table__cell">01/04/2023</td>
-                  <td class="nhsuk-table__cell ">Payment no 2 cleared for value £18.70. Please refer to telesales for total paid.</td>
-                  
-                  <td class="nhsuk-table__cell "><strong>PPCTELE1</strong></td>
-                  
-                </tr>
-                
-              </tbody>
-            </table>
-     
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Payment type
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             Card payment
+            </dd>
           </div>
-       </div>
+    
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Card amount
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             £18.70
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Card expiry date
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             01/24
+            </dd>
+          </div>
+    
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Card number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             1234 5678 9123 4567
+            </dd>
+          </div>
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Description
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             Cleared
+            </dd>
+          </div>
+    
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              PPCPAYE
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+             £18.70
+            </dd>
+          </div>
+        </dl>
+        
+          
 
 
      </div>
