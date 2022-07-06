@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-narrow.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -17,30 +17,31 @@
 
 <div class="nhsuk-secondary-navigation">
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-width-container">
-      
-        
-          
-            <ul class="nhsuk-secondary-navigation__list">
-              
-
-              <li class="nhsuk-secondary-navigation__item">
-                <a class="nhsuk-secondary-navigation__link" href="#">Access Keys: ON</a>
-              </li>
-              
-              <li class="nhsuk-secondary-navigation__item login-details">
-                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
-              </li>
-              <li class="nhsuk-secondary-navigation__item login-details">
-                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
-              </li> 
-            </ul>
-          
-       
-      
-          </div>
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
   </div>
 </div>
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -53,8 +54,8 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 <div class="nhsuk-grid-row">
+  <div class="nhsuk-width-container">
 
-  <div class="nhsuk-grid-column-full">
 
       <!-- Change the page heading -->
       <form action="access-keys">
@@ -276,8 +277,7 @@
         <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
       </div>
       
-      
-      <br><br>
+
 
       <div>
         

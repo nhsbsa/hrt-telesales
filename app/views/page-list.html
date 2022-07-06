@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-narrow.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -14,10 +14,7 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-  {{ breadcrumb({
-    href: "/",
-    text: "Home"
-  }) }}
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -66,11 +63,11 @@
             <td class="nhsuk-table__cell "><a href="/keys-on/start">Telesales</a></td>
             
           </tr>
-          <tr role="row" class="nhsuk-table__row">
+          <!--<tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">Version 1 - Access keys off</td>
             <td class="nhsuk-table__cell "><a href="/keys-off/start">Telesales</a></td>
             
-          </tr>
+          </tr>-->
           
         </tbody>
         
