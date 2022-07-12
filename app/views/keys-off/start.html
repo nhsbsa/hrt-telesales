@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-full-width.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -14,7 +14,6 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 
 <div class="nhsuk-secondary-navigation">
   <div class="nhsuk-grid-row">
@@ -54,13 +53,12 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 <div class="nhsuk-grid-row">
-
-  <div class="nhsuk-grid-column-full">
+  
 
       <!-- Change the page heading -->
       <form action="access-keys">
       <h1>
-          Certificate Manager
+        Certificate Manager
       
 
     
@@ -72,18 +70,22 @@
       <!-- SEARCH BOX -->
       <!-- ==================================================================================== -->
       
-      <div id="">
+      <div id="search">
         <h2>Search users</h2>
         <div class="nhsuk-grid-column-one-half">
           
+          
+
           <div class="nhsuk-form-group">
             <label class="nhsuk-label" for="select-1">
               Search by:
             </label>
-            <select class="nhsuk-select" id="select-1" name="select-1" style="height:85px; width: 250px;" multiple>
-              <option value="1">Name</option>
-              <option value="2">D.O.B</option>
-              <option value="3">Certificate Number</option>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1">Certificate number</option>
+              <option value="2">Name, date of birth or postcode</option>
+              
+              <option value="3">NHS number or email address</option>
+              
             </select>
           </div>
           
@@ -107,14 +109,33 @@
 
       <div>
         
-          <a href="search-results"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-            Search 
-          </button></a>&nbsp;&nbsp;&nbsp;
           <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-            Cancel
+            Search (I)
+          </button></a>
+          <a href="new-application"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            New Application (Y)
+          </button></a>
+          <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            Cancel (M)
           </button></a>
       </div>
 
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Prototype: Search options
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          
+          <ul>
+            <li><a href="no-results">No results found</a></li>
+            <!--<li><a href="search-results">Results found - Table only full width</a></li>-->
+            <li><a href="search-results-wide">Results found </a></li>
+            <!--<li><a href="search-results-wide-2">Results found - Mix width</a></li>-->
+          </ul>
+        </div>
+      </details>
       
       
       <!-- ==================================================================================== -->
