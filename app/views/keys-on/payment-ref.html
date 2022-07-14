@@ -53,6 +53,21 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("/keys-on/certificate-summary");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/check-your-answers");
+    }
+    
+    else if (event.key === "y") {
+        window.location.replace("/keys-on/new-application");
+    }
+});
+</script>
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-width-container">
 
