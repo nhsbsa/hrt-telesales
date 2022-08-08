@@ -172,8 +172,8 @@ margin-bottom: -15px;
             Certificate issued
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            <a href="change-status"><button class="nhsuk-button" type="submit"  style="background-color: #025eb8; width:100px;height:30px; line-height: 0px;  text-align: left; ">
-              Change
+            <a href="change-status-2"><button class="nhsuk-button" type="submit"  style="background-color: #025eb8; width:135px;height:30px; line-height: 0px;  text-align: left; ">
+              Change (C)
              </button></a>
           </dd>
       
@@ -383,7 +383,7 @@ margin-bottom: -15px;
       </dl>
       <a href="edit-information">
         <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right;">
-        Edit
+        Edit (E)
        </button>
       </a>
     </div>
@@ -491,6 +491,41 @@ margin-bottom: -15px;
       </div>
   </div>
   <br>
+  <script>
+    document.body.addEventListener("keydown", function (event) {
+      if (event.key === "i") {
+          window.location.replace("javascript:history.go(-1)");
+      }
+      else if (event.key === "y") {
+          window.location.replace("/keys-on/new-application");
+      }
+      else if (event.key === "j") {
+          window.location.replace("/keys-on/email-post");
+      }
+      else if (event.key === "k") {
+          window.location.replace("/keys-on/email-post");
+      }
+      else if (event.key === "m") {
+          window.location.replace("/keys-on/start");
+      }
+      else if (event.key === "h") {
+          window.location.replace("/keys-on/history");
+      }
+      else if (event.key === "+") {
+          window.location.replace("/keys-on/exemption-add-note");
+      }
+      else if (event.key === "r") {
+          window.location.replace("/keys-on/card-refund");
+      }
+      else if (event.key === "c") {
+          window.location.replace("/keys-on/change-status-2");
+      }
+      else if (event.key === "e") {
+          window.location.replace("/keys-on/edit-information");
+      }
+      
+  });
+  </script>
   <div>
         
     <a href="search-results-wide"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
@@ -512,7 +547,7 @@ margin-bottom: -15px;
       History (H)
     </button></a>
     <a href="card-refund"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Card refund payment
+      Card refund payment (R)
     </button></a>
 </div>
       

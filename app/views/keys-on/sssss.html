@@ -53,7 +53,41 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("javascript:history.go(-1)");
+    }
+    else if (event.key === "y") {
+        window.location.replace("/keys-on/new-application");
+    }
+    else if (event.key === "j") {
+        window.location.replace("/keys-on/email-post");
+    }
+    else if (event.key === "k") {
+        window.location.replace("/keys-on/email-post");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
+    }
+    else if (event.key === "h") {
+        window.location.replace("/keys-on/new-history");
+    }
+    else if (event.key === "+") {
+        window.location.replace("/keys-on/add-note");
+    }
+    else if (event.key === "r") {
+        window.location.replace("/keys-on/card-refund");
+    }
+    else if (event.key === "c") {
+        window.location.replace("/keys-on/new-change-status");
+    }
+    else if (event.key === "e") {
+        window.location.replace("/keys-on/new-edit-information");
+    }
+    
+});
+</script>
 <style>
   
 .nhsuk-summary-list__key, .nhsuk-summary-list__value, .nhsuk-summary-list__actions {
@@ -243,8 +277,10 @@ margin-bottom: -15px;
         </div>
       
       </dl>
-
+      
+      
     </div>
+    
     
     <div class="column bg-alt">
       <div id="header">
@@ -454,19 +490,19 @@ margin-bottom: -15px;
     <a href="new-application"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       New application (Y)
     </button></a>
-    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+    <a href="email-post"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Use details (J)
     </button></a>
-    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+    <a href="email-post"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Reissue (K)
     </button></a>
     <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Cancel (M)
     </button></a>
-    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+    <a href="new-history"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       History (H)
     </button></a>
-    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+    <a href="card-refund"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Card refund payment
     </button></a>
 </div>

@@ -41,7 +41,6 @@
      </div>
   </div>
 </div>
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -68,18 +67,6 @@
 
 
 </style>-->
-
-<script>
-  document.body.addEventListener("keydown", function (event) {
-    if (event.key === "i") {
-        window.location.replace("/keys-on/exemption-information");
-    }
-    else if (event.key === "r") {
-        window.location.replace("javascript:history.go(-1)");
-    }
-    
-});
-</script>
 
 <legend class="nhsuk-fieldset__legend nhsuk-label--l">
   <h1 class="nhsuk-fieldset__heading">
@@ -249,10 +236,72 @@ margin-bottom: -15px;
           </dd>
       
           
-          <br><br><br><br>
+          
         </div>
       
       </dl>
+
+      <div class="nhsuk-form-group">
+        <div id="header">
+          <h4 style="padding: 10px;">Update certificate status</h4>
+        </div>
+        <dl class="nhsuk-summary-list">
+
+          <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Current status:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Certificate issued
+          </dd>
+
+    
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      New status
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <div class="nhsuk-form-group">
+        
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1">Issued</option>
+          <option value="2" >Cancelled</option>
+          <option value="3" >Renewed</option>
+        </select>
+      </div>
+    </dd>
+
+    
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Note (V)
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+    </dd>
+
+    
+
+  </div>
+
+  
+
+</dl>
+        
+      </div>
+      
+      
+      <a href="new-application-summary"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+        Submit (I)
+      </button></a>
+      <a href="new-application-summary"><button class="nhsuk-button nhsuk-button--secondary" type="submit">
+        Reset
+      </button></a>
 
     </div>
     
@@ -464,42 +513,13 @@ margin-bottom: -15px;
     <div id="header">
       <h4 style="padding: 10px;">Notes</h4>
     </div>
-    
-    <table class="nhsuk-table">
-      
-      
-      <tbody class="nhsuk-table__body">
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-06-2024</td>
-          <td class="nhsuk-table__cell ">14:29 - LAUGO</td>
-          <td class="nhsuk-table__cell ">Advised cert details</td>
-        </tr>
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-06-2024</td>
-          <td class="nhsuk-table__cell ">14:30 - LAUGO</td>
-          <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
-        </tr>
+    <br><br>
+    <div style="background-color: #fffca4; border-radius: 20px;">
+      <br><br>
+      <p style="text-align: center;">No notes available for this certificate case.</p>
+          <br>
+        </div><br><br><br>
         
-      </tbody>
-    </table>
-    <div class="nhsuk-form-group">
-      <div id="header">
-        <h4 style="padding: 10px;">New note</h4>
-      </div>
-      <br>
-      
-      <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-      <br>
-      
-    </div>
-    
-    
-    <a href="exemption-information"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
-      Submit (I)
-    </button></a>
-    <a href="exemption-information"><button class="nhsuk-button nhsuk-button--secondary" type="submit">
-      Reset (R)
-    </button></a>
         
         
       </div>

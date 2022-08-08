@@ -53,7 +53,41 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<!--
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("javascript:history.go(-1)");
+    }
+    else if (event.key === "y") {
+        window.location.replace("/keys-on/new-application");
+    }
+    else if (event.key === "j") {
+        window.location.replace("/keys-on/email-post");
+    }
+    else if (event.key === "k") {
+        window.location.replace("/keys-on/email-post");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
+    }
+    else if (event.key === "h") {
+        window.location.replace("/keys-on/new-history");
+    }
+    else if (event.key === "+") {
+        window.location.replace("/keys-on/add-note");
+    }
+    else if (event.key === "r") {
+        window.location.replace("/keys-on/card-refund");
+    }
+    else if (event.key === "c") {
+        window.location.replace("/keys-on/new-change-status");
+    }
+    else if (event.key === "e") {
+        window.location.replace("/keys-on/new-edit-information");
+    }
+    
+});
+</script>
 <style>
   
 .nhsuk-summary-list__key, .nhsuk-summary-list__value, .nhsuk-summary-list__actions {
@@ -67,19 +101,7 @@
 
 
 
-</style>-->
-
-<script>
-  document.body.addEventListener("keydown", function (event) {
-    if (event.key === "i") {
-        window.location.replace("/keys-on/exemption-information");
-    }
-    else if (event.key === "r") {
-        window.location.replace("javascript:history.go(-1)");
-    }
-    
-});
-</script>
+</style>
 
 <legend class="nhsuk-fieldset__legend nhsuk-label--l">
   <h1 class="nhsuk-fieldset__heading">
@@ -185,7 +207,9 @@ margin-bottom: -15px;
             Certificate issued
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            
+            <a href="new-change-status"><button class="nhsuk-button" type="submit"  style="background-color: #025eb8; width:100px;height:30px; line-height: 0px;  text-align: left; ">
+              Change
+             </button></a>
           </dd>
       
           
@@ -382,7 +406,9 @@ margin-bottom: -15px;
           <dd class="nhsuk-summary-list__actions">
       
             <a href="#">
-              
+              <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; width:70px;height:30px; line-height: 0px;  text-align: left; ">
+              Edit
+             </button>
             </a>
       
           </dd>
@@ -395,13 +421,17 @@ margin-bottom: -15px;
 </div>
 
 <div class="flex-container">
-  <div class="column" style="position: relative;">
+  <div class="column">
     <div id="header">
       <h4 style="padding: 10px;">Payment</h4>
     </div>
     
-      
-      
+      <a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+        New payment (Q)
+      </button></a>
+      <a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right;">
+       Refresh
+      </button></a>
       <table class="nhsuk-table" >
         
         <thead role="rowgroup" class="nhsuk-table__head">
@@ -430,82 +460,51 @@ margin-bottom: -15px;
         </tbody>
         
       </table>
-
-      
-      <div style="position:absolute; bottom: 0;">
-      <table class="nhsuk-table" style="">
-        
-        <thead role="rowgroup" class="nhsuk-table__head">
-          <tr role="row">
-            
-          </tr>
-        </thead>
-        <tbody class="nhsuk-table__body" >
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Cost: £18.70</td>
-            
-            <td class="nhsuk-table__cell ">Total: £18.70</td>
-            <td class="nhsuk-table__cell "></td>
-          </tr>
-          
-          
-        </tbody>
-        
-      </table>
-    </div>
-  
-
-      
-      
   </div>
   
-
   <div class="column bg-alt">
     <div id="header">
       <h4 style="padding: 10px;">Notes</h4>
     </div>
-    
-    <table class="nhsuk-table">
-      
-      
-      <tbody class="nhsuk-table__body">
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-06-2024</td>
-          <td class="nhsuk-table__cell ">14:29 - LAUGO</td>
-          <td class="nhsuk-table__cell ">Advised cert details</td>
-        </tr>
-        <tr role="row" class="nhsuk-table__row">
-          <td class="nhsuk-table__cell">01-06-2024</td>
-          <td class="nhsuk-table__cell ">14:30 - LAUGO</td>
-          <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
-        </tr>
-        
-      </tbody>
-    </table>
-    <div class="nhsuk-form-group">
-      <div id="header">
-        <h4 style="padding: 10px;">New note</h4>
-      </div>
-      <br>
-      
-      <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-      <br>
-      
-    </div>
-    
-    
-    <a href="exemption-information"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
-      Submit (I)
-    </button></a>
-    <a href="exemption-information"><button class="nhsuk-button nhsuk-button--secondary" type="submit">
-      Reset (R)
-    </button></a>
+    <br><br>
+    <div style="background-color: #fffca4; border-radius: 20px;">
+      <br><br>
+      <p style="text-align: center;">No notes available for this certificate case.</p>
+          <br>
+        </div><br><br><br>
+        <a href="add-note"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+          Add note +
+        </button>
         
         
       </div>
   </div>
-  
-  
+  <br>
+  <div>
+        
+    <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Back (I)
+    </button></a>
+    <a href="new-application"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      New application (Y)
+    </button></a>
+    <a href="email-post"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Use details (J)
+    </button></a>
+    <a href="email-post"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Reissue (K)
+    </button></a>
+    <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Cancel (M)
+    </button></a>
+    <a href="new-history"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      History (H)
+    </button></a>
+    <a href="card-refund"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Card refund payment
+    </button></a>
+</div>
+      
       <!-- ==================================================================================== -->
       <!-- END OF SEARCH BOX -->
       <!-- ==================================================================================== -->

@@ -446,13 +446,24 @@
           <br>
           
         </div>
+        <script>
+          document.body.addEventListener("keydown", function (event) {
+            if (event.key === "i") {
+                window.location.replace("javascript:history.go(-1)");
+            }
+            else if (event.key === "r") {
+                window.location.replace("/keys-on/new-application-summary");
+            }
         
+            
+        });
+        </script>
         
-        <a href="certificate-summary"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+        <a href="new-application-summary"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
           Submit (I)
         </button></a>
-        <a href="certificate-summary"><button class="nhsuk-button nhsuk-button--secondary" type="submit">
-          Reset
+        <a href="new-application-summary"><button class="nhsuk-button nhsuk-button--secondary" type="submit">
+          Reset (R)
         </button></a>
 
       </div>
