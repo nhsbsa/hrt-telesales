@@ -1,0 +1,171 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Search Results
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}<!--
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("/keys-on/name");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
+    }
+});
+</script>-->
+
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-width-container">
+
+      
+
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Personal details
+        </h1>
+      </legend>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+          
+        
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <p>Address line 1 (1)</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-two-thirds">
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <p>Address line 2 (2)</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-two-thirds">
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <p>Town (3)</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-two-thirds">
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <p>Address line 4 (4)</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="nhsuk-grid-column-two-thirds">
+          
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <p>Postcode (Z)</p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+      
+
+      
+     
+      
+      
+
+      <div>
+        
+          <a href="name"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            Submit (I)
+          </button></a>
+          <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            Cancel (M)
+          </button></a>
+      </div>
+
+      
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  </div>
+
+</div>
+
+{% endblock %}
