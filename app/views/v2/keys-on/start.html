@@ -23,7 +23,7 @@
               <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
                  <ul class="nhsuk-secondary-navigation__list">
                   <li class="nhsuk-secondary-navigation__item">
-                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                    <a class="nhsuk-secondary-navigation__link" href="access-keys">Access Keys: ON</a>
                   </li>
                   
                   <li class="nhsuk-secondary-navigation__item login-details">
@@ -52,112 +52,107 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-
-
+<!--
 <script>
-document.body.addEventListener("keydown", function (event) {
-    if (event.key === "y") {
-        window.location.replace("/keys-on/new-application");
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("/keys-on/name");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
     }
 });
+</script>-->
 
-</script>
-<div class="nhsuk-grid-row">
-  
 
-      <!-- Change the page heading -->
-      <form action="access-keys">
-      <h1>
-        Certificate Manager
-      
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
 
-    
-      <button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+
+
+
+<div id="search" >
+  <div>
+    <h1>Certificate Manager
+
+      <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
         Access Keys
-      </button></h1></form>
+      </button></a>
+    </h1>
+  </div>
+  
+  <hr>
+   <h2>Search users</h2>
 
-      <!-- ==================================================================================== -->
-      <!-- SEARCH BOX -->
-      <!-- ==================================================================================== -->
-      
-      <div id="search">
-        <h2>Search users</h2>
-        <div class="nhsuk-grid-column-one-half">
+
+   <div class="nhsuk-grid-column-one-half">
           
           
 
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="select-1">
-              Search by:
-            </label>
-            <select class="nhsuk-select" id="select-1" name="select-1">
-              <option value="1">Certificate number</option>
-              <option value="2">Name, date of birth or postcode</option>
-              
-              <option value="3">NHS number or email address</option>
-              
-            </select>
-          </div>
-          
-      
-        </div>
-        <div class="nhsuk-grid-column-one-half">
-          <div class="nhsuk-form-group">
-            <label class="nhsuk-label" for="example">
-              Keywords:
-            </label>
-            <textarea class="nhsuk-textarea" id="example" name="example" rows="3" aria-describedby="example-hint"></textarea>
-          </div><br>
-        </div>
-
-       
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="select-1">
+        Search by:
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1">Certificate number</option>
+        <option value="2">Name, date of birth or postcode</option>
         
-       
-      </div>
-      
-      <br><br>
-
-      <div>
+        <option value="3">NHS number or email address</option>
         
-          <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-            Search (I)
-          </button></a>
-          <a href="new-application"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-            New Application (Y)
-          </button></a>
-          <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-            Cancel (M)
-          </button></a>
-      </div>
-
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Prototype: Search options
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          
-          <ul>
-            <li><a href="no-results">No results found</a></li>
-            <!--<li><a href="search-results">Results found - Table only full width</a></li>-->
-            <li><a href="search-results-wide">Results found </a></li>
-            <!--<li><a href="search-results-wide-2">Results found - Mix width</a></li>-->
-          </ul>
-        </div>
-      </details>
-      
-      
-      <!-- ==================================================================================== -->
-      <!-- END OF SEARCH BOX -->
-      <!-- ==================================================================================== -->
-
-
-     
-      <!-- End of content -->
+      </select>
+    </div>
+    
 
   </div>
-
+  
+  <div class="nhsuk-grid-column-one-half">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        Keywords:
+      </label>
+      <textarea class="nhsuk-textarea" id="example" name="example" rows="3" aria-describedby="example-hint"></textarea>
+    </div>
+  </div>
+ 
+  <div>
+    <hr><hr><hr><hr><hr>
+    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Search (I)
+    </button></a>
+    <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      New Application (Y)
+    </button></a>
+    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Cancel (M)
+    </button></a>
 </div>
 
+
+
+  
+  </div>
+<br><br>
+  <details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+        Prototype: Search options
+      </span>
+    </summary>
+    <div class="nhsuk-details__text">
+      
+      <ul>
+        <li><a href="no-results">No results found</a></li>
+        <!--<li><a href="search-results">Results found - Table only full width</a></li>-->
+        <li><a href="search-results-wide">Results found </a></li>
+        <!--<li><a href="search-results-wide-2">Results found - Mix width</a></li>-->
+      </ul>
+    </div>
+  </details>
 {% endblock %}

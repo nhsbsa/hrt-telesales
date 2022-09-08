@@ -65,14 +65,35 @@
 </script>-->
 
 
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
+
+
+
+
+<div id="search">
+<div>
+  <h1>Personal details</h1>
+</div>
+
+<hr style="margin-top:-30px;">
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-width-container">
 
+    
       
 
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
         <h1 class="nhsuk-fieldset__heading">
-          Personal details
+          What is your address?
         </h1>
       </legend>
 
@@ -85,121 +106,131 @@
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
             <strong> Address line 1 (1)</strong>
           </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="1 Test House">
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="Test House">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
             <strong> Address line 2 (2)</strong>
           </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text"value="Test Street">
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="Test Street">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
             <strong>  Town or city (3)</strong>
           </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text"value="Test Town">
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="Test City">
         </div>
       
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
-            <strong>  Address line 4 (4)</strong>
+            <strong>  County (optional) (4)</strong>
           </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text"value="County Test">
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text" VALUE="">
         </div>
       
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-postcode" style="display:inline-block; width:160px; text-align:right;">
             <strong> Postcode (Z)</strong>
           </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="NE12AB">
-          <button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px;">
+          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="NE12TE5">
+          <a href="get-address"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px;">
             Get address (P)
-          </button>
+          </button></a>
+          <details class="nhsuk-details" style="margin-left:163px;">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                They don't know which address to use?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+              <h3>If they have more than one address</h3>
+              <p>They should use the address that their GP or dentist holds for them. For example, if they're a student living away from home, this could be their home or term time address.</p>
+              <h3>If they don't have a permanent address</h3>
+              <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they should use the address that their GP  holds for them.</p>
+            </div>
+          </details>
         </div>
+        <br>
+
+      
+
+
+       
 
         <hr style="margin-top: -20px;">
 
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
-            <strong>Title</strong>
-          </label>
-          <div class="nhsuk-radios" style="display: flex; float:right; position:relative; right:143px; top:-5px;">
+        
+          <h2>
+            What is your name?
+          </h2>
+       
 
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Mr (Q)
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Mrs (W)
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Miss (E)
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Ms (E)
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Other (T)
-              </label>
-            </div>
-            
-      
-          </div>
-        </div>
+        
 
-        <div class="nhsuk-form-group" style="position:relative; right:-163px;">
-          <select class="nhsuk-select" id="select-1" name="select-1" style="width: 300px;">
-            <option value="1">Mr</option>
-            <option value="2">Mrs</option>
-            <option value="3">Miss</option>
-            <option value="3">Ms</option>
-            <option value="3">Other</option>
-          </select>
-        </div>
+        
         <style>
           .no-click {pointer-events: none;}
         </style>
-
-        
+  
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
-            <strong>  Surname (A)</strong>
+            <strong>  First name (S)</strong>
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
-            <strong>  Forename (S)</strong>
+            <strong>  Last name (A)</strong>
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
       
+        <hr>
+
+
+        <h2>
+          What is your date of birth?
+        </h2>
+
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-postcode" style="display:inline-block; width:160px; text-align:right; ">
-            <strong> DOB (X)</strong>
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-          <button class="nhsuk-button no-click" type="submit" style="background-color:grey; height: 35px; line-height: 10px; margin-bottom: -5px;">
-            (ddmmyy)
-          </button>
+          
+          
+          <div class="nhsuk-date-input" id="example">
+            <label class="nhsuk-label" for="address-postcode" style="display:inline-block; width:160px; text-align:right; padding-right: 5px;">
+              <strong> DOB (X)</strong>
+            </label>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                  Day (dd)
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                  Month (mm)
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                  Year (yy)
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+          
         </div>
+        
+
+        <hr style="margin-top:-20px;">
+
+        <h2>Contact details</h2>
   
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
@@ -208,82 +239,101 @@
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right; margin-top: -15px; ">
+          <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
             <strong>Telephone Number (C)</strong>
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
+
+
+
+        <hr>
+        <h2>What is your NHS number?</h2>
+
+
+
+
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town" style="display:inline-block; width:160px; text-align:right;">
             <strong>NHS Number (V)</strong>
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
+      <hr>
+        
+        <h2>Payment type</h2>
+
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+             Important information
+            </span>
+          </h3>
+          <p>Advise the customer that payments for HRT PPC can only be made in a one-off credit or debit card payment of £18.70 at this time.</p>
+        </div>
+
+        <div class="nhsuk-form-group" style="margin-top:-20px;">
+          <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
+            <strong>Payment Type</strong>
+          </label>
+          <div class="nhsuk-radios nhsuk-radios--inline" style="display:inline-block;">
+            
+            <div class="nhsuk-radios__item" style="position:relative; top:13px;">
+              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                Credit or debit card (J)
+              </label>
+            </div>
       
+            
+      
+          </div>
+        </div>
+
+        <!--<div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
+            <strong>Certificate Fulfillment</strong>
+          </label>
+          <div class="nhsuk-radios nhsuk-radios--inline" style="display:inline-block">
+            
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-1" name="example-inline" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+                Email
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-inline-2" name="example-inline" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                Post
+              </label>
+            </div>
+      
+          </div>
+        </div>-->
+
+
+        <hr>
+
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
             <strong>Notes (B)</strong>
           </label>
           <textarea class="nhsuk-textarea nhsuk-u-width-two-thirds" id="example" name="example" rows="3" aria-describedby="example-hint" style="float: right; position:relative; left:-156px"></textarea>
         </div>
-        <br><br>
-
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
-            <strong>Payment Type</strong>
-          </label>
-          <div class="nhsuk-radios" style="display: flex; float:right; position:relative; right:550px; top:-5px;">
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Credit/Debit card (J)
-              </label>
-            </div>
-      
-            
-      
-          </div>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
-            <strong>Certificate Fulfilment</strong>
-          </label>
-          <div class="nhsuk-radios" style="display: flex; float:right; position:relative; right:522px; top:5px;">
-
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Email (L)
-              </label>
-            </div>
-            
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                Post (L)
-              </label>
-            </div>
-      
-            
-      
-          </div>
-        </div>
 
 
 
-
-
-
-
-
-      
+      <br><br>
       </fieldset>
 
       
 
-      
+      <div>
+        <hr>
+      </div>
       
       
     
@@ -293,7 +343,7 @@
 
       <div>
         
-          <a href="name"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          <a href="check-your-answers"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
             Submit (I)
           </button></a>
           <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
@@ -316,6 +366,7 @@
 
   </div>
 
+</div>
 </div>
 
 {% endblock %}

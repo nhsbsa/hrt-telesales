@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Search Results
+  Content page example - NHS.UK prototype kit
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -41,7 +41,6 @@
      </div>
   </div>
 </div>
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -53,78 +52,89 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<!--<script>
+<!--
+<script>
   document.body.addEventListener("keydown", function (event) {
     if (event.key === "i") {
-        window.location.replace("/keys-on/new-application-summary");
+        window.location.replace("/keys-on/name");
     }
-    else if (event.key === "o") {
-        window.location.replace("javascript:history.go(-1)");
-    }
-    
-    else if (event.key === "y") {
-        window.location.replace("/keys-on/new-application");
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
     }
 });
 </script>-->
-<div id="search">
-  <h1 >
-    Application
-  </h1>
-  <hr style="margin-top:-30px;">
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-width-container">
 
 
-      <!-- Change the page heading -->
-      <form action="access-keys">
-     
-      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
+
+
+
+
+<div id="search" style="margin:-10px;">
+  <div>
+    <h1>Certificate Manager
+
+      <button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
         Access Keys
-      </button>--></form>
+      </button>
+    </h1>
+  </div>
+  
+  <hr>
+   <h2>Search users</h2>
 
-      
-      
 
-      <!-- ==================================================================================== -->
-      <!-- SEARCH BOX -->
-      <!-- ==================================================================================== -->
-      <h2>Payment provider number to call</h2><br>
+   <div class="nhsuk-grid-column-one-half">
+          
+          
 
-      <div>
-        <p>Payment provider reference number: <strong style="font-size:xx-large;">43567</strong></p>
-
-      </div>
-      
-      
-      <br><br>
-
-      <div>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="select-1">
+        Search by:
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1">Certificate number</option>
+        <option value="2">Name, date of birth or postcode</option>
         
-        <a href="new-application-summary"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Submit (I)
-        </button></a>
-        <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Back (O)
-        </button></a>
-        <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          New application (Y)
-        </button></a>
-
+        <option value="3">NHS number or email address</option>
+        
+      </select>
     </div>
-
-      
-      
-      <!-- ==================================================================================== -->
-      <!-- END OF SEARCH BOX -->
-      <!-- ==================================================================================== -->
-
-
-     
-      <!-- End of content -->
+    
 
   </div>
+  <div class="nhsuk-grid-column-one-half">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        Keywords:
+      </label>
+      <textarea class="nhsuk-textarea" id="example" name="example" rows="3" aria-describedby="example-hint"></textarea>
+    </div>
+  </div>
+ 
+  <div>
+      <br> 
+    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Search (I)
+    </button></a>
+    <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      New Application (Y)
+    </button></a>
+    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Cancel (M)
+    </button></a>
+</div>
 
-</div>
-</div>
+
+
+  
+  </div>
 {% endblock %}

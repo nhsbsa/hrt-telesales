@@ -7,9 +7,9 @@ const router = express.Router();
 
 router.get(/access-handler/, function (req, res) {
     if (req.query.keys === "yes")  {
-     res.redirect('/keys-on/start');
+     res.redirect('/v2/keys-on/start');
    } else {
-     res.redirect('/keys-off/start');
+     res.redirect('/v2/keys-off/start');
    }
   });
 
