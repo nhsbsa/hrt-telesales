@@ -68,11 +68,7 @@
 
 </style>-->
 
-<legend class="nhsuk-fieldset__legend nhsuk-label--l">
-  <h1 class="nhsuk-fieldset__heading">
-    Certificate summary
-  </h1>
-</legend>
+
 
 <style>
   .flex-container{
@@ -122,8 +118,15 @@ margin-bottom: -15px;
   <!-- ==================================================================================== -->
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
-  
+  <div id="search">
     
+      <h1>
+        Certificate summary
+      </h1>
+      <hr style="margin-top:-30px;">
+
+
+
   <div class="flex-container">
     <div class="column">
       <div id="header">
@@ -164,12 +167,30 @@ margin-bottom: -15px;
       
         </div>
       
-        <div class="nhsuk-summary-list__row" >
-          <dt class="nhsuk-summary-list__key" >
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
             Certificate status
           </dt>
-          <dd class="nhsuk-summary-list__value" >
+          <dd class="nhsuk-summary-list__value">
             Certificate issued
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="change-status-2"><button class="nhsuk-button" type="submit"  style="background-color: #025eb8; width:135px;height:30px; line-height: 0px;  text-align: left; ">
+              Change (C)
+             </button></a>
+          </dd>
+      
+          
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate fulfillment
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>Email</p>
+            
           </dd>
           <dd class="nhsuk-summary-list__actions">
             
@@ -178,134 +199,51 @@ margin-bottom: -15px;
           
       
         </div>
-      
-        
-      
-      </dl>
-
-      <div class="nhsuk-form-group">
-        <div id="header">
-          <h4 style="padding: 10px;">Update certificate status</h4>
-        </div>
-        <dl class="nhsuk-summary-list">
-
-          <div class="nhsuk-summary-list__row">
+        <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Current status:
+            Certificate Start
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Certificate issued
+            <p>01/04/2023</p>
+            
           </dd>
-
-    
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      New status
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <div class="nhsuk-form-group">
-        
-        <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="1">Issued</option>
-          <option value="2" >Cancelled</option>
-          <option value="3" >Renewed</option>
-        </select>
-      </div>
-    </dd>
-
-    
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Note (V)
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-    </dd>
-
-    
-
-  </div>
-
-  
-
-</dl>
-        
-      </div>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
       
+          
       
-      <a href="new-application-summary"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
-        Submit (I)
-      </button></a>
-      <a href="new-application-summary"><button class="nhsuk-button nhsuk-button--secondary" type="submit">
-        Reset
-      </button></a>
-
-      <dl class="nhsuk-summary-list">
-
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Certificate fulfillment
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>Email</p>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate expiry
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>31/04/2024</p>
+            
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+      
           
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
+      
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Application date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <p>01/04/2023</p>
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            
+          </dd>
+      
           
-        </dd>
-    
-        
-    
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Certificate Start
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>01/04/2023</p>
-          
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          
-        </dd>
-    
-        
-    
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Certificate expiry
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>31/04/2024</p>
-          
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          
-        </dd>
-    
-        
-    
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Application date
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p>01/04/2023</p>
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          
-        </dd>
-    
-        
-        
-      </div>
+          <br><br><br><br>
+        </div>
+      
       </dl>
 
     </div>
@@ -435,27 +373,39 @@ margin-bottom: -15px;
           </dd>
           <dd class="nhsuk-summary-list__actions">
       
-            <a href="#">
-              
-            </a>
+            
       
           </dd>
+
+          
           
       
         </div>
         
+        
       </dl>
+      <a href="edit-information">
+        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right;">
+        Edit (E)
+       </button>
+      </a>
     </div>
 </div>
 
 <div class="flex-container">
-  <div class="column" style="position: relative;">
+  <div class="column">
     <div id="header">
       <h4 style="padding: 10px;">Payment</h4>
     </div>
     
+
+    <a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;float: left;">
+      New payment (Q)
+     </button></a>
       
-      
+      <a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;  text-align: left;">
+       Refresh
+      </button></a>
       <table class="nhsuk-table" >
         
         <thead role="rowgroup" class="nhsuk-table__head">
@@ -486,7 +436,7 @@ margin-bottom: -15px;
       </table>
 
       
-      <div style="position:absolute; bottom: 0;">
+      <div style="position:absolute; bottom: 0;"></div>
       <table class="nhsuk-table" style="">
         
         <thead role="rowgroup" class="nhsuk-table__head">
@@ -506,7 +456,6 @@ margin-bottom: -15px;
         </tbody>
         
       </table>
-    </div>
   
 
       
@@ -518,19 +467,95 @@ margin-bottom: -15px;
     <div id="header">
       <h4 style="padding: 10px;">Notes</h4>
     </div>
-    <br><br>
-    <div style="background-color: #fffca4; border-radius: 20px;">
-      <br><br>
-      <p style="text-align: center;">No notes available for this certificate case.</p>
-          <br>
-        </div><br><br><br>
+    
+    <table class="nhsuk-table">
+      
+      
+      <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">01-06-2024</td>
+          <td class="nhsuk-table__cell ">14:29 - LAUGO</td>
+          <td class="nhsuk-table__cell ">Advised cert details</td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+          <td class="nhsuk-table__cell">01-06-2024</td>
+          <td class="nhsuk-table__cell ">14:30 - LAUGO</td>
+          <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+        </tr>
         
+      </tbody>
+    </table>
+        
+        <a href="exemption-add-note"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+          Add note +
+        </button>
         
         
       </div>
   </div>
-  
-  
+  <br>
+  <!--<script>
+    document.body.addEventListener("keydown", function (event) {
+      if (event.key === "i") {
+          window.location.replace("javascript:history.go(-1)");
+      }
+      else if (event.key === "y") {
+          window.location.replace("/keys-on/new-application");
+      }
+      else if (event.key === "j") {
+          window.location.replace("/keys-on/email-post");
+      }
+      else if (event.key === "k") {
+          window.location.replace("/keys-on/email-post");
+      }
+      else if (event.key === "m") {
+          window.location.replace("/keys-on/start");
+      }
+      else if (event.key === "h") {
+          window.location.replace("/keys-on/history");
+      }
+      else if (event.key === "+") {
+          window.location.replace("/keys-on/exemption-add-note");
+      }
+      else if (event.key === "r") {
+          window.location.replace("/keys-on/card-refund");
+      }
+      else if (event.key === "c") {
+          window.location.replace("/keys-on/change-status-2");
+      }
+      else if (event.key === "e") {
+          window.location.replace("/keys-on/edit-information");
+      }
+      
+  });
+  </script>-->
+  <div>
+        
+    <a href="search-results-wide"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Back (I)
+    </button></a>
+    <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      New application (Y)
+    </button></a>
+    <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Use details (J)
+    </button></a>
+    <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Reissue (K)
+    </button></a>
+    <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Cancel (M)
+    </button></a>
+    <a href="history"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      History (H)
+    </button></a>
+    <a href="card-refund"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Card refund payment (R)
+    </button></a>
+</div>
+
+</div>
+      
       <!-- ==================================================================================== -->
       <!-- END OF SEARCH BOX -->
       <!-- ==================================================================================== -->

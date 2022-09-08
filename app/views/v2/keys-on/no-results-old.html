@@ -1,0 +1,122 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Search Results
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+ 
+      
+        
+      <div class="nhsuk-secondary-navigation">
+        <div class="nhsuk-grid-row">
+           <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-secondary-navigation__container">
+                 <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+                    <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                       <ul class="nhsuk-secondary-navigation__list">
+                        <li class="nhsuk-secondary-navigation__item">
+                          <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                        </li>
+                        
+                        <li class="nhsuk-secondary-navigation__item login-details">
+                          <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                        </li>
+                        <li class="nhsuk-secondary-navigation__item login-details">
+                          <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                        </li> 
+           
+                        
+                       </ul>
+                    </nav>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </div>
+      
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div id="search">
+<div class="nhsuk-grid-row">
+  <div>
+
+      <!-- Change the page heading -->
+      <form action="access-keys">
+      <h1>
+          Certificate Manager
+      
+
+    
+      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button>--></h1></form>
+      <hr style="margin-top:-30px;">
+
+      <!-- ==================================================================================== -->
+      <!-- SEARCH BOX -->
+      <!-- ==================================================================================== -->
+      
+      <div>
+        
+        
+        
+  <p><strong>No results were found for the specified search criteria</strong></p>
+  
+<br><br><br><br><br><br><br><br><br>
+
+
+
+       
+        
+       
+      </div>
+      
+      <br><br>
+
+      <div>
+        
+          <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            Back (I)
+          </button></a>
+          <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+            New application (Y)
+          </button></a>
+      </div>
+
+      
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  </div>
+
+</div>
+</div>
+{% endblock %}
