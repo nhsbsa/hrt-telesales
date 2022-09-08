@@ -52,17 +52,20 @@
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}<!--
+{% block content %}
 <script>
   document.body.addEventListener("keydown", function (event) {
-    if (event.key === "i") {
-        window.location.replace("/keys-on/name");
+    if (event.key === "^") {
+        window.location.replace("check-your-answers");
     }
-    else if (event.key === "m") {
+    else if (event.key === "µ") {
         window.location.replace("/keys-on/start");
     }
+    else if (event.key === "ø") {
+        window.location.replace("start");
+    }
 });
-</script>-->
+</script>
 
 
 <!--
