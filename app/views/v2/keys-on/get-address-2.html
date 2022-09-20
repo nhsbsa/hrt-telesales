@@ -52,23 +52,17 @@
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}
+{% block content %}<!--
 <script>
   document.body.addEventListener("keydown", function (event) {
-    if (event.key === "^") {
-        window.location.replace("check-your-answers");
+    if (event.key === "i") {
+        window.location.replace("/keys-on/name");
     }
-    else if (event.key === "µ") {
-        window.location.replace("start");
-    }
-    else if (event.key === "ø") {
-        window.location.replace("start");
-    }
-    else if (event.key === "^") {
-        window.location.replace("check-your-answers");
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
     }
 });
-</script>
+</script>-->
 
 
 <!--
@@ -131,7 +125,7 @@
           <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
             <strong>  County (optional) (4)</strong>
           </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text">
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-county" name="address-county" type="text" VALUE="">
         </div>
       
         <div class="nhsuk-form-group">
@@ -230,7 +224,7 @@
               </div>
             </div>
           </div>
-          <br>
+          
         </div>
         
 
@@ -297,10 +291,7 @@
           </div>
         </div>
 
-
-        <hr>
-        <h2>Certificate fulfillment</h2>
-        <div class="nhsuk-form-group">
+        <!--<div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-county" style="display:inline-block; width:160px; text-align:right;">
             <strong>Certificate Fulfillment</strong>
           </label>
@@ -321,7 +312,7 @@
             </div>
       
           </div>
-        </div>
+        </div>-->
 
 
         <hr>
