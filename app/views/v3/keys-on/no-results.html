@@ -1,0 +1,128 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<!--
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("/keys-on/name");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
+    }
+});
+</script>-->
+
+
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
+
+
+
+
+<div id="search" >
+  <div>
+    <h1>Certificate Manager
+
+     
+    </h1>
+  </div>
+  
+  <hr>
+   
+
+  <div>
+        
+        
+        
+    <p><strong>No results were found for the specified search criteria</strong></p>
+    
+  <br><br><br><br><br><br><br><br><br>
+  
+  
+  
+         
+          
+         
+        </div>
+        
+        <br><br>
+  
+        <div>
+          
+            <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+              Back (I)
+            </button></a>
+            <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+              New application (Y)
+            </button></a>
+        </div>
+
+
+ 
+  
+
+
+
+  
+  </div>
+
+{% endblock %}

@@ -1,0 +1,157 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "µ") {
+        window.location.replace("/v2/keys-on/start");
+    }
+    else if (event.key === "¥") {
+        window.location.replace("/v2/keys-on/customer-details");
+    }
+});
+</script>
+
+
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
+
+<div>
+  <h1>Certificate Manager
+
+    <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+      Access Keys
+    </button></a>
+  </h1>
+</div>
+
+
+<div id="search">
+  
+  <hr>
+  <div class="grid-row">
+      <div class="nhsuk-grid-column-one-third">
+          <span class="nhsuk-label form-label">Certificate number</span>
+          <div class="form-group">
+              <input class="nhsuk-input form-control" id="reference-number" name="first-name-2" type="text">
+          </div>
+      </div>
+&ZeroWidthSpace;
+      <div class="nhsuk-grid-column-one-third">
+          <span class="nhsuk-label form-label">Surname</span>
+          <div class="form-group">
+              <input class="nhsuk-input form-control" id="reference-number" name="first-name-2" type="text">
+          </div>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+          <span class="nhsuk-label form-label">Date of birth (ddmmyy)</span>
+          <div class="form-group">
+              <input class="nhsuk-input form-control" id="reference-number" name="first-name-2" type="text">
+              
+          </div>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+          <span class="nhsuk-label form-label nhsuk-u-margin-top-4">Postcode</span>
+          <div class="form-group">
+              <input class="nhsuk-input form-control" id="reference-number" name="first-name-2" type="text">
+          </div>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+          <span class="nhsuk-label form-label nhsuk-u-margin-top-4">Email address</span>
+          <div class="form-group">
+              <input class="nhsuk-input form-control" id="reference-number" name="first-name-2" type="text">
+          </div>
+      </div>
+      <div class="nhsuk-grid-column-one-third">
+        <span class="nhsuk-label form-label nhsuk-u-margin-top-4">NHS number</span>
+        <div class="form-group">
+            <input class="nhsuk-input form-control" id="reference-number" name="first-name-2" type="text">
+        </div>
+    </div>
+  </div>
+
+  <div class="grid-row">
+      <div class="nhsuk-grid-column-full">
+          <div class="form-group">
+            <hr>
+            <a href="search"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
+              Submit
+            </button></a>
+            <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
+              Cancel
+            </button></a>
+          </div>
+
+      </div>
+  </div>
+</div>
+
+<a href="search-results">SUV Search design</a>
+
+
+
+  
+
+
+
+  
+{% endblock %}
