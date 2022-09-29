@@ -13,6 +13,14 @@ router.get(/access-handler/, function (req, res) {
    }
   });
 
+  router.get(/key-handler/, function (req, res) {
+    if (req.query.keys === "yes")  {
+     res.redirect('/v3/keys-on/start');
+   } else {
+     res.redirect('/v3/keys-off/start');
+   }
+  });
+
   router.get(/email-handler/, function (req, res) {
     if (req.query.email === "yes")  {
      res.redirect('/keys-on/email');

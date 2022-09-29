@@ -55,7 +55,7 @@
 {% block content %}
 <script>
   document.body.addEventListener("keydown", function (event) {
-    if (event.key === "i") {
+    if (e.altKey == true && e.keyCode == 73) {
         window.location.replace("/keys-on/nhs-number");
     }
     else if (event.key === "o") {

@@ -67,29 +67,30 @@
 </script>-->
 
 
-<!--
-<div id="search" style="margin:-10px;">
-  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-    <h1 class="nhsuk-fieldset__heading">
-      Personal details
-    </h1>
-  </legend>
-</div>
-<br><br>-->
+<script>
+  window.addEventListener('keydown', function(e) {
+    if (e.altKey == true && e.keyCode == 79) {
+        window.location.replace("/v3/keys-on/start");
+    }
+    else if (e.altKey == true && e.keyCode == 89) {
+        window.location.replace("/v3/keys-on/customer-details");
+    }
+});
+</script>
 
 <div>
-    <h1>Certificate Manager
+    <h1 style="margin-bottom: 10px;">Certificate Manager
   
-      <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+      <!--<a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
         Access Keys
-      </button></a>
+      </button></a>-->
     </h1>
   </div>
 
 
 <div id="search" >
   
-  
+  <h2>Exemption Search Results</h2>
    
 
   <table role="table" class="nhsuk-table-responsive">
@@ -100,10 +101,10 @@
           Certificate number
         </th>
         <th role="columnheader" class="" scope="col">
-          Name
+          History
         </th>
         <th role="columnheader" class="" scope="col">
-          History
+          Name
         </th>
         <th role="columnheader" class="" scope="col">
          Address
@@ -254,7 +255,7 @@
       <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
         Back (0)
       </button></a>
-      <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
         New application (Y)
       </button></a>
   </div>

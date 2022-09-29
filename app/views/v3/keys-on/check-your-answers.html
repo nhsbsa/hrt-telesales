@@ -54,26 +54,24 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<!--<script>
-  document.body.addEventListener("keydown", function (event) {
-    if (event.key === "^") {
-        window.location.replace("payment-ref");
+<script>
+  window.addEventListener('keydown', function(e) {
+    if (e.altKey == true && e.keyCode == 73) {
+        window.location.replace("/v3/keys-on/payment-ref");
     }
-    
-    else if (event.key === "µ") {
-        window.location.replace("start");
+    else if (e.altKey == true && e.keyCode == 79) {
+        window.location.replace("/v3/keys-on/customer-details-change");
     }
-    else if (event.key === "ç") {
-        window.location.replace("customer-details-change");
+    else if (e.altKey == true && e.keyCode == 77) {
+        window.location.replace("/v3/keys-on/start");
     }
 });
-</script>-->
+</script>
+
+<h1 style="margin-bottom: 10px;">Check their answers</h1>
 <div id="search">
 
-  <div>
-    <h1>Check their answers</h1>
-  </div>
-  <hr style="margin-top:-30px;">
+  
 
 <div class="nhsuk-grid-row">
   <div class="nhsuk-width-container">
@@ -125,7 +123,7 @@
                 text: "Date of birth"
               },
               value: {
-                html: "1 January 1999"
+                html: "29/11/1970"
               }
             },{
               key: {
@@ -148,7 +146,7 @@
                 text: "Address"
               },
               value: {
-                html: '1 Test House<br>Test Road<br>Test Town<br>NE1 0LD'
+                html: '101 Test Road<br>Stella<br>Goldcrest<br>TR110TS'
               }
             },
             {
@@ -164,7 +162,7 @@
                 text: "Email address"
               },
               value: {
-                html: 'Jane.doe@nhs.net'
+                html: 'Jane.doe@hotmail.net'
               }
               
             },
@@ -173,7 +171,7 @@
                 text: "Telephone number"
               },
               value: {
-                html: '01234 567890'
+                html: '	07123456789'
               }
               
             }
@@ -181,9 +179,7 @@
           ]
         }) }}
 
-        <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Change customer information (C)
-        </button></a>
+        
 
   
         <h3>
@@ -205,14 +201,14 @@
                 text: "Starts on"
               },
               value: {
-                html: "1 January 2022 (Today)"
+                html: "01/01/2023 (Today)"
               }
             },{
               key: {
                 text: "Ends on"
               },
               value: {
-                html: "1 January 2023"
+                html: "01/01/2024"
               }
             },{
               key: {
@@ -234,31 +230,41 @@
                 text: "Certificate number"
               },
               value: {
-                html: "11124500001"
+                html: "10000005940"
               }
             }
           ]
         }) }}
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Notes (B)
-        </label>
-        
-        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-      </div>
+      <h3>Notes</h3>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Notes"
+            },
+            value: {
+              text: "Customer is getting married next year and will call to update name."
+            }
+          }
+        ]
+      }) }}
       
 
-
+<br>
       <div>
         
-       
+        <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Amend details (O)
+        </button></a>
         <a href="payment-ref"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
           Card payment call (I)
         </button></a>
         <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
           Cancel (M)
         </button></a>
+       
 
     </div>
 

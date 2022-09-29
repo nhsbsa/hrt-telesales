@@ -53,25 +53,17 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<!--<script>
-  document.body.addEventListener("keydown", function (event) {
-    if (event.key === "^") {
-        window.location.replace("new-application-summary");
-    }
-    else if (event.key === "ø") {
-        window.location.replace("check-your-answers");
-    }
-    
-    else if (event.key === "¥") {
-        window.location.replace("customer-details");
+<script>
+  window.addEventListener('keydown', function(e) {
+  if (e.altKey == true && e.keyCode == 73) {
+        window.location.replace("/v3/keys-on/start");
     }
 });
-</script>-->
+</script>
+<h1 style="margin-bottom: 10px;">Card payment</h1>
 <div id="search">
-  <h1 >
-    Application
-  </h1>
-  <hr style="margin-top:-30px;">
+  
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-width-container">
 
@@ -101,15 +93,10 @@
 
       <div>
         
-        <a href="new-application-summary"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
           Submit (I)
         </button></a>
-        <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Back (O)
-        </button></a>
-        <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          New application (Y)
-        </button></a>
+        
 
     </div>
 
