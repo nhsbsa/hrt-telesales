@@ -131,22 +131,13 @@ padding-bottom:0.01cm;
   <!-- ==================================================================================== -->
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
- 
- 
   <div>
-    
     
   <div class="flex-container" style="margin-top: -30px;" >
     <div class="column">
 
       <div id="header">
-        <h3 style="margin-bottom: 10px;">Certificate details
-          <a href="edit-certificate">
-            <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-            Change (C)
-           </button>
-          </a>
-        </h3>
+        <h3 style="margin-bottom: 10px;">Certificate details</h3>
       </div>
       
         
@@ -269,16 +260,12 @@ padding-bottom:0.01cm;
       <div id="header">
         
           <h3 style="margin-bottom: 10px;">Personal details
-        <a href="edit-information">
-          <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-          Edit (E)
-         </button>
-        </a></h3>
+        </h2>
         
         
       </div>
       
-      <dl class="nhsuk-summary-list" style="margin-bottom:10px; padding-top: 10px;">
+      <dl class="nhsuk-summary-list" style="margin-bottom:10px; padding-top: 20px;">
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             First name
@@ -429,16 +416,14 @@ padding-bottom:0.01cm;
 <div class="flex-container">
   <div class="column">
     <div id="header">
-      <h3 style="margin-bottom: 10px;">Payment<a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;  text-align: left; margin-bottom: 10px;">
-       Refresh
-      </button></a></h2>
+      <h3 style="margin-bottom: 10px;">Payment</h2>
     </div>
     
 
     
       
       
-      <table class="nhsuk-table" style="margin-bottom:10px; padding-top: 10px;">
+      <table class="nhsuk-table" style="margin-bottom:10px; padding-top: 20px;">
         
         <thead role="rowgroup" class="nhsuk-table__head">
           <tr role="row">
@@ -482,14 +467,10 @@ padding-bottom:0.01cm;
 
   <div class="column bg-alt">
     <div id="header">
-      <h3 style="margin-bottom: 10px;">Notes<a href="exemption-add-note">
-        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-        Add note +
-       </button>
-      </a></h2>
+      <h3 style="margin-bottom: 10px;">Notes</h2>
     </div>
     
-    <table class="nhsuk-table " style="padding-top: 10px; margin-bottom: 10px;">
+    <table class="nhsuk-table " style="padding-top: 20px;">
       
       
       <tbody class="nhsuk-table__body">
@@ -506,7 +487,29 @@ padding-bottom:0.01cm;
         
       </tbody>
     </table>
-        
+    <div class="nhsuk-form-group">
+      
+        <h3 style="margin-bottom: -10px; margin-top: -30px;">New note</h4>
+      
+      <br>
+      
+      <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+      <br>
+      
+    </div>
+    
+    <div style="margin-top:-10px;">
+    <a href="exemption-information">
+      <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -10px;">
+      Submit (I)
+     </button>
+    </a>
+    <a href="exemption-information">
+      <button class="nhsuk-button nhsuk-button--secondary" type="submit"  style=" line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -10px;">
+      Cancel (M)
+     </button>
+    </a>
+</div>
         
         
         
@@ -548,28 +551,7 @@ padding-bottom:0.01cm;
       
   });
   </script>-->
-  <div style="margin-bottom:-50px; padding-top: 10px;">
-        
-    <a href="search"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Back (I)
-    </button></a>
-    <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      New application (Y)
-    </button></a>
-    <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Use details (J)
-    </button></a>
-    <a href="reissue"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Reissue (K)
-    </button></a>
-    <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Cancel (M)
-    </button></a>
-    <a href="history"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      History (H)
-    </button></a>
-    
-</div>
+  
 
 </div>
 </div>

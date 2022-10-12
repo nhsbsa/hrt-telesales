@@ -141,11 +141,7 @@ padding-bottom:0.01cm;
 
       <div id="header">
         <h3 style="margin-bottom: 10px;">Certificate details
-          <a href="edit-certificate">
-            <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-            Change (C)
-           </button>
-          </a>
+          
         </h3>
       </div>
       
@@ -175,7 +171,7 @@ padding-bottom:0.01cm;
           </dt>
           <dd class="nhsuk-summary-list__value">
             <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--green">
-              HRT PPC
+              HRT PPC 
             </strong>
           </dd>
           <dd class="nhsuk-summary-list__actions">
@@ -206,7 +202,11 @@ padding-bottom:0.01cm;
             Certificate fulfillment
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>Email</p>
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="1">Email</option>
+              <option value="2" >Post</option>
+
+            </select>
             
           </dd>
           <dd class="nhsuk-summary-list__actions">
@@ -221,7 +221,7 @@ padding-bottom:0.01cm;
             Certificate Start
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>01/01/2023</p>
+            <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2023-01-01" name="datemin" min="2023-01-01" max="2023-02-01">
             
           </dd>
           <dd class="nhsuk-summary-list__actions">
@@ -262,6 +262,16 @@ padding-bottom:0.01cm;
         </div>
       
       </dl>
+      <a href="exemption-information">
+        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -20px;">
+        Submit (I)
+       </button>
+      </a>
+      <a href="exemption-information">
+        <button class="nhsuk-button nhsuk-button--secondary" type="submit"  style=" line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -20px;">
+        Cancel (M)
+       </button>
+      </a>
 
     </div>
     
@@ -270,9 +280,7 @@ padding-bottom:0.01cm;
         
           <h3 style="margin-bottom: 10px;">Personal details
         <a href="edit-information">
-          <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-          Edit (E)
-         </button>
+          
         </a></h3>
         
         
@@ -429,9 +437,7 @@ padding-bottom:0.01cm;
 <div class="flex-container">
   <div class="column">
     <div id="header">
-      <h3 style="margin-bottom: 10px;">Payment<a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;  text-align: left; margin-bottom: 10px;">
-       Refresh
-      </button></a></h2>
+      <h3 style="margin-bottom: 10px;">Payment</h2>
     </div>
     
 
@@ -483,9 +489,7 @@ padding-bottom:0.01cm;
   <div class="column bg-alt">
     <div id="header">
       <h3 style="margin-bottom: 10px;">Notes<a href="exemption-add-note">
-        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-        Add note +
-       </button>
+        
       </a></h2>
     </div>
     
@@ -513,63 +517,8 @@ padding-bottom:0.01cm;
       </div>
   </div>
   <br>
-  <!--<script>
-    document.body.addEventListener("keydown", function (event) {
-      if (event.key === "i") {
-          window.location.replace("javascript:history.go(-1)");
-      }
-      else if (event.key === "y") {
-          window.location.replace("/keys-on/new-application");
-      }
-      else if (event.key === "j") {
-          window.location.replace("/keys-on/email-post");
-      }
-      else if (event.key === "k") {
-          window.location.replace("/keys-on/email-post");
-      }
-      else if (event.key === "m") {
-          window.location.replace("/keys-on/start");
-      }
-      else if (event.key === "h") {
-          window.location.replace("/keys-on/history");
-      }
-      else if (event.key === "+") {
-          window.location.replace("/keys-on/exemption-add-note");
-      }
-      else if (event.key === "r") {
-          window.location.replace("/keys-on/card-refund");
-      }
-      else if (event.key === "c") {
-          window.location.replace("/keys-on/change-status-2");
-      }
-      else if (event.key === "e") {
-          window.location.replace("/keys-on/edit-information");
-      }
-      
-  });
-  </script>-->
-  <div style="margin-bottom:-50px; padding-top: 10px;">
-        
-    <a href="search"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Back (I)
-    </button></a>
-    <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      New application (Y)
-    </button></a>
-    <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Use details (J)
-    </button></a>
-    <a href="reissue"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Reissue (K)
-    </button></a>
-    <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Cancel (M)
-    </button></a>
-    <a href="history"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      History (H)
-    </button></a>
-    
-</div>
+  
+  
 
 </div>
 </div>

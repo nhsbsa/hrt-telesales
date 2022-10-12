@@ -1,0 +1,286 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Check their answers
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<script>
+  window.addEventListener('keydown', function(e) {
+    if (e.altKey == true && e.keyCode == 73) {
+        window.location.replace("/v3/keys-on/payment-ref");
+    }
+    else if (e.altKey == true && e.keyCode == 79) {
+        window.location.replace("/v3/keys-on/customer-details-change");
+    }
+    else if (e.altKey == true && e.keyCode == 77) {
+        window.location.replace("/v3/keys-on/start");
+    }
+});
+</script>
+
+<h1 style="margin-bottom: 10px;">Check their answers</h1>
+<div id="search">
+
+  
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-width-container">
+
+
+      <!-- Change the page heading -->
+      <form action="access-keys">
+      
+    
+      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button>--></form>
+
+      
+      
+
+      <!-- ==================================================================================== -->
+      <!-- SEARCH BOX -->
+      <!-- ==================================================================================== -->
+      
+
+        <div class="nhsuk-warning-callout">
+          <h3 class="nhsuk-warning-callout__label">
+            <span role="text">
+              <span class="nhsuk-u-visually-hidden">Important: </span>
+              Reminder:
+            </span>
+          </h3>
+          <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication. <br><br> If the customer requires medication for something other than HRT, a Prescription Prepayment Certificate (PPC) may be better for them.</p>
+        </div>
+  
+        <h3 class="heading">
+          Customer details
+        </h3>
+  
+        {{ summaryList({
+          rows: [
+            
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Jane Doe"
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                html: "29/11/1970"
+              }
+            },{
+              key: {
+                text: "Do you know your NHS number?"
+              },
+              value: {
+                text: "Yes"
+              }
+            },
+            {
+              key: {
+                text: "NHS number"
+              },
+              value: {
+                text: "1111111111"
+              }
+            },
+            {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: '101 Test Road<br>Stella<br>Goldcrest<br>TR110TS'
+              }
+            },
+            {
+              key: {
+                text: "Receive certificate and reminder by email or post?"
+              },
+              value: {
+                text: "Email"
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                html: 'Jane.doe@hotmail.net'
+              }
+              
+            },
+            {
+              key: {
+                text: "Telephone number"
+              },
+              value: {
+                html: '	07123456789'
+              }
+              
+            }
+            
+          ]
+        }) }}
+
+        
+
+  
+        <h3>
+          Customer certificate
+        </h3>
+  
+        {{ summaryList({
+          rows: [
+            {
+              key: {
+                text: "Length"
+              },
+              value: {
+                text: "12 months"
+              }
+            },
+            {
+              key: {
+                text: "Starts on"
+              },
+              value: {
+                html: "01/01/2023"
+              }
+            },{
+              key: {
+                text: "Ends on"
+              },
+              value: {
+                html: "01/01/2024"
+              }
+            },{
+              key: {
+                text: "Total cost"
+              },
+              value: {
+                html: "£18.70"
+              }
+            },{
+              key: {
+                text: "Payment method"
+              },
+              value: {
+                html: "Card payment"
+              }
+            }
+            ,{
+              key: {
+                text: "Certificate number"
+              },
+              value: {
+                html: "10000005940"
+              }
+            }
+          ]
+        }) }}
+
+      <h3>Notes</h3>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Notes"
+            },
+            value: {
+              text: "Customer is getting married next year and will call to update name."
+            }
+          }
+        ]
+      }) }}
+      
+
+<br>
+      <div>
+        
+        <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Amend details (O)
+        </button></a>
+        <a href="payment-ref"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Card payment call (I)
+        </button></a>
+        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Cancel (M)
+        </button></a>
+       
+
+    </div>
+
+      
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

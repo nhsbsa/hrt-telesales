@@ -106,21 +106,21 @@
         <label class="nhsuk-label" for="address-line-1">
           Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
         </label>
-        <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text" value="101 Test Road">
+        <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
       </div>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-line-2">
           Address line 2 (2)
         </label>
-        <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="Stella">
+        <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
       </div>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-town">
           Town or city (3)
         </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="Goldcrest">
+        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
       </div>
     
       <div class="nhsuk-form-group">
@@ -166,7 +166,7 @@
         <label class="nhsuk-label" for="example">
           First name (S)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Jane">
+        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
       </div>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="example">
@@ -188,7 +188,31 @@
           <label class="nhsuk-label" for="example">
             DOB (X)
           </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text" value="28 11 70">
+          <div class="nhsuk-date-input" id="example">
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+                  Day
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric" value="28">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+                  Month
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric" value="11">
+              </div>
+            </div>
+            <div class="nhsuk-date-input__item">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+                  Year
+                </label>
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric" value="70">
+              </div>
+            </div>
         </div>
       
       </div>
@@ -213,13 +237,13 @@
         <label class="nhsuk-label" for="example">
           Email (G)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Jane.doe@hotmail.com">
+        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
       </div>
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="example">
           Telephone number (C)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Doe"07123456789>
+        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
       </div>
 
 
@@ -237,7 +261,7 @@
         <label class="nhsuk-label" for="example">
           NHS number (V)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text" value="12345678901">
+        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
       </div>
 
       <hr style="margin-top: -10px;">
@@ -247,7 +271,7 @@
         </h2>
       </legend>
 
-      
+    
 
 
 <div class="nhsuk-form-group">
@@ -265,10 +289,47 @@
 
 
       
+      <hr style="margin-top: -10px;">
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <h2 class="nhsuk-fieldset__heading">
+          Payment 
+        </h2>
+      </legend>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+           Important information
+          </span>
+        </h3>
+        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment or postal order of £18.70 at this time.</p>
+      </div>
+
+      <fieldset class="nhsuk-fieldset">
+        <div class="nhsuk-radios nhsuk-radios--inline">
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="ex" name="card" type="radio" value="yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
+              Card payment (L)
+            </label>
+          </div>
+    
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="exa" name="postal" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+              Postal order (P)
+            </label>
+          </div>
+    
+        </div>
+      </fieldset>
+
       
 
       
-      <hr style="margin-top: -10px;">
+      <hr style="margin-top: 10px;">
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
         <h2 class="nhsuk-fieldset__heading">
           Certificate fulfillment
@@ -283,16 +344,16 @@
           <div class="nhsuk-radios nhsuk-radios--inline">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="email" checked>
+              <input class="nhsuk-radios__input" id="example-1" name="email" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
                 Email (L)
               </label>
             </div>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="post">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Post (M)
+              <input class="nhsuk-radios__input" id="example-2" name="postal" type="radio" value="no">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
+                Postal (M)
               </label>
             </div>
       
@@ -307,7 +368,7 @@
           Notes (B)
         </label>
         
-        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint">Customer is getting married next year and will call to update name.</textarea>
+        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
       </div>
 
       

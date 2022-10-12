@@ -68,18 +68,8 @@
 
 </style>-->
 
-<!--<legend class="nhsuk-fieldset__legend nhsuk-label--l">
-  <h1 class="nhsuk-fieldset__heading">
-    Certificate summary
-    <p style="float:right;"><a href="exemption-information-2">Alternative design</a></p>
-  </h1>
-  
-</legend>-->
 
 
-
-<!--<div id="search" style="margin-top: -25px; margin-bottom: -25px;">-->
-<div>
 <style>
   .flex-container{
     width: 100%;
@@ -87,37 +77,34 @@
     margin: 0 auto;
     display: -webkit-flex; /* Safari */		
     display: flex; /* Standard syntax */
-    border-radius: 0px;
     
   }
   .flex-container .column{
-    border: 5px solid #DEE0E2;
-  background-color: #F8F8F8;
-    margin: 20px 5px -15px 0;
-    padding: 20px 20px 20px 20px;
-    display: inline-block;
-    width: 100%;
-    border-radius: 10px
+    padding: 10px;
+    
+    -webkit-flex: 1; /* Safari */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1; /* Standard syntax */
+    border: 7.5px solid #DEE0E2;
+    background-color: #F8F8F8;
+    display: block;
+    padding: 10px;
+    margin: 5px;
   }
   
   #header {
 
 background-color: #DEE0E2;
-margin-top: -25px;
-margin-left: -25px;
-margin-right: -25px;
+margin-top: -15px;
+margin-left: -15px;
+margin-right: -15px;
 margin-bottom: -15px;
-border-radius: 10px 10px 0px 0px;
-padding-left: 25px;
-padding-top: 10px;
-padding-bottom:0.01cm;
 
 
 
 
 
 }
-  
 
 
 
@@ -131,35 +118,29 @@ padding-bottom:0.01cm;
   <!-- ==================================================================================== -->
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
- 
- 
-  <div>
+  <div id="search">
     
-    
-  <div class="flex-container" style="margin-top: -30px;" >
-    <div class="column">
+      <h1>
+        Certificate summary
+      </h1>
+      <hr style="margin-top:-30px;">
 
+
+
+  <div class="flex-container">
+    <div class="column">
       <div id="header">
-        <h3 style="margin-bottom: 10px;">Certificate details
-          <a href="edit-certificate">
-            <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-            Change (C)
-           </button>
-          </a>
-        </h3>
+        <h4 style="padding: 10px;">Certificate details</h4>
       </div>
       
-        
-      
-      
-      <dl class="nhsuk-summary-list" style="padding-top: 25px;">
+      <dl class="nhsuk-summary-list">
 
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             Certificate number
           </dt>
           <dd class="nhsuk-summary-list__value">
-            10000005940
+            10000000005940
           </dd>
           <dd class="nhsuk-summary-list__actions">
             
@@ -191,10 +172,12 @@ padding-bottom:0.01cm;
             Certificate status
           </dt>
           <dd class="nhsuk-summary-list__value">
-             Issued
+            Certificate issued
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            
+            <a href="change-status-2"><button class="nhsuk-button" type="submit"  style="background-color: #025eb8; width:135px;height:30px; line-height: 0px;  text-align: left; ">
+              Change (C)
+             </button></a>
           </dd>
       
           
@@ -221,7 +204,7 @@ padding-bottom:0.01cm;
             Certificate Start
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>01/01/2023</p>
+            <p>01/04/2023</p>
             
           </dd>
           <dd class="nhsuk-summary-list__actions">
@@ -236,7 +219,7 @@ padding-bottom:0.01cm;
             Certificate expiry
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>01/01/2024</p>
+            <p>31/04/2024</p>
             
           </dd>
           <dd class="nhsuk-summary-list__actions">
@@ -251,7 +234,7 @@ padding-bottom:0.01cm;
             Application date
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <p>01/01/2023</p>
+            <p>01/04/2023</p>
           </dd>
           <dd class="nhsuk-summary-list__actions">
             
@@ -267,18 +250,11 @@ padding-bottom:0.01cm;
     
     <div class="column bg-alt">
       <div id="header">
-        
-          <h3 style="margin-bottom: 10px;">Personal details
-        <a href="edit-information">
-          <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-          Edit (E)
-         </button>
-        </a></h3>
-        
-        
+        <h4 style="padding: 10px;">Personal details</h4>
       </div>
       
-      <dl class="nhsuk-summary-list" style="margin-bottom:10px; padding-top: 10px;">
+      <dl class="nhsuk-summary-list">
+
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
             First name
@@ -287,7 +263,6 @@ padding-bottom:0.01cm;
             Jane
           </dd>
           <dd class="nhsuk-summary-list__actions">
-            
             
           </dd>
       
@@ -310,7 +285,7 @@ padding-bottom:0.01cm;
             Address line 1
           </dt>
           <dd class="nhsuk-summary-list__value">
-            101 Test Road
+            101 Test Lane
           </dd>
           <dd class="nhsuk-summary-list__actions">
             
@@ -352,7 +327,7 @@ padding-bottom:0.01cm;
             Postcode
           </dt>
           <dd class="nhsuk-summary-list__value">
-            TR110TS
+            NE158NY
           </dd>
           <dd class="nhsuk-summary-list__actions">
             
@@ -366,7 +341,7 @@ padding-bottom:0.01cm;
             Telephone number
           </dt>
           <dd class="nhsuk-summary-list__value">
-            07123456789
+            
           </dd>
           <dd class="nhsuk-summary-list__actions">
             
@@ -402,43 +377,36 @@ padding-bottom:0.01cm;
       
           </dd>
 
-        
-        </div>
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            NHS number
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            1234567890
-          </dd>
-          <dd class="nhsuk-summary-list__actions">
+          
+          
       
-            
-      
-          </dd>
-
-        
         </div>
         
         
       </dl>
-      
+      <a href="edit-information">
+        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right;">
+        Edit (E)
+       </button>
+      </a>
     </div>
 </div>
 
 <div class="flex-container">
   <div class="column">
     <div id="header">
-      <h3 style="margin-bottom: 10px;">Payment<a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;  text-align: left; margin-bottom: 10px;">
-       Refresh
-      </button></a></h2>
+      <h4 style="padding: 10px;">Payment</h4>
     </div>
     
 
-    
+    <a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;float: left;">
+      New payment (Q)
+     </button></a>
       
-      
-      <table class="nhsuk-table" style="margin-bottom:10px; padding-top: 10px;">
+      <a href=""><button class="nhsuk-button" type="submit" style="background-color: #025eb8; float: right; line-height: 0px;  text-align: left;">
+       Refresh
+      </button></a>
+      <table class="nhsuk-table" >
         
         <thead role="rowgroup" class="nhsuk-table__head">
           <tr role="row">
@@ -466,13 +434,28 @@ padding-bottom:0.01cm;
         </tbody>
         
       </table>
-      <br>
-
-      <p>Cost: £18.70 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Total: £18.70</p>
 
       
-    
-      
+      <div style="position:absolute; bottom: 0;"></div>
+      <table class="nhsuk-table" style="">
+        
+        <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            
+          </tr>
+        </thead>
+        <tbody class="nhsuk-table__body" >
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cost: £18.70</td>
+            
+            <td class="nhsuk-table__cell ">Total: £18.70</td>
+            <td class="nhsuk-table__cell "></td>
+          </tr>
+          
+          
+        </tbody>
+        
+      </table>
   
 
       
@@ -482,14 +465,10 @@ padding-bottom:0.01cm;
 
   <div class="column bg-alt">
     <div id="header">
-      <h3 style="margin-bottom: 10px;">Notes<a href="exemption-add-note">
-        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-        Add note +
-       </button>
-      </a></h2>
+      <h4 style="padding: 10px;">Notes</h4>
     </div>
     
-    <table class="nhsuk-table " style="padding-top: 10px; margin-bottom: 10px;">
+    <table class="nhsuk-table">
       
       
       <tbody class="nhsuk-table__body">
@@ -507,7 +486,9 @@ padding-bottom:0.01cm;
       </tbody>
     </table>
         
-        
+        <a href="exemption-add-note"><button class="nhsuk-button" type="submit" style="background-color: #025eb8;">
+          Add note +
+        </button>
         
         
       </div>
@@ -548,9 +529,9 @@ padding-bottom:0.01cm;
       
   });
   </script>-->
-  <div style="margin-bottom:-50px; padding-top: 10px;">
+  <div>
         
-    <a href="search"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+    <a href="search-results-wide"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Back (I)
     </button></a>
     <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
@@ -559,7 +540,7 @@ padding-bottom:0.01cm;
     <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Use details (J)
     </button></a>
-    <a href="reissue"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+    <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       Reissue (K)
     </button></a>
     <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
@@ -568,10 +549,11 @@ padding-bottom:0.01cm;
     <a href="history"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
       History (H)
     </button></a>
-    
+    <a href="card-refund"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Card refund payment (R)
+    </button></a>
 </div>
 
-</div>
 </div>
       
       <!-- ==================================================================================== -->
