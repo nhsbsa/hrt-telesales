@@ -103,9 +103,12 @@ Check their answers
           <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication. <br><br> If the customer requires medication for something other than HRT, a Prescription Prepayment Certificate (PPC) may be better for them.</p>
         </div>
   
-        <h3 class="heading">
-          Customer details
-        </h3>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h2 class="nhsuk-fieldset__heading">
+              Applicant details
+            </h2>
+          </legend>
   
         {{ summaryList({
           rows: [
@@ -182,9 +185,12 @@ Check their answers
         
 
   
-        <h3>
-          Customer certificate
-        </h3>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h2 class="nhsuk-fieldset__heading">
+              Certificate details
+            </h2>
+          </legend>
   
         {{ summaryList({
           rows: [
@@ -229,7 +235,12 @@ Check their answers
           ]
         }) }}
 
-      <h3>Notes</h3>
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h2 class="nhsuk-fieldset__heading">
+             Notes
+            </h2>
+          </legend>
 
       {{ summaryList({
         rows: [
