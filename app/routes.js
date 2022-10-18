@@ -21,6 +21,14 @@ router.get(/access-handler/, function (req, res) {
    }
   });
 
+  router.get(/key-v4/, function (req, res) {
+    if (req.query.keys === "yes")  {
+     res.redirect('/v4-mvp/keys-on/start');
+   } else {
+     res.redirect('/v4-mvp/keys-off/start');
+   }
+  });
+
   router.get(/email-handler/, function (req, res) {
     if (req.query.email === "yes")  {
      res.redirect('/keys-on/email');
