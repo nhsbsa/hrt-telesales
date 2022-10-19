@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Applicant details
+  Customer details
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -106,21 +106,21 @@
         <label class="nhsuk-label" for="address-line-1">
           Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
         </label>
-        <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
+        <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text" value="">
       </div>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-line-2">
           Address line 2 (2)
         </label>
-        <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
+        <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="">
       </div>
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-town">
           Town or city (3)
         </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
+        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="">
       </div>
     
       <div class="nhsuk-form-group">
@@ -132,13 +132,38 @@
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-postcode">
-          Postcode
+            Get address
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="TR110TS">
-        <a href="get-address"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
-          Get address (P)
-        </button></a>
+        <div class="nhsuk-form-group">
+        
+          <select class="nhsuk-select" id="select-1" name="select-1">
+            <option value="0">Select applicant address</option>
+            <option value="1">101 Test Road, Goldcrest, TR110TS</option>
+            <option value="2">2 Test Road, Town, NE1 OLD</option>
+            <option value="3">3 Test Road, Town, NE1 OLD</option>
+            <option value="4">4 Test Road, Town, NE1 OLD</option>
+            <option value="5">5 Test Road, Town, NE1 OLD</option>
+            <option value="6">6 Test Road, Town, NE1 OLD</option>
+            <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
+          </select>
+        </div>
+
+        
       </div>
+
+      <a href="get-address-test-2"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
+        Select address (?)
+      </button></a>
+      <a href="new-application-test"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
+        Edit Postcode (?)
+      </button></a>
+      <a href="new-application-test"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
+        Enter manually (?)
+      </button></a>
+
+
+
+
       <details class="nhsuk-details" style="margin-top: 10px;">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
@@ -271,7 +296,9 @@
         </h2>
       </legend>
 
-    
+      
+
+      
 
 
 <div class="nhsuk-form-group">
@@ -282,7 +309,7 @@
     <div class="nhsuk-hint" id="example-with-hint-text-hint">
       The start date of the HRT PPC must be 30 days in the past or the future.
     </div>
-    <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-11-20" max="2022-12-20">
+    <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-10-20" max="2022-12-20">
   </div>
       
       </div>
@@ -292,7 +319,7 @@
       <hr style="margin-top: -10px;">
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
         <h2 class="nhsuk-fieldset__heading">
-          Payment 
+          Payment
         </h2>
       </legend>
 
