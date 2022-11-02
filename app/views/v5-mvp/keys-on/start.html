@@ -1,0 +1,195 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Certificate Manager - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="access-keys">Access Keys: ON</a>
+                  </li>
+                  
+
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<script>
+  window.addEventListener('keydown', function(e) {
+    if (e.altKey == true && e.keyCode == 73) {
+        window.location.replace("search");
+    }
+    else if (e.altKey == true && e.keyCode == 77) {
+        window.location.replace("");
+    }
+    else if (e.altKey == true && e.keyCode == 89) {
+        window.location.replace("access-keys");
+    }
+});
+</script>
+
+
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
+
+<div class="nhsuk-warning-callout" style="margin-top:10px;">
+  <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Important information
+    </span>
+  </h3>
+  <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication.
+
+    <br><br>If the customer requires prescription medication for something other than HRT, a Prescription Prepayment Certificate (PPC) may be better for them.
+    <br><br>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.
+    </p>
+</div>
+
+<div >
+  <h1 style="margin-bottom: 10px;">Certificate Manager
+
+    <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right; margin-bottom: 10px;">
+      Access Keys (T)
+    </button></a>
+  </h1>
+</div>
+
+
+<div id="search" style="margin-bottom: -20px;">
+  <h2>Search details</h2>
+  
+<hr style="margin-top:10px;">
+  <div class="nhsuk-width-container">
+    
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        <strong>Certificate number (A)</strong>
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+    </div>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        <strong>Last name (Z)</strong>
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+    </div>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+       <strong> Date of birth (X)</strong>
+      </label>
+      <div class="nhsuk-hint" id="example-hint">
+        For example, 15 03 84
+      </div>
+      <div class="nhsuk-date-input" id="example" style="margin-bottom: 20px;">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+    </div>
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        <Strong>Postcode (C)</strong>
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+    </div>
+    
+ 
+
+
+  
+      
+          <div class="form-group">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <a href="search"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
+              Submit (I)
+            </button></a>
+            <a href=""><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
+              Cancel (M)
+            </button></a>
+          </div>
+
+      
+ 
+</div>
+
+</div>
+
+
+
+
+
+  
+
+
+
+  
+{% endblock %}
