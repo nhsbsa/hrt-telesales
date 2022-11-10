@@ -29,7 +29,7 @@
 
                   
                   <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                    <a class="nhsuk-secondary-navigation__link" href="ms-login">Sign out</a>
                   </li>
                   <li class="nhsuk-secondary-navigation__item login-details">
                     <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
@@ -55,7 +55,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<script>
+<!--<script>
   window.addEventListener('keydown', function(e) {
     if (e.altKey == true && e.keyCode == 73) {
         window.location.replace("search");
@@ -67,6 +67,34 @@
         window.location.replace("access-keys");
     }
 });
+</script>-->
+
+
+<script>
+  window.addEventListener("keydown", function (e) {
+    if (e.altKey == true && e.keyCode == 84) {
+      // Access keys button
+      document.getElementById("access-keys-button").click();
+    } else if (e.altKey == true && e.keyCode == 65) {
+      // Certificate number input
+      document.getElementById("certificate-number").focus();
+    } else if (e.altKey == true && e.keyCode == 90) {
+      // Last name input
+      document.getElementById("last-name").focus();
+    } else if (e.altKey == true && e.keyCode == 88) {
+      // DOB input
+      document.getElementById("dob-day").focus();
+    } else if (e.altKey == true && e.keyCode == 67) {
+      // Postcode input
+      document.getElementById("postcode").focus();
+    } else if (e.altKey == true && e.keyCode == 73) {
+      // Submit button
+      document.getElementById("submit-button").click();
+    } else if (e.altKey == true && e.keyCode == 77) {
+      // Cancel button
+      document.getElementById("cancel-button").click();
+    }
+  });
 </script>
 
 
@@ -97,7 +125,7 @@
 <div >
   <h1 style="margin-bottom: 10px;">Certificate Manager
 
-    <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right; margin-bottom: 10px;">
+    <a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" id="access-keys-button" style="background-color: #025eb8; float: right; margin-bottom: 10px;">
       Access Keys (T)
     </button></a>
   </h1>
@@ -114,13 +142,13 @@
       <label class="nhsuk-label" for="example">
         <strong>Certificate number (A)</strong>
       </label>
-      <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+      <input class="nhsuk-input nhsuk-input--width-20" id="certificate-number" name="example" type="text">
     </div>
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="example">
         <strong>Last name (Z)</strong>
       </label>
-      <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+      <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="example" type="text">
     </div>
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="example">
@@ -135,7 +163,7 @@
             <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
               Day
             </label>
-            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
           </div>
         </div>
         <div class="nhsuk-date-input__item">
@@ -159,7 +187,7 @@
       <label class="nhsuk-label" for="example">
         <Strong>Postcode (C)</strong>
       </label>
-      <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
+      <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="example" type="text">
     </div>
     
  
@@ -169,10 +197,10 @@
       
           <div class="form-group">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <a href="search"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
+            <a href="search"><button class="nhsuk-button" id="submit-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
               Submit (I)
             </button></a>
-            <a href=""><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
+            <a href=""><button class="nhsuk-button" id="cancel-button" type="submit" formaction="/access-keys" style="background-color: #025eb8;">
               Cancel (M)
             </button></a>
           </div>

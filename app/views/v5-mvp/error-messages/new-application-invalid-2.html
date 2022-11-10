@@ -98,7 +98,7 @@
         <a href="#start-date">Enter a start date between 20 October 2022 and 20 December 2022</a>
       </li>
       <li>
-        <a href="#notes">Notes must only include letters a to z, hyphens, spaces and apostrophes</a>
+        <a href="#notes">Notes must only include letters a to z, hyphens, spaces forward slashes and apostrophes</a>
       </li>
       
     </ul>
@@ -207,13 +207,14 @@
 
       
       <hr style="margin-top: -10px;">
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Date of birth
-        </h2>
-      </legend>
+      
 
       <div class="nhsuk-form-group nhsuk-form-group--error">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h2 class="nhsuk-fieldset__heading">
+            Date of birth
+          </h2>
+        </legend>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="example">
             DOB (X)
@@ -304,11 +305,7 @@
       </div>
 
       <hr style="margin-top: -10px;">
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Certificate start date 
-        </h2>
-      </legend>
+      
 
     
 
@@ -319,6 +316,11 @@
     
     <div class="nhsuk-form-group nhsuk-form-group--error">
       <div class="nhsuk-form-group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h2 class="nhsuk-fieldset__heading">
+            Certificate start date 
+          </h2>
+        </legend>
         <label class="nhsuk-label" for="example">
           Start date (E)
         </label>
@@ -426,7 +428,7 @@
           Notes (B)
         </label>
         <span class="nhsuk-error-message" id="name-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span>Notes must only include letters a to z, hyphens, spaces and apostrophes
+          <span class="nhsuk-u-visually-hidden">Error:</span>Notes must only include letters a to z, hyphens, spaces, forward slashes and apostrophes
         </span>
         
         <textarea class="nhsuk-textarea nhsuk-input--error" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
