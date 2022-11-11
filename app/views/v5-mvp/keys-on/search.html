@@ -268,4 +268,19 @@
   </div>
 </div>
 
+{% endblock %} {% block pageScripts %}
+<script>
+  // Search results
+
+  window.addEventListener("keydown", (event) => {
+    // Back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+    // New application button
+    if (event.altKey === true && event.code === "KeyY") {
+      document.getElementById("new-application-button").click();
+    }
+  });
+</script>
 {% endblock %}
