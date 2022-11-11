@@ -46,28 +46,6 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<!--
-<script>
-  document.body.addEventListener("keydown", function (event) {
-    if (event.key === "i") {
-        window.location.replace("/keys-on/name");
-    }
-    else if (event.key === "m") {
-        window.location.replace("/keys-on/start");
-    }
-});
-</script>-->
-
-<script>
-  window.addEventListener("keydown", function (e) {
-    if (e.altKey == true && e.keyCode == 79) {
-      window.location.replace("start");
-    } else if (e.altKey == true && e.keyCode == 89) {
-      window.location.replace("customer-details");
-    }
-  });
-</script>
-
 <div>
   <h1 style="margin-bottom: 10px">
     Certificate Manager
@@ -285,7 +263,7 @@
   <br />
 
   <div>
-    <a href="start" class="nhsuk-button" id="back-button" role="button" style="background-color: #025eb8">Back (0)</a>
+    <a href="start" class="nhsuk-button" id="back-button" role="button" style="background-color: #025eb8">Back (O)</a>
     <a href="customer-details" class="nhsuk-button" id="new-application-button" role="button" style="background-color: #025eb8">New application (Y)</a>
   </div>
 </div>
