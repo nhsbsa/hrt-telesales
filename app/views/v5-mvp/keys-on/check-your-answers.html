@@ -31,9 +31,7 @@ Check their answers
                   </li>
                   <li class="nhsuk-secondary-navigation__item login-details">
                     <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
-                  </li> 
-     
-                  
+                  </li>                 
                  </ul>
               </nav>
            </div>
@@ -49,242 +47,207 @@ Check their answers
 {% block outerContent %}
 {% endblock %}
 
-
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<script>
-  window.addEventListener('keydown', function(e) {
-    if (e.altKey == true && e.keyCode == 73) {
-        window.location.replace("payment-ref");
-    }
-    else if (e.altKey == true && e.keyCode == 79) {
-        window.location.replace("customer-details-change");
-    }
-    else if (e.altKey == true && e.keyCode == 77) {
-        window.location.replace("start");
-    }
-});
-</script>
-
 <h1 style="margin-bottom: 10px;">Check their answers</h1>
 <div id="search">
-
-  
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-width-container">
-
-
-      <!-- Change the page heading -->
-      <form action="access-keys">
-      
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">      
+          <div class="nhsuk-warning-callout">
+            <h2 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Reminder:
+              </span>
+            </h2>
+            <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication. <br><br> If the customer requires medication for something other than HRT, a Prescription Prepayment Certificate (PPC) may be better for them.</p>
+          </div>
     
-      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
-        Access Keys
-      </button>--></form>
-
-      
-      
-
-      <!-- ==================================================================================== -->
-      <!-- SEARCH BOX -->
-      <!-- ==================================================================================== -->
-      
-
-        <div class="nhsuk-warning-callout">
-          <h3 class="nhsuk-warning-callout__label">
-            <span role="text">
-              <span class="nhsuk-u-visually-hidden">Important: </span>
-              Reminder:
-            </span>
-          </h3>
-          <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication. <br><br> If the customer requires medication for something other than HRT, a Prescription Prepayment Certificate (PPC) may be better for them.</p>
-        </div>
-  
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h2 class="nhsuk-fieldset__heading">
-              Applicant details
-            </h2>
-          </legend>
-  
-        {{ summaryList({
-          rows: [
-            
-            {
-              key: {
-                text: "Name"
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h2 class="nhsuk-fieldset__heading">
+                Applicant details
+              </h2>
+            </legend>
+    
+          {{ summaryList({
+            rows: [
+              
+              {
+                key: {
+                  text: "Name"
+                },
+                value: {
+                  text: "Jane Doe"
+                }
               },
-              value: {
-                text: "Jane Doe"
-              }
-            },
-            {
-              key: {
-                text: "Date of birth"
+              {
+                key: {
+                  text: "Date of birth"
+                },
+                value: {
+                  html: "29/11/1970"
+                }
+              },{
+                key: {
+                  text: "Do you know your NHS number?"
+                },
+                value: {
+                  text: "Yes"
+                }
               },
-              value: {
-                html: "29/11/1970"
-              }
-            },{
-              key: {
-                text: "Do you know your NHS number?"
+              {
+                key: {
+                  text: "NHS number"
+                },
+                value: {
+                  text: "1111111111"
+                }
               },
-              value: {
-                text: "Yes"
-              }
-            },
-            {
-              key: {
-                text: "NHS number"
+              {
+                key: {
+                  text: "Address"
+                },
+                value: {
+                  html: '101 Test Road<br>Stella<br>Goldcrest<br>TR110TS'
+                }
               },
-              value: {
-                text: "1111111111"
-              }
-            },
-            {
-              key: {
-                text: "Address"
+              {
+                key: {
+                  text: "Receive certificate and reminder by email or post?"
+                },
+                value: {
+                  text: "Email"
+                }
               },
-              value: {
-                html: '101 Test Road<br>Stella<br>Goldcrest<br>TR110TS'
-              }
-            },
-            {
-              key: {
-                text: "Receive certificate and reminder by email or post?"
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  html: 'Jane.doe@hotmail.net'
+                }
+                
               },
-              value: {
-                text: "Email"
-              }
-            },
-            {
-              key: {
-                text: "Email address"
-              },
-              value: {
-                html: 'Jane.doe@hotmail.net'
+              {
+                key: {
+                  text: "Telephone number"
+                },
+                value: {
+                  html: '	07123456789'
+                }
+                
               }
               
-            },
-            {
-              key: {
-                text: "Telephone number"
+            ]
+          }) }}
+
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h2 class="nhsuk-fieldset__heading">
+                Certificate details
+              </h2>
+            </legend>
+    
+          {{ summaryList({
+            rows: [
+              {
+                key: {
+                  text: "Length"
+                },
+                value: {
+                  text: "12 months"
+                }
               },
-              value: {
-                html: '	07123456789'
+              {
+                key: {
+                  text: "Starts on"
+                },
+                value: {
+                  html: "01/01/2023"
+                }
+              },{
+                key: {
+                  text: "Ends on"
+                },
+                value: {
+                  html: "01/01/2024"
+                }
+              },{
+                key: {
+                  text: "Total cost"
+                },
+                value: {
+                  html: "£18.70"
+                }
+              },{
+                key: {
+                  text: "Payment method"
+                },
+                value: {
+                  html: "Card payment"
+                }
               }
               
-            }
-            
-          ]
-        }) }}
+            ]
+          }) }}
 
-        
+          <fieldset class="nhsuk-fieldset">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h2 class="nhsuk-fieldset__heading">
+              Notes
+              </h2>
+            </legend>
 
-  
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h2 class="nhsuk-fieldset__heading">
-              Certificate details
-            </h2>
-          </legend>
-  
         {{ summaryList({
           rows: [
             {
               key: {
-                text: "Length"
+                text: "Notes"
               },
               value: {
-                text: "12 months"
-              }
-            },
-            {
-              key: {
-                text: "Starts on"
-              },
-              value: {
-                html: "01/01/2023"
-              }
-            },{
-              key: {
-                text: "Ends on"
-              },
-              value: {
-                html: "01/01/2024"
-              }
-            },{
-              key: {
-                text: "Total cost"
-              },
-              value: {
-                html: "£18.70"
-              }
-            },{
-              key: {
-                text: "Payment method"
-              },
-              value: {
-                html: "Card payment"
+                text: "A new HRT prepaid certificate created using telephony sales channel."
               }
             }
-            
           ]
         }) }}
-
-        <fieldset class="nhsuk-fieldset">
-          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-            <h2 class="nhsuk-fieldset__heading">
-             Notes
-            </h2>
-          </legend>
-
-      {{ summaryList({
-        rows: [
-          {
-            key: {
-              text: "Notes"
-            },
-            value: {
-              text: "A new HRT prepaid certificate created using telephony sales channel."
-            }
-          }
-        ]
-      }) }}
-      
-
-<br>
-      <div>
         
-        <a href="customer-details-change"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Amend details (O)
-        </button></a>
-        <a href="payment-ref"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Card payment call (I)
-        </button></a>
-        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Cancel (M)
-        </button></a>
-       
-
-    </div>
-
-      
-      
-      <!-- ==================================================================================== -->
-      <!-- END OF SEARCH BOX -->
-      <!-- ==================================================================================== -->
-
-
-     
+        <br>
+        <div>
+          <a href="customer-details-change" id="amend-button" class="nhsuk-button" role="button" style="background-color: #025eb8;">
+            Amend details (O)
+          </a>
+          <a href="payment-ref" id="card-payment-button" class="nhsuk-button" role="button" style="background-color: #025eb8;">
+            Card payment call (I)
+          </a>
+          <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8;">
+            Cancel (M)
+          </a>
+      </div>
       <!-- End of content -->
-
+    </div>
   </div>
-
 </div>
-</div>
+{% endblock %}
+{% block pageScripts %}
+<script>
+  // Check your answers
 
+  window.addEventListener("keydown", (event) => {
+    // Amend button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("amend-button").click();
+    }
+    // Card payment button
+    if (event.altKey === true && event.code === "KeyI") {
+      document.getElementById("card-payment-button").click();
+    }
+    // Cancel button
+    if (event.altKey === true && event.code === "KeyM") {
+      document.getElementById("cancel-button").click();
+    }
+  });
+</script>
 {% endblock %}

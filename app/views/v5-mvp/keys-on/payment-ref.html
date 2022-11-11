@@ -7,9 +7,7 @@
 -->
 
 <!-- Set the page title -->
-{% block pageTitle %}
-  Card payment
-{% endblock %}
+{% block pageTitle %} Card payment {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
@@ -17,28 +15,26 @@
 
 <div class="nhsuk-secondary-navigation">
   <div class="nhsuk-grid-row">
-     <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-secondary-navigation__container">
-           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
-              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
-                 <ul class="nhsuk-secondary-navigation__list">
-                  <li class="nhsuk-secondary-navigation__item">
-                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
-                  </li>
-                  
-                  <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
-                  </li>
-                  <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
-                  </li> 
-     
-                  
-                 </ul>
-              </nav>
-           </div>
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-secondary-navigation__container">
+        <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+          <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+            <ul class="nhsuk-secondary-navigation__list">
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+              </li>
+
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-     </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -46,77 +42,45 @@
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-{% endblock %}
-
+{% block outerContent %} {% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<script>
-  window.addEventListener('keydown', function(e) {
-  if (e.altKey == true && e.keyCode == 73) {
-        window.location.replace("start");
-    }
-  else if (e.altKey == true && e.keyCode == 79) {
-        window.location.replace("check-your-answers");
-    }
-});
-</script>
-<h1 style="margin-bottom: 10px;">Card payment</h1>
+
+<h1 style="margin-bottom: 10px">Card payment</h1>
 <div id="search">
-  
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-width-container">
-
-
-      <!-- Change the page heading -->
-      <form action="access-keys">
-     
-      <!--<button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
-        Access Keys
-      </button>--></form>
-
-      
-      
-
-      <!-- ==================================================================================== -->
-      <!-- SEARCH BOX -->
-      <!-- ==================================================================================== -->
-      <h2>Payment provider number to call</h2><br>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      <h2>Payment provider number to call</h2>
+      <br />
 
       <div>
-        <p>Payment provider reference number: <strong style="font-size:xx-large;">43567</strong></p>
-
+        <p>Payment provider reference number: <strong style="font-size: xx-large">43567</strong></p>
       </div>
-      
-      
-      <br><br>
+
+      <br /><br />
 
       <div>
-        <a href="check-your-answers"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Back (O)
-        </button></a>
-        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Submit (I)
-        </button></a>
-        
-
+        <a href="check-your-answers" id="back-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Back (O)</a>
+        <a href="start" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
+      </div>
     </div>
-
-      
-      
-      <!-- ==================================================================================== -->
-      <!-- END OF SEARCH BOX -->
-      <!-- ==================================================================================== -->
-
-
-     
-      <!-- End of content -->
-
   </div>
+</div>
+{% endblock %} {% block pageScripts %}
+<script>
+  // Check your answers
 
-</div>
-</div>
+  window.addEventListener("keydown", (event) => {
+    // Submit button
+    if (event.altKey === true && event.code === "KeyI") {
+      document.getElementById("submit-button").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+  });
+</script>
 {% endblock %}
