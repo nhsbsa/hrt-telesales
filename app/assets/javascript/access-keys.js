@@ -1,4 +1,4 @@
-// Start page access keys
+// Start page
 
 const certificateNumberInput = document.querySelector("[name=certificate-number]");
 const lastNameInput = document.querySelector("[name=last-name]");
@@ -45,5 +45,18 @@ window.addEventListener("keydown", (event) => {
   // Cancel button
   if (event.altKey === true && event.code === "KeyM") {
     document.getElementById("cancel-button").click();
+  }
+});
+
+// Search results
+
+window.addEventListener("keydown", (event) => {
+  // Back button
+  if (event.altKey === true && event.code === "Digit0") {
+    document.getElementById("back-button").click();
+  }
+  // New application button
+  if (event.altKey === true && event.code === "KeyY") {
+    document.getElementById("new-application-button").click();
   }
 });
