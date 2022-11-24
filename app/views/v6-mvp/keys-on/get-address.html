@@ -7,9 +7,7 @@
 -->
 
 <!-- Set the page title -->
-{% block pageTitle %}
-  Applicant details
-{% endblock %}
+{% block pageTitle %} Applicant details {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
@@ -17,28 +15,26 @@
 
 <div class="nhsuk-secondary-navigation">
   <div class="nhsuk-grid-row">
-     <div class="nhsuk-grid-column-full">
-        <div class="nhsuk-secondary-navigation__container">
-           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
-              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
-                 <ul class="nhsuk-secondary-navigation__list">
-                  <li class="nhsuk-secondary-navigation__item">
-                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
-                  </li>
-                  
-                  <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
-                  </li>
-                  <li class="nhsuk-secondary-navigation__item login-details">
-                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
-                  </li> 
-     
-                  
-                 </ul>
-              </nav>
-           </div>
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-secondary-navigation__container">
+        <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+          <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+            <ul class="nhsuk-secondary-navigation__list">
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+              </li>
+
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-     </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -46,351 +42,414 @@
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{% block outerContent %}
-{% endblock %}
-
+{% block outerContent %} {% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-<script>
-  window.addEventListener('keydown', function(e) {
-    if (e.altKey == true && e.keyCode == 80) {
-        window.location.replace("/get-address");
-    }
-    else if (e.altKey == true && e.keyCode == 73) {
-        window.location.replace("/check-your-answers");
-    }
-    else if (e.altKey == true && e.keyCode == 79) {
-        window.location.replace("/search");
-    }
-    else if (e.altKey == true && e.keyCode == 77) {
-        window.location.replace("/start");
-    }
-});
-</script>
 
+<h1 style="margin-bottom: 10px">Applicant details</h1>
 
-<!--
-<div id="search" style="margin:-10px;">
-  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-    <h1 class="nhsuk-fieldset__heading">
-      Personal details
-    </h1>
-  </legend>
-</div>
-<br><br>-->
+<div id="search">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">Applicant address</h2>
+        </legend>
 
-
-<h1 style="margin-bottom: 10px;"> Applicant details</h1>
-
-<div id="search" >
-
-
-
-
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-width-container">
-
-    
+        <p>Postcode: <strong>TR11 0TS</strong> <a href="get-address-selected" id="select-address" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-top: -5px; margin-left: 5px; margin-bottom: -10px;">Edit postcode (Z) </a></p> 
       
 
-    <fieldset class="nhsuk-fieldset">
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Applicant address
-        </h2>
-      </legend>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="address-line-1">
-          Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
-        </label>
-        <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="address-line-2">
-          Address line 2 (Optional) (2)
-        </label>
-        <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
-      </div>
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="address-town">
-          Town or city (3)
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
-      </div>
 
-    
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="address-postcode">
-          Postcode
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="TR110TS">
-        <a href="get-address"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
-          Get address (P)
-        </button></a>
-      </div>
-      <details class="nhsuk-details" style="margin-top: 10px;">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            They don't know which address to use?
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h3>If they have more than one address</h3>
-          <p>They should use the address that their GP or dentist holds for them. For example, if they're a student living away from home, this could be their home or term time address.</p>
-          <h3>If they don't have a permanent address</h3>
-          <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they should use the address that their GP  holds for them.</p>
+        
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-postcode">
+              Get address (T)
+          </label>
+          <div class="nhsuk-form-group">
+          
+            <select class="nhsuk-select" id="select-1" name="select-1">
+              <option value="0">Select applicant address</option>
+              <option value="1">101 Test Road, Goldcrest, TR110TS</option>
+              <option value="2">2 Test Road, Town, NE1 OLD</option>
+              <option value="3">3 Test Road, Town, NE1 OLD</option>
+              <option value="4">4 Test Road, Town, NE1 OLD</option>
+              <option value="5">5 Test Road, Town, NE1 OLD</option>
+              <option value="6">6 Test Road, Town, NE1 OLD</option>
+              <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
+            </select>
+          </div>
+  
+          
         </div>
-      </details>
-    
-    </fieldset>
 
-      
-      <hr style="margin-top: -10px;">
+        <a href="get-address-selected" id="select-address" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">Select address (W) </a>
+        <a href="customer-details" id="enter-manually" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">Enter manually (N)</a>
+  
+        
+  
+  
+  
+    
+        <details class="nhsuk-details" style="margin-top: 10px">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text"> They don't know which address to use? </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h3>If they have more than one address</h3>
+            <p>
+              They should use the address that their GP or dentist holds for them. For example, if they're a student living away from home, this could be their home or term time
+              address.
+            </p>
+            <h3>If they don't have a permanent address</h3>
+            <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they should use the address that their GP holds for them.</p>
+          </div>
+        </details>
+      </fieldset>
+
+      <hr style="margin-top: -10px" />
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Applicant name
-        </h2>
+        <h2 class="nhsuk-fieldset__heading">Applicant name</h2>
       </legend>
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          First name (S)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
+        <label class="nhsuk-label" for="app-first-name"> First name (S) </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="app-first-name" name="app-first-name" type="text" />
       </div>
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Last name (A)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Doe">
+        <label class="nhsuk-label" for="app-last-name"> Last name (A) </label>
+        <input class="nhsuk-input nhsuk-input--width-20" id="app-last-name" name="app-last-name" type="text" value="Doe" />
       </div>
 
-      
-      <hr style="margin-top: -10px;">
+      <hr style="margin-top: -10px" />
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Date of birth
-        </h2>
+        <h2 class="nhsuk-fieldset__heading">Date of birth</h2>
       </legend>
 
       <div class="nhsuk-form-group">
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="example">
-            DOB (X)
-          </label>
-          <div class="nhsuk-date-input" id="example">
+          <p class="nhsuk-label" for="app-dob">DOB (X)</p>
+          <div class="nhsuk-date-input" id="app-dob">
             <div class="nhsuk-date-input__item">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
-                  Day
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric" value="28">
+                <label class="nhsuk-label nhsuk-date-input__label" for="app-dob-day"> Day </label>
+                <input
+                  class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                  id="app-dob-day"
+                  name="app-dob-day"
+                  type="text"
+                  pattern="[0-9]*"
+                  inputmode="numeric"
+                  value="28" />
               </div>
             </div>
             <div class="nhsuk-date-input__item">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
-                  Month
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric" value="11">
+                <label class="nhsuk-label nhsuk-date-input__label" for="app-dob-month"> Month </label>
+                <input
+                  class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                  id="app-dob-month"
+                  name="app-dob-month"
+                  type="text"
+                  pattern="[0-9]*"
+                  inputmode="numeric"
+                  value="11" />
               </div>
             </div>
             <div class="nhsuk-date-input__item">
               <div class="nhsuk-form-group">
-                <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
-                  Year
-                </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric" value="70">
+                <label class="nhsuk-label nhsuk-date-input__label" for="app-dob-year"> Year </label>
+                <input
+                  class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                  id="app-dob-year"
+                  name="app-dob-year"
+                  type="text"
+                  pattern="[0-9]*"
+                  inputmode="numeric"
+                  value="70" />
               </div>
             </div>
-        </div>
-      
-      </div>
-      
-      <hr style="margin-top: -10px;">
-      
-        
-      
-          
-      
-        
-        
-      
-    
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Contact details
-        </h2>
-      </legend>
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Email (G)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
-      </div>
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Telephone number (C)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text">
-      </div>
-
-
-
-
-
-      <hr style="margin-top: -10px;">
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          NHS Number (Optional)
-        </h2>
-      </legend>
-
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          NHS number (V)
-        </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="example" name="example" type="text">
-      </div>
-
-      <hr style="margin-top: -10px;">
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Certificate start date 
-        </h2>
-      </legend>
-
-      
-
-      
-
-
-<div class="nhsuk-form-group">
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="example">
-      Start date (E)
-    </label>
-    <div class="nhsuk-hint" id="example-with-hint-text-hint">
-      The start date of the HRT PPC must be 30 days in the past or the future.
-    </div>
-    <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-10-20" max="2022-12-20">
-  </div>
-      
-      </div>
-
-
-      
-      <hr style="margin-top: -10px;">
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Payment
-        </h2>
-      </legend>
-
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-           Important information
-          </span>
-        </h3>
-        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.</p>
-      </div>
-
-      
-
-      
-      <hr style="margin-top: -10px;">
-      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-        <h2 class="nhsuk-fieldset__heading">
-          Certificate fulfillment
-        </h2>
-      </legend>
-
-     
-
-      <div class="nhsuk-form-group">
-
-        <fieldset class="nhsuk-fieldset">
-          <div class="nhsuk-radios nhsuk-radios--inline">
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
-                Email (L)
-              </label>
-            </div>
-      
-            <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Post (M)
-              </label>
-            </div>
-      
           </div>
-        </fieldset>
-      
+        </div>
+
+        <hr style="margin-top: -10px" />
+
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h2 class="nhsuk-fieldset__heading">Contact details</h2>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="app-email"> Email (E) </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="app-email" name="app-email" type="text" />
+        </div>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="app-telephone"> Telephone number (C) </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="app-telephone" name="app-telephone" type="text" />
+        </div>
+
+        <hr style="margin-top: -10px" />
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h2 class="nhsuk-fieldset__heading">NHS Number (Optional)</h2>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="app-nhs-number"> NHS number (V) </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="app-nhs-number" name="app-nhs-number" type="text" />
+        </div>
+
+        <hr style="margin-top: -10px" />
+        <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+          <h2 class="nhsuk-fieldset__heading">Certificate start date</h2>
+        </legend>
+
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-form-group">
+            <p class="nhsuk-label" for="start-date">Start date (H)</p>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">The start date of the HRT PPC must be 30 days in the past or the future.</div>
+            <div class="nhsuk-date-input" id="start-date">
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="start-day"> Day </label>
+                  <input
+                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                    id="start-day"
+                    name="start-day"
+                    type="text"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value="" />
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="start-month"> Month </label>
+                  <input
+                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                    id="start-month"
+                    name="start-month"
+                    type="text"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value="" />
+                </div>
+              </div>
+              <div class="nhsuk-date-input__item">
+                <div class="nhsuk-form-group">
+                  <label class="nhsuk-label nhsuk-date-input__label" for="start-year"> Year </label>
+                  <input
+                    class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                    id="start-year"
+                    name="start-year"
+                    type="text"
+                    pattern="[0-9]*"
+                    inputmode="numeric"
+                    value="" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr style="margin-top: -10px" />
+          <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+            <h2 class="nhsuk-fieldset__heading">Payment</h2>
+          </legend>
+
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Important information
+              </span>
+            </h3>
+            <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.</p>
+          </div>
+
+          <hr style="margin-top: -10px" />
+
+          <div class="nhsuk-form-group">
+            <fieldset class="nhsuk-fieldset">
+              <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+                <h2 class="nhsuk-fieldset__heading">Certificate fulfillment</h2>
+              </legend>
+              <label class="nhsuk-label nhsuk-input__label" for="fulfillment">Email (L) or post (N) </label>
+              <div class="nhsuk-radios nhsuk-radios--inline">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes" />
+                  <label class="nhsuk-label nhsuk-radios__label" for="cert-1"> Email (L) </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no" />
+                  <label class="nhsuk-label nhsuk-radios__label" for="cert-2"> Post (N) </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <hr style="margin-top: -10px" />
+
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="app-notes"> Notes (B) </label>
+
+            <textarea class="nhsuk-textarea" id="app-notes" name="app-notes" rows="5">A new HRT prepaid certificate created using telephony sales channel</textarea>
+          </div>
+
+          <div>
+            <a href="check-your-answers" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
+            <a href="javascript:history.go(-1)" id="back-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Back (O)</a>
+            <a href="start" class="nhsuk-button" id="cancel-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
+          </div>
+        </div>
       </div>
-      <hr style="margin-top: -10px;">
 
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
-          Notes (B)
-        </label>
-        
-        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-      </div>
-
-      
-
-     
-
-      
-      <div>
-        
-        <a href="check-your-answers"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Submit (I)
-        </button></a>
-        <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Back (O)
-        </button></a>
-        <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Cancel (M)
-        </button></a>
-    </div>
-      
-</div>
-      
-
-      
-      </div>
-      
-    
-    
-      
-
-
-    
-
-      
-      
       <!-- ==================================================================================== -->
       <!-- END OF SEARCH BOX -->
       <!-- ==================================================================================== -->
 
-
-     
       <!-- End of content -->
-
+    </div>
   </div>
-
-</div>
 </div>
 
+{% endblock %} {% block pageScripts %}
+<script>
+  // Customer details
+
+  const addressLineOne = document.querySelector("[name=address-line-1]");
+  const addressLineTwo = document.querySelector("[name=address-line-2]");
+  const townOrCity = document.querySelector("[name=address-town]");
+  const postcode = document.querySelector("[name=address-postcode]");
+  const appFirstName = document.querySelector("[name=app-first-name]");
+  const appLastName = document.querySelector("[name=app-last-name]");
+  const appDobDay = document.querySelector("[name=app-dob-day]");
+  const appEmail = document.querySelector("[name=app-email]");
+  const appTelephone = document.querySelector("[name=app-telephone]");
+  const appNhsNumber = document.querySelector("[name=app-nhs-number]");
+  const appStartDay = document.querySelector("[name=start-day]");
+  const appNotes = document.querySelector("[name=app-notes]");
+
+  window.addEventListener("keydown", (event) => {
+    // Address line 1
+    if (event.altKey === true && event.code === "KeyD") {
+      if (addressLineOne !== document.addressLineOne) {
+        addressLineOne.focus();
+        event.preventDefault();
+      }
+    }
+    // Address line 2
+    if (event.altKey === true && event.code === "KeyF") {
+      if (addressLineTwo !== document.activeElement) {
+        addressLineTwo.focus();
+        event.preventDefault();
+      }
+    }
+    // Town or city
+    if (event.altKey === true && event.code === "KeyG") {
+      if (townOrCity !== document.activeElement) {
+        townOrCity.focus();
+        event.preventDefault();
+      }
+    }
+    // postcode
+    if (event.altKey === true && event.code === "KeyZ") {
+      if (postcode !== document.activeElement) {
+        postcode.focus();
+        event.preventDefault();
+      }
+    }
+    // Get address button
+    if (event.altKey === true && event.code === "KeyP") {
+      document.getElementById("get-address-button").click();
+    }
+    // Applicant first name
+    if (event.altKey === true && event.code === "KeyS") {
+      if (appFirstName !== document.activeElement) {
+        appFirstName.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant last name
+    if (event.altKey === true && event.code === "KeyA") {
+      if (appLastName !== document.activeElement) {
+        appLastName.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant DOB
+    if (event.altKey === true && event.code === "KeyX") {
+      if (appDobDay !== document.activeElement) {
+        appDobDay.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant email address
+    if (event.altKey === true && event.code === "KeyE") {
+      if (appEmail !== document.activeElement) {
+        appEmail.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant telephone number
+    if (event.altKey === true && event.code === "KeyC") {
+      if (appTelephone !== document.activeElement) {
+        appTelephone.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant NHS number
+    if (event.altKey === true && event.code === "KeyV") {
+      if (appNhsNumber !== document.activeElement) {
+        appNhsNumber.focus();
+        event.preventDefault();
+      }
+    }
+    // Certificate start date
+    if (event.altKey === true && event.code === "KeyH") {
+      if (appStartDay !== document.activeElement) {
+        appStartDay.focus();
+        event.preventDefault();
+      }
+    }
+    // Cert fulfillment email
+    if (event.altKey === true && event.code === "KeyL") {
+      document.getElementById("cert-1").click();
+    }
+    // Cert fulfillment post
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("cert-2").click();
+    }
+    // Applicant notes
+    if (event.altKey === true && event.code === "KeyB") {
+      if (appNotes !== document.activeElement) {
+        appNotes.focus();
+        event.preventDefault();
+      }
+    }
+    // Submit button
+    if (event.altKey === true && event.code === "KeyI") {
+      document.getElementById("submit-button").click();
+    }
+    // Cancel button
+    if (event.altKey === true && event.code === "KeyM") {
+      document.getElementById("cancel-button").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+
+    // Back button
+    if (event.altKey === true && event.code === "KeyZ") {
+      document.getElementById("edit-postcode").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyW") {
+      document.getElementById("select-address").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("enter-manually").click();
+    }
+  });
+</script>
 {% endblock %}

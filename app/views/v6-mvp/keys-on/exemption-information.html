@@ -125,17 +125,67 @@ padding-bottom:0.01cm;
 </style>
 
 <script>
-  window.addEventListener('keydown', function(e) {
-    if (e.altKey == true && e.keyCode == 73) {
-        window.location.replace("payment-ref");
+  // Start page
+
+  const changeInput = document.querySelector("[name=change]");
+  const lastNameInput = document.querySelector("[name=last-name]");
+  const dobDayInput = document.querySelector("[name=dob-day]");
+  const postcodeInput = document.querySelector("[name=postcode]");
+
+  window.addEventListener("keydown", (event) => {
+    // Certificate number input
+    if (event.altKey === true && event.code === "KeyT") {
+      if (certificateNumberInput !== document.activeElement) {
+        certificateNumberInput.focus();
+        event.preventDefault();
+      }
     }
-    else if (e.altKey == true && e.keyCode == 75) {
-        window.location.replace("reissue-cya");
+    // Last name input
+    //if (event.altKey === true && event.code === "KeyZ") {
+    //  if (lastNameInput !== document.activeElement) {
+    ///    lastNameInput.focus();
+    //    event.preventDefault();
+    //  }
+    //}
+    // DOB day input
+    if (event.altKey === true && event.code === "KeyX") {
+      if (dobDayInput !== document.activeElement) {
+        dobDayInput.focus();
+        event.preventDefault();
+      }
     }
-    else if (e.altKey == true && e.keyCode == 77) {
-        window.location.replace("start");
+    // Postcode input
+    //if (event.altKey === true && event.code === "KeyC") {
+    //  if (postcodeInput !== document.activeElement) {
+    //    postcodeInput.focus();
+    //    event.preventDefault();
+    //  }
+   // }
+    // change button
+    if (event.altKey === true && event.code === "KeyC") {
+      document.getElementById("change-button").click();
     }
-});
+    // back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+    // Reissue button
+    if (event.altKey === true && event.code === "KeyK") {
+      document.getElementById("reissue-button").click();
+    }
+    // Edit button
+    if (event.altKey === true && event.code === "KeyE") {
+      document.getElementById("edit-button").click();
+    }
+    // Add note button
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("add-note-button").click();
+    }
+    // Cancel button
+    if (event.altKey === true && event.code === "KeyM") {
+      document.getElementById("cancel-button").click();
+    }
+  });
 </script>
 
 
@@ -155,10 +205,10 @@ padding-bottom:0.01cm;
 
       <div id="header">
         <h3 style="margin-bottom: 10px;">Certificate details
-          <a href="edit-certificate">
-            <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
+          <a href="edit-certificate" id="change-button" class="nhsuk-button" role="button" style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
+            
             Change (C)
-           </button>
+           
           </a>
         </h3>
       </div>
@@ -281,11 +331,11 @@ padding-bottom:0.01cm;
       <div id="header">
         
           <h3 style="margin-bottom: 10px;">Personal details
-        <a href="edit-information">
-          <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-          Edit (E)
-         </button>
-        </a></h3>
+            <a href="edit-information" id="edit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
+            
+              Edit (E)
+             
+            </a></h3>
         
         
       </div>
@@ -497,11 +547,13 @@ padding-bottom:0.01cm;
 
   <div class="column bg-alt">
     <div id="header">
-      <h3 style="margin-bottom: 10px;">Notes<a href="exemption-add-note">
-        <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
-        Add note +
-       </button>
-      </a></h2>
+      <h3 style="margin-bottom: 10px;">Notes
+        <a href="exemption-add-note" id="add-note-button" class="nhsuk-button" role="button" style="background-color: #025eb8; line-height: 0px;  text-align: left; float: right; margin-bottom: 10px;">
+            
+          Add note (N)
+         
+        </a>
+      </h2>
     </div>
     
     <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px;">
@@ -529,8 +581,9 @@ padding-bottom:0.01cm;
       <style>
         table{
         overflow-y:scroll; 
-        height:300px; 
-        display:block;  
+        height:300px;
+      
+        display:block; } 
  
       </style>
       
@@ -593,17 +646,12 @@ padding-bottom:0.01cm;
   <br>
   
   <div style="margin-bottom:-50px; padding-top: 10px;">
-        
-    <a href="search"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Back (O)
-    </button></a>
+    <div class="form-group">
+      <a href="search" id="back-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Back (O)</a>
+      <a href="reissue-cya" id="reissue-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Reissue (K)</a>
+      <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
+    </div>
     
-    <a href="reissue-cya"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Reissue (K)
-    </button></a>
-    <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-      Cancel (M)
-    </button></a>
     
     
 </div>

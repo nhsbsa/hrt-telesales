@@ -80,6 +80,38 @@
 
 <!--<div id="search" style="margin-top: -25px; margin-bottom: -25px;">-->
 <div>
+
+  <script>
+    // Start page
+    const certInput = document.querySelector("[name=email-print]");
+    
+    
+    
+    
+  
+    window.addEventListener("keydown", (event) => {
+      if (event.altKey === true && event.code === "KeyY") 
+      {
+      if (certInput !== document.activeElement) {
+        certInput.click();
+        event.preventDefault();
+      }
+    }
+      // submit button
+      if (event.altKey === true && event.code === "KeyI") {
+        document.getElementById("submit-button").click();
+      }
+     
+      // Cancel button
+      if (event.altKey === true && event.code === "KeyM") {
+        document.getElementById("cancel-button").click();
+      }
+      // Cancel button
+      if (event.altKey === true && event.code === "KeyC") {
+        document.getElementById("email-print").click();
+      }
+    });
+  </script>
 <style>
   .flex-container{
     width: 100%;
@@ -202,10 +234,10 @@ padding-bottom:0.01cm;
       
         <div class="nhsuk-summary-list__row">
           <dt class="nhsuk-summary-list__key">
-            Certificate fulfillment
+            Certificate fulfillment (C)
           </dt>
-          <dd class="nhsuk-summary-list__value">
-            <select class="nhsuk-select" id="select-1" name="select-1">
+          <dd class="nhsuk-summary-list__value" >
+            <select class="nhsuk-select" id="email-print" name="email-print">
               <option value="1">Email</option>
               <option value="2" >Post</option>
 
@@ -257,7 +289,25 @@ padding-bottom:0.01cm;
         </div>
       
       </dl>
-      <a href="exemption-information">
+
+      <div class="form-group">
+        <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -20px;">Submit (I)</a>
+        <a href="exemption-information" id="cancel-button" class="nhsuk-button nhsuk-button--secondary" role="button" style="line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -20px;">Cancel (M)</a>
+       
+      </div>
+
+      <br>
+      <div class="nhsuk-warning-callout" style="margin-bottom: -10px; margin-top: 10px;">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Remember
+          </span>
+        </h3>
+        <p>You must make a note of the changes before you end the call with the customer.</p>
+      </div>
+
+     <!-- <a href="exemption-information">
         <button class="nhsuk-button" type="submit"  style="background-color: #025eb8; line-height: 0px;  text-align: left; float: left; margin-bottom:10px; margin-top: -20px;">
         Submit (I)
        </button>
@@ -267,7 +317,7 @@ padding-bottom:0.01cm;
         Cancel (M)
        </button>
       </a>
-
+    -->
     </div>
     
     <div class="column bg-alt">
@@ -517,7 +567,7 @@ padding-bottom:0.01cm;
         table{
         overflow-y:scroll; 
         height:300px; 
-        display:block;  
+        display:block;  }
  
       </style>
       
