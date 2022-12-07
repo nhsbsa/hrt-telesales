@@ -351,12 +351,7 @@
       }
     }
     // postcode
-    if (event.altKey === true && event.code === "KeyZ") {
-      if (postcode !== document.activeElement) {
-        postcode.focus();
-        event.preventDefault();
-      }
-    }
+    
     // Get address button
     if (event.altKey === true && event.code === "KeyP") {
       document.getElementById("get-address-button").click();
