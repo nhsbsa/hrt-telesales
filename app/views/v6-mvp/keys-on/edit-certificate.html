@@ -83,13 +83,23 @@
 
   <script>
     // Start page
-    const certInput = document.querySelector("[name=email-print]");
+    const certInput = document.querySelector("[name=email-option]");
     
-    
+    const addressDrop = document.querySelector("[name=address-drop]");
     
     
   
     window.addEventListener("keydown", (event) => {
+
+
+      if (event.altKey === true && event.code === "KeyT") {
+      if (addressDrop !== document.addressDrop) {
+        addressDrop.focus();
+        event.preventDefault();
+      }
+    }
+
+
       if (event.altKey === true && event.code === "KeyY") 
       {
       if (certInput !== document.activeElement) {
@@ -106,10 +116,17 @@
       if (event.altKey === true && event.code === "KeyM") {
         document.getElementById("cancel-button").click();
       }
-      // Cancel button
-      if (event.altKey === true && event.code === "KeyC") {
-        document.getElementById("email-print").click();
-      }
+
+
+      // Cert fulfillment email
+    if (event.altKey === true && event.code === "KeyL") {
+      document.getElementById("cert-1").click();
+    }
+    // Cert fulfillment post
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("cert-2").click();
+    }
+      
     });
   </script>
 <style>
@@ -237,11 +254,25 @@ padding-bottom:0.01cm;
             Certificate fulfillment (C)
           </dt>
           <dd class="nhsuk-summary-list__value" >
-            <select class="nhsuk-select" id="email-print" name="email-print">
-              <option value="1">Email</option>
-              <option value="2" >Post</option>
-
-            </select>
+            <div class="nhsuk-form-group">
+            
+              <fieldset class="nhsuk-fieldset">
+               
+                
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes" />
+                    <label class="nhsuk-label nhsuk-radios__label" for="cert-1"> Email (L) </label>
+                  </div>
+  
+                  <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no" />
+                    <label class="nhsuk-label nhsuk-radios__label" for="cert-2"> Post (N) </label>
+                  </div>
+                </div>
+              </fieldset>
+            
+            </div>
             
           </dd>
           

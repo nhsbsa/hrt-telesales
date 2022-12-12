@@ -66,11 +66,11 @@
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-postcode">
-              Get address (T)
+              Select address (T)
           </label>
           <div class="nhsuk-form-group">
-          
-            <select class="nhsuk-select" id="select-1" name="select-1">
+            
+            <select class="nhsuk-select" id="address-drop-down" name="address-drop">
               <option value="0">Select applicant address</option>
               <option value="1">101 Test Road, Goldcrest, TR110TS</option>
               <option value="2">2 Test Road, Town, NE1 OLD</option>
@@ -80,6 +80,7 @@
               <option value="6">6 Test Road, Town, NE1 OLD</option>
               <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
             </select>
+          
           </div>
   
           
@@ -328,11 +329,20 @@
   const appStartDay = document.querySelector("[name=start-day]");
   const appNotes = document.querySelector("[name=app-notes]");
 
+  const addressDrop = document.querySelector("[name=address-drop]");
+
   window.addEventListener("keydown", (event) => {
     // Address line 1
     if (event.altKey === true && event.code === "KeyD") {
       if (addressLineOne !== document.addressLineOne) {
         addressLineOne.focus();
+        event.preventDefault();
+      }
+    }
+
+    if (event.altKey === true && event.code === "KeyT") {
+      if (addressDrop !== document.addressDrop) {
+        addressDrop.focus();
         event.preventDefault();
       }
     }
@@ -445,6 +455,7 @@
     if (event.altKey === true && event.code === "KeyN") {
       document.getElementById("enter-manually").click();
     }
+     
   });
 </script>
 {% endblock %}
