@@ -15,17 +15,17 @@ router.get(/access-handler/, function (req, res) {
 
   router.get(/key-handler/, function (req, res) {
     if (req.query.keys === "yes")  {
-     res.redirect('/v3/keys-on/start');
+     res.redirect('start');
    } else {
-     res.redirect('/v3/keys-off/start');
+     res.redirect('start');
    }
   });
 
   router.get(/key-v4/, function (req, res) {
     if (req.query.keys === "yes")  {
-     res.redirect('/v4-mvp/keys-on/start');
+     res.redirect('start');
    } else {
-     res.redirect('/v4-mvp/keys-off/start');
+     res.redirect('start');
    }
   });
 

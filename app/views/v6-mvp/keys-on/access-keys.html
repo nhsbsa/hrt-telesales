@@ -52,7 +52,27 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
+<script>
+  // Start page
 
+  const certificateNumberInput = document.querySelector("[name=certificate-number]");
+  const lastNameInput = document.querySelector("[name=last-name]");
+  const dobDayInput = document.querySelector("[name=dob-day]");
+  const postcodeInput = document.querySelector("[name=postcode]");
+
+  window.addEventListener("keydown", (event) => {
+    // Certificate number input
+    
+    // Submit button
+    if (event.altKey === true && event.code === "KeyI") {
+      document.getElementById("submit-button").click();
+    }
+    // Cancel button
+    if (event.altKey === true && event.code === "KeyM") {
+      document.getElementById("cancel-button").click();
+    }
+  });
+</script>
 
 
    
@@ -105,12 +125,9 @@
         
         </fieldset><br>
 
-        <div><button class="nhsuk-button" type="submit"  style="background-color: #025eb8;">
-          Submit (I)
-        </button></form>
-        <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; display;">
-          Cancel (M)
-         </button></a>
+        <div class="form-group">
+          <a href="search" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
+          <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
         </div>
       
      
