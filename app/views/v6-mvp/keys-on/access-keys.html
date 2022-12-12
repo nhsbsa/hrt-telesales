@@ -60,6 +60,15 @@
   const dobDayInput = document.querySelector("[name=dob-day]");
   const postcodeInput = document.querySelector("[name=postcode]");
 
+  // Cert fulfillment email
+  if (event.altKey === true && event.code === "KeyL") {
+      document.getElementById("cert-1").click();
+    }
+    // Cert fulfillment post
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("cert-2").click();
+    }
+
   window.addEventListener("keydown", (event) => {
     // Certificate number input
     
@@ -105,16 +114,16 @@
             <div class="nhsuk-radios">
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="yes" name="keys" type="radio" value="yes" required>
+                <input class="nhsuk-radios__input" id="cert-1" name="keys" type="radio" value="yes" required>
                 <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
-                  Yes
+                  Yes (L)
                 </label>
               </div>
         
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="no" name="keys" type="radio" value="no" required>
+                <input class="nhsuk-radios__input" id="cert-2" name="keys" type="radio" value="no" required>
                 <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-                  No
+                  No (N)
                 </label>
               </div>
         
@@ -126,8 +135,8 @@
         </fieldset><br>
 
         <div class="form-group">
-          <a href="search" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
-          <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
+          <a id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
+          <a id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
         </div>
       
      
