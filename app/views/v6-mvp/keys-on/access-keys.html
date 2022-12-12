@@ -60,17 +60,17 @@
   const dobDayInput = document.querySelector("[name=dob-day]");
   const postcodeInput = document.querySelector("[name=postcode]");
 
-  // Cert fulfillment email
-  if (event.altKey === true && event.code === "KeyL") {
+  
+
+  window.addEventListener("keydown", (event) => {
+ // Cert fulfillment email
+ if (event.altKey === true && event.code === "KeyL") {
       document.getElementById("cert-1").click();
     }
     // Cert fulfillment post
     if (event.altKey === true && event.code === "KeyN") {
       document.getElementById("cert-2").click();
     }
-
-  window.addEventListener("keydown", (event) => {
-    // Certificate number input
     
     // Submit button
     if (event.altKey === true && event.code === "KeyI") {
@@ -110,34 +110,37 @@
 
         <form action="key-v4" method="get" class="form">
           <div class="nhsuk-form-group">
-        
-            <div class="nhsuk-radios">
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="cert-1" name="keys" type="radio" value="yes" required>
-                <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
-                  Yes (L)
-                </label>
-              </div>
-        
-              <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="cert-2" name="keys" type="radio" value="no" required>
-                <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-                  No (N)
-                </label>
-              </div>
-        
+            <fieldset class="nhsuk-fieldset">
               
-        
-            </div>
+              
+              <div class="nhsuk-radios nhsuk-radios--inline">
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes" required/>
+                  <label class="nhsuk-label nhsuk-radios__label" for="cert-1"> Yes (L) </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                  <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no" />
+                  <label class="nhsuk-label nhsuk-radios__label" for="cert-2"> No (N) </label>
+                </div>
+              </div>
+            </fieldset>
           </div>
         
         </fieldset><br>
 
-        <div class="form-group">
-          <a id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
-          <a id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
+        <div><button class="nhsuk-button" type="submit" id="submit-button" style="background-color: #025eb8;">
+          Submit (I)
+        </button></form>
+        <a href="javascript:history.go(-1)"><button class="nhsuk-button" id="cancel-button" type="submit" style="background-color: #025eb8; display;">
+          Cancel (M)
+         </button></a>
         </div>
+
+
+
+        
+       
       
      
     

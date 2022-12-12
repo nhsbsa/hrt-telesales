@@ -22,7 +22,7 @@ router.get(/access-handler/, function (req, res) {
   });
 
   router.get(/key-v4/, function (req, res) {
-    if (req.query.keys === "yes")  {
+    if (req.query.keys === "cert-1")  {
      res.redirect('start');
    } else {
      res.redirect('start');
