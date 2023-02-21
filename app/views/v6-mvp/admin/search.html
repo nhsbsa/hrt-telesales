@@ -1,0 +1,1072 @@
+<!-- Use this page as the index for your project -->
+
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-admin-interface.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title inside the pageTitle block -->
+{% block pageTitle %} Section 12 {% endblock %}
+
+<!-- Breadcrumb goes inside the beforeContent block -->
+{% block beforeContent %} {% endblock %}
+
+<!-- Your page content goes inside the content block -->
+<!-- More info and code for the page layout can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/layout -->
+{% block content %}
+
+<nav class="nhsuk-breadcrumb nhsBSA-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container-fluid">
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full">
+
+        <ol class="nhsuk-breadcrumb__list">
+
+          <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="s12-search-results">Search</a></li>
+          <li class="nhsuk-breadcrumb__item">Doctor List</li>
+        </ol>
+      </div>
+    </div>
+    <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="search-results">Back to search
+        results</a></p>
+  </div>
+</nav>
+
+<div class="nhsBSA-sidebar-container">
+  <div class="nhsBSA-sidebar-wrapper">
+    <div class="nhsBSA-sidebar-content">
+    <div class="nhsuk-main-wrapper" id="maincontent">
+      <div class="nhsuk-width-container-fluid">
+
+                  <div class="nhsuk-grid-row">
+
+
+
+          <h1>Certificate Manager</h1>
+
+          <hr class="nhsuk-section-break nhsuk-section-break--l nhsuk-section-break--visible nhsuk-u-margin-top-2">
+
+              <!-- SEARCH CONTROLS START -->
+              <div id="search" style="margin-bottom: -20px">
+                
+                <div class="nhsuk-width-container">
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="certificate-number" id="certificate-number-label">
+                      <strong>Certificate number (A)</strong>
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-20" id="certificate-number" name="certificate-number" type="text">
+                  </div>
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="last-name" id="last-name-label">
+                      <strong>Last name (Z)</strong>
+                    </label>
+                    <input class="nhsuk-input nhsuk-input--width-20" id="last-name" name="last-name" type="text">
+                  </div>
+                  <div class="nhsuk-form-group">
+                    <label class="nhsuk-label" for="dob">
+                      <strong> Date of birth (X)</strong>
+                    </label>
+                    <div class="nhsuk-hint" id="dob-hint">For example, 15 03 84</div>
+                    <div class="nhsuk-date-input" id="dob" style="margin-bottom: 20px">
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="dob-day"> Day </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="dob-month"> Month </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="nhsuk-date-input__item">
+                        <div class="nhsuk-form-group">
+                          <label class="nhsuk-label nhsuk-date-input__label" for="dob-year"> Year </label>
+                          <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="nhsuk-form-group">
+                      <label class="nhsuk-label" for="postcode">
+                        <strong>Postcode (C)</strong>
+                      </label>
+                      <input class="nhsuk-input nhsuk-input--width-10" id="postcode" name="postcode" type="text">
+                    </div>
+              
+                    <div class="form-group">
+                      <a href="search" id="submit-button" class="nhsuk-button" role="button" >Submit (I)</a>
+                      <a href="start" id="cancel-button" class="nhsuk-button nhsuk-button--secondary" role="button" >Cancel (M)</a>
+
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <!-- SEARCH CONTROLS END -->
+
+
+          <br><br>
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <h2>
+                HRT PPC Search Results
+              </h2>
+            <div class="nhsuk-details__above--quarter">
+            <p class="nhsuk-heading-s case-stage-title">Certificate number</p>
+            </div>
+            <div class="nhsuk-details__above--quarter">
+              <p class="nhsuk-heading-s case-stage-title">Name</p>
+              </div>
+            <div class="nhsuk-details__above--quarter">
+             <p class="nhsuk-heading-s status-title">Address</p>
+            </div>
+            <div class="nhsuk-details__above--quarter">
+              <p class="nhsuk-heading-s edit-title">Postcode</p>
+            </div>
+            
+            </div>
+
+            
+        </div>
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+       <!-- <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+          <table id="sortable" class="nhsuk-table nhsuk-table-u-margin-0 nhsuk-table-clickable main-table">
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                 Email address
+                </th>
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                  Phone numbers
+                </th>
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                  S12 expiry date
+                </th>
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                  Approved clinician expiry
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body nhsuk-body-">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell"><a href="#">a@b.c</a></td>
+                <td class="nhsuk-table__cell">07780 138231</td>
+                <td class="nhsuk-table__cell">01 Sep 2021</td>
+                <td class="nhsuk-table__cell">Approved</td>
+              </tr>
+            </tbody>
+          </table>
+          <table id="sortable" class="nhsuk-table nhsuk-table-u-margin-0 nhsuk-table-clickable main-table">
+            <thead class="nhsuk-table__head">
+              <tr class="nhsuk-table__row">
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                 Languages
+                </th>
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                  Regular Hours
+                </th>
+                <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                  Out of hours
+                </th>
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body nhsuk-body-">
+              <tr class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">English,Afrikaans</td>
+                <td class="nhsuk-table__cell">Yes</td>
+                <td class="nhsuk-table__cell">No</td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+        </details>-->
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+                    <br> <p><a href="s12-basic-details" style="text-decoration: none">Edit</a></p>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+        <details class="nhsuk-details nhsuk-expander" style="margin-bottom: 14px;">
+            <summary class="nhsuk-details__summary" role="button" aria-controls="nhsuk-details__text0" tabindex="0" aria-expanded="false" style="padding: 10px 14px 14px;">
+            <span class="nhsuk-details__summary-text--third">Dr Richard Bowley</span>
+          <div class="nhsuk-details__summary-text--third" style="text-align: center;">
+            <span class="nhsuk-details__summary-text--third">1234567</span>
+          </div>
+          <div class="nhsuk-details__summary-text--third" style="text-align: right; padding-right: 0;">
+            <strong strong style="color: #354550" ;
+                    class="nhsuk-tag no-caps nhsuk-tag--green">Current and in Region</strong>          </div>
+          </summary>  <div class="nhsuk-details__text">
+            <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        S12 expiry date
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            01 January 2023
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Approved Clinician Expiry
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Approved
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Contact details
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <p>07700 900362</p>
+                            <p>rich.bowley@example.com</p>
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+            <dl class="nhsuk-summary-list" style="margin-bottom: 0;">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Languages
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                        English <br> Afrikaans
+                        </dd>
+                        </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Regular hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Yes
+                            </dd>
+                            </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Out of hours
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            No
+                            </dd>
+                            </div>
+            </dl>
+            </div>
+            </div>
+            </div>
+        </details>
+
+            </div>
+
+
+
+            </div>
+        </div>
+
+
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+          <nav class="nhsuk-pagination" id="pagination-label">
+            <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+            <ul class="nhsuk-pagination__list">
+              <li class="nhsuk-pagination__item  nhsuk-pagination__item--prev">
+                <a class="nhsuk-pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+                    pages</span></a>
+              </li>
+              <li class="nhsuk-pagination__item nhsuk-pagination__item--active">1</li>
+              <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="#">2</a></li>
+              <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="#">3</a></li>
+              <li class="nhsuk-pagination__item  nhsuk-pagination__item--next">
+                <a class="nhsuk-pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+                    pages</span></a>
+              </li>
+            </ul>
+            <p class="nhsuk-pagination__results">Showing <b>1</b> to <b>10</b> of <b>30</b> results</p>
+          </nav>
+
+          <div class="action-buttons">
+            <button class="nhsuk-button nhsuk-button--secondary" type="submit"
+              onclick="document.location.href='s12-new-doctor'">Add Doctor</button>
+          </div>
+          <br><br>
+            </div>
+        </div>
+
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+              <h2>
+                <!-- Last 10 Practitioners Records Accessed -->
+                <!-- Recently Viewed -->
+                Recently Accessed
+              </h2>
+            <table id="sortable" class="nhsuk-table nhsuk-table-u-margin-0 nhsuk-table-clickable main-table">
+
+              <!-- TABLE START -->
+              <thead class="nhsuk-table__head">
+                <tr class="nhsuk-table__row">
+                  <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                    Doctor Name
+                  </th>
+                  <th class="nhsuk-table__header" aria-sort="none" scope="col">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody class="nhsuk-table__body nhsuk-body-">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Ms Sarah Watson</td>
+                  <td class="nhsuk-table__cell"><a href="s12-basic-details">View</a></td>
+                </tr>
+              </tbody>
+
+              <tbody class="nhsuk-table__body nhsuk-body-">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Mr John Smith</td>
+                  <td class="nhsuk-table__cell"><a href="#">View</a></td>
+                </tr>
+              </tbody>
+
+              <tbody class="nhsuk-table__body nhsuk-body-">
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Mr Gregory Surnameson</td>
+                  <td class="nhsuk-table__cell"><a href="#">View</a></td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+    <div class="nhsBSA-sidebar-nav">
+      
+      <div class="side-nav">
+        <ul>
+          <li><a class="active" href="s12-doctor-search">Search</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>
