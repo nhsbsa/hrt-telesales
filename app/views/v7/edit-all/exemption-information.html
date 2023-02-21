@@ -368,7 +368,7 @@
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           
-          
+          <div class="table-container">
           <table class="nhsuk-table" style="margin-bottom:-10px; ">
     
             <thead role="rowgroup" class="nhsuk-table__head" >
@@ -428,6 +428,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </dl>
       </div>
     </div>
@@ -443,7 +444,24 @@
       
       
   </div>
-  
+  <style>
+    .table-container {
+  max-height: 400px;
+
+  overflow: auto;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #f0f4f5;
+}
+
+
+
+
+
+  </style>
 
   <div class="column">
     
@@ -461,7 +479,7 @@
       <div class="govuk-summary-card__content">
         <dl class="govuk-summary-list">
           
-          
+          <div class="table-container">
           <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px;">
 
             <thead role="rowgroup" class="nhsuk-table__head" >
@@ -484,14 +502,7 @@
             </thead>
             
       
-            <style>
-              table{
-              overflow-y:scroll; 
-              height:300px;
             
-              display:block; } 
-       
-            </style>
             
             <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
@@ -543,6 +554,7 @@
               
             </tbody>
           </table>
+          </div>
         </dl>
       </div>
     </div>
