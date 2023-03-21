@@ -37,4 +37,14 @@ router.get(/access-handler/, function (req, res) {
    }
   });
 
+
+
+  router.get(/different-exemption/, function (req, res) {
+    if (req.query.exemption === "no")  {
+     res.redirect('cannot-confirm-entitlement');
+   } else {
+     res.redirect('check-personal-details');
+   }
+  });
+
 module.exports = router;
