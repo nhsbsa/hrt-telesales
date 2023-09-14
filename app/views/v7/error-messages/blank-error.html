@@ -86,14 +86,15 @@
     There is a problem
   </h2>
   <div class="nhsuk-error-summary__body">
-    
+    <p>
+      You must enter at least one search query
+    </p>
     <ul class="nhsuk-list nhsuk-error-summary__list">
-      <li>
-        <a href="#example">Last name is required</a>
-        
-      </li>
-      <li><a href="#example-1">Date of birth is required</a></li>
-        <li><a href="#example-2">Postcode is required</a></li>
+      <li><a href="#example">Enter a certificate number</a></li>
+      <li><a href="#example-1">Enter a first name</a></li>
+      <li><a href="#example-2">Enter a last name</a></li>
+      <li><a href="#example-day">Enter a date of birth</a></li>
+        <li><a href="#example-4">Enter a postcode, like AA1 1AA</a></li>
     </ul>
   </div>
 </div>
@@ -129,28 +130,45 @@
 <hr style="margin-top:10px;">
   <div class="nhsuk-width-container">
     
-    
     <div class="nhsuk-form-group nhsuk-form-group--error">
       <label class="nhsuk-label" for="example">
-        <strong>Last name (Z)</strong>
+       <strong>Certificate number (A)</strong>
       </label>
       <span class="nhsuk-error-message" id="name-error">
-        <span class="nhsuk-u-visually-hidden">Error:</span> Last name is required
+        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a certificate number
       </span>
-      
       <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example" name="example" type="text">
     </div>
     <div class="nhsuk-form-group nhsuk-form-group--error">
-      <label class="nhsuk-label" for="example">
+      <label class="nhsuk-label" for="example-1">
+        <strong>First name (F)</strong>
+      </label>
+      <span class="nhsuk-error-message" id="name-error">
+        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a first name
+      </span>
+      <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example-1" name="example-1" type="text">
+    </div>
+    <div class="nhsuk-form-group nhsuk-form-group--error">
+      <label class="nhsuk-label" for="example-2">
+        <strong>Last name (Z)</strong>
+      </label>
+      <span class="nhsuk-error-message" id="name-error">
+        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a last name
+      </span>
+      
+      <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example-2" name="example-2" type="text">
+    </div>
+    <div class="nhsuk-form-group nhsuk-form-group--error">
+      <label class="nhsuk-label" for="example-3">
        <strong> Date of birth (X)</strong>
       </label>
       <div class="nhsuk-hint" id="example-hint">
         For example, 15 03 84
       </div>
       <span class="nhsuk-error-message" id="name-error">
-        <span class="nhsuk-u-visually-hidden">Error:</span> Date of birth is required
+        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a date of birth
       </span>
-      <div class="nhsuk-date-input" id="example-1" style="margin-bottom: 20px;">
+      <div class="nhsuk-date-input" id="example-3" style="margin-bottom: 20px;">
         <div class="nhsuk-date-input__item">
           <div class="nhsuk-form-group">
             <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
@@ -181,13 +199,13 @@
 
 
     <div class="nhsuk-form-group nhsuk-form-group--error">
-      <label class="nhsuk-label" for="example">
+      <label class="nhsuk-label" for="example-4">
         <Strong>Postcode (C)</strong>
       </label>
       <span class="nhsuk-error-message" id="name-error">
-        <span class="nhsuk-u-visually-hidden">Error:</span> Postcode is required
+        <span class="nhsuk-u-visually-hidden">Error:</span> Enter a postcode, like AA1 1AA
       </span>
-      <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="example-2" name="example" type="text">
+      <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="example-4" name="example-4" type="text">
     </div>
     
  
