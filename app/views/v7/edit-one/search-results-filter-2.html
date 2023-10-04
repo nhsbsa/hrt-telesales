@@ -65,20 +65,110 @@
   <!-- <div class="nhsuk-hint" id="contact-hint">Search results will only show HRT Prescription Prepayment Certificates.</div> -->
 
 
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="select-1">
-      Sort by
-    </label>
-    <select class="nhsuk-select" id="select-1" name="select-1">
-      <option value="1" selected>Best match</option>
-      <option value="2">Certificate type</option>
-      <option value="4">Start date: most recent to oldest</option>
-      <option value="5">Start date: oldest to most recent</option>
-      <option value="3">Status</option>
-      <option value="6">Expiry date: most recent to oldest</option>
-      <option value="7">Expiry date: oldest to most recent</option>
-    </select>
-  </div>
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <form>
+
+            <div class="nhsuk-form-group">
+          
+              <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
+                <p style="margin-bottom: 10px;">
+                  Filter by certificate type:
+                </p>
+          
+                <div class="nhsuk-checkboxes">
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="HRTPPC">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact" style="margin-right:10px ;">
+                      HRT PPC
+                    </label>
+                  </div>
+                  
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="PPC">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-2" style="margin-right:10px;">
+                      PPC
+                    </label>
+                  </div>
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="MED">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3" style="margin-right:10px;">
+                      MED
+                    </label>
+                  </div>
+        
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="MED">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-4">
+                      TAX
+                    </label>
+                  </div>
+          
+                </div>
+              </fieldset>
+          
+            </div>
+          
+          </form>
+        </div>
+
+        <div class="nhsuk-grid-column-one-half">
+          <form>
+
+            <div class="nhsuk-form-group">
+          
+              <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
+                <p style="margin-bottom: 10px;">
+                  Filter by status:
+                </p>
+          
+                <div class="nhsuk-checkboxes">
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-5" name="contact" type="checkbox" value="active">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-5" style="margin-right:10px ;">
+                      Active
+                    </label>
+                  </div>
+                  
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-6" name="contact" type="checkbox" value="pending">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-6" style="margin-right:10px;">
+                      Pending
+                    </label>
+                  </div>
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-7" name="contact" type="checkbox" value="cancelled">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-7" style="margin-right:10px;">
+                      Cancelled
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>
+          
+            </div>
+          
+          </form>
+        </div>
+      </div>
+
+
+      <style>
+        .nhsuk-checkboxes__item {
+    @media (min-width: 500px) {
+        display: inline-flex;
+        flex-direction: row;
+    }
+}
+      </style>
 
 
   <table role="table" class="nhsuk-table-responsive">

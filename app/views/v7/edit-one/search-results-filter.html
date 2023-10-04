@@ -65,21 +65,68 @@
   <!-- <div class="nhsuk-hint" id="contact-hint">Search results will only show HRT Prescription Prepayment Certificates.</div> -->
 
 
-  <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="select-1">
-      Sort by
-    </label>
-    <select class="nhsuk-select" id="select-1" name="select-1">
-      <option value="1" selected>Best match</option>
-      <option value="2">Certificate type</option>
-      <option value="4">Start date: most recent to oldest</option>
-      <option value="5">Start date: oldest to most recent</option>
-      <option value="3">Status</option>
-      <option value="6">Expiry date: most recent to oldest</option>
-      <option value="7">Expiry date: oldest to most recent</option>
-    </select>
-  </div>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+      <label class="nhsuk-label" for="select-1">
+        Type
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1" selected>All</option>
+        <option value="2">HRT PPC</option>
+        <option value="3">PPC</option>
+        <option value="4">MED</option>
+        <option value="4">TAX</option>
+      </select>
+    </div>
 
+    <div class="nhsuk-grid-column-one-quarter">
+      <label class="nhsuk-label" for="select-1">
+        Status
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1" selected>All</option>
+        <option value="2">Active</option>
+        <option value="3">Cancelled</option>
+      </select>
+    </div>
+
+    <div class="nhsuk-grid-column-one-quarter">
+      <label class="nhsuk-label" for="select-1">
+        Start date
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1" selected>All time</option>
+        <option value="2">Last 3 years</option>
+        <option value="2">Last year</option>
+        <option value="2">This year</option>
+        <option value="3">Last 3 months</option>
+        <option value="4">Last month</option>
+        <option value="5">This month</option>
+        <option value="6">Last 7 days</option>
+        <option value="7">Yesterday</option>
+        <option value="8">Today</option>
+      </select>
+    </div>
+
+    <div class="nhsuk-grid-column-one-quarter">
+      <label class="nhsuk-label" for="select-1">
+        Expiry date
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1" selected>All time</option>
+        <option value="2">Next 3 years</option>
+        <option value="3">Next year</option>
+        <option value="4">This year</option>
+        <option value="5">Next 3 months</option>
+        <option value="6">Next month</option>
+        <option value="7">This month</option>
+        <option value="8">Next week</option>
+        <option value="9">Tomorrow</option>
+        <option value="0">Today</option>
+      </select>
+    </div>
+  </div>
+  <br>
 
   <table role="table" class="nhsuk-table-responsive">
     <thead role="rowgroup" class="nhsuk-table__head">
