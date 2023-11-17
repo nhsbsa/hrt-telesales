@@ -86,12 +86,7 @@
     There is a problem
   </h2>
   <div class="nhsuk-error-summary__body">
-    <p>
-      Describe the errors and how to correct them
-    </p>
-    <ul class="nhsuk-list nhsuk-error-summary__list">
-      
-      
+    <ul class="nhsuk-list nhsuk-error-summary__list"> 
       <li>
         <a href="#email">Enter an email address in the correct format, like name@example.com</a>
       </li>
@@ -123,10 +118,21 @@
           Applicant address
         </h2>
       </legend>
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="search-postcode">Search postcode</label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="search-postcode" name="search-postcode" type="text">
+        <a href="get-address"><button id="search-postcode-button" class="nhsuk-button" role="button" style="background-color: #025eb8; height: 36px; line-height: 10px;">
+          Get address (P)
+        </button></a>
+      </div>
+
+      <hr style="margin-top: -10px" />
+
     
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="address-line-1">
-          Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+          Address line 1 (D) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
         </label>
         
         <input class="nhsuk-input " id="address-line-1" name="address-line-1" type="text">
@@ -134,7 +140,7 @@
     
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="address-line-2">
-          Address line 2 (2)
+          Address line 2 (Optional) (F)
         </label>
         
         <input class="nhsuk-input " id="address-line-2" name="address-line-2" type="text">
@@ -142,28 +148,18 @@
     
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="address-town">
-          Town or city (3)
+          Town or city (G)
         </label>
         
         <input class="nhsuk-input nhsuk-u-width-two-thirds " id="address-town" name="address-town" type="text">
       </div>
     
-      <div class="nhsuk-form-group ">
-        <label class="nhsuk-label" for="address-county">
-          County (optional) (4)
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds " id="address-county" name="address-county" type="text">
-      </div>
-    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-postcode">
-          Postcode
+          Postcode (Z)
         </label>
       
         <input class="nhsuk-input nhsuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" >
-        <a href="get-address"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
-          Get address (P)
-        </button></a>
       </div>
       <details class="nhsuk-details" style="margin-top: 10px;">
         <summary class="nhsuk-details__summary">
@@ -265,7 +261,7 @@
 
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="example">
-          Email (G)
+          Email (E)
         </label>
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
@@ -374,7 +370,7 @@
            Important information
           </span>
         </h3>
-        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.</p>
+        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £19.30 at this time.</p>
       </div>
 
       
@@ -394,7 +390,7 @@
         <fieldset class="nhsuk-fieldset">
           <div class="nhsuk-radios nhsuk-radios--inline">
             <label class="nhsuk-label" for="example">
-              Fulfillment (F)
+              Email (L) or post (N)
             </label>
          
       

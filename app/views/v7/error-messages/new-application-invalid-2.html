@@ -125,10 +125,21 @@
           Applicant address
         </h2>
       </legend>
+
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="search-postcode">Search postcode</label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="search-postcode" name="search-postcode" type="text">
+        <a href="get-address"><button id="search-postcode-button" class="nhsuk-button" role="button" style="background-color: #025eb8; height: 36px; line-height: 10px;">
+          Get address (P)
+        </button></a>
+      </div>
+
+      <hr style="margin-top: -10px" />
     
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="address-line-1">
-          Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+          Address line 1 (D) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
         </label>
         
         <input class="nhsuk-input " id="address-line-1" name="address-line-1" type="text">
@@ -136,7 +147,7 @@
     
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="address-line-2">
-          Address line 2 (2)
+          Address line 2 (Optional) (F)
         </label>
         
         <input class="nhsuk-input " id="address-line-2" name="address-line-2" type="text">
@@ -144,28 +155,18 @@
     
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="address-town">
-          Town or city (3)
+          Town or city (G)
         </label>
         
         <input class="nhsuk-input nhsuk-u-width-two-thirds " id="address-town" name="address-town" type="text">
       </div>
     
-      <div class="nhsuk-form-group ">
-        <label class="nhsuk-label" for="address-county">
-          County (optional) (4)
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds " id="address-county" name="address-county" type="text">
-      </div>
-    
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-postcode">
-          Postcode
+          Postcode (Z)
         </label>
       
         <input class="nhsuk-input nhsuk-input--width-10 " id="address-postcode" name="address-postcode" type="text" >
-        <a href="get-address"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
-          Get address (P)
-        </button></a>
       </div>
       <details class="nhsuk-details" style="margin-top: 10px;">
         <summary class="nhsuk-details__summary">
@@ -270,7 +271,7 @@
 
       <div class="nhsuk-form-group ">
         <label class="nhsuk-label" for="example">
-          Email (G)
+          Email (E)
         </label>
         
         
@@ -322,7 +323,7 @@
           </h2>
         </legend>
         <label class="nhsuk-label" for="example">
-          Start date (E)
+          Start date (H)
         </label>
         <div class="nhsuk-hint" id="example-with-hint-text-hint">
           The start date of the HRT PPC must be 30 days in the past or the future.
@@ -378,7 +379,7 @@
            Important information
           </span>
         </h3>
-        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.</p>
+        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £19.30 at this time.</p>
       </div>
 
       
@@ -398,7 +399,7 @@
         <fieldset class="nhsuk-fieldset">
           <div class="nhsuk-radios nhsuk-radios--inline">
             <label class="nhsuk-label" for="example">
-              Fulfillment (F)
+              Email (L) or post (N)
             </label>
          
       
@@ -413,7 +414,7 @@
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Post (M)
+                Post (N)
               </label>
             </div>
       
@@ -431,7 +432,7 @@
           <span class="nhsuk-u-visually-hidden">Error:</span>Notes must only include letters a to z, hyphens, spaces, forward slashes and apostrophes
         </span>
         
-        <textarea class="nhsuk-textarea nhsuk-input--error" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+        <textarea class="nhsuk-textarea nhsuk-input--error" id="notes" name="notes" rows="5" aria-describedby="example-hint">!@£$%^&*(())</textarea>
       </div>
 
       

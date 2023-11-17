@@ -86,15 +86,12 @@
     There is a problem
   </h2>
   <div class="nhsuk-error-summary__body">
-    <p>
-      Describe the errors and how to correct them
-    </p>
     <ul class="nhsuk-list nhsuk-error-summary__list">
       <li>
-        <a href="#address-line-1">Address line 1 is required</a>
+        <a href="#search-postcode">Enter a postcode</a>
       </li>
       <li>
-        <a href="#address-line-2">Address line 2 is required</a>
+        <a href="#address-line-1">Address line 1 is required</a>
       </li>
       <li>
         <a href="#address-town">Town or city is required</a>
@@ -103,25 +100,25 @@
         <a href="#address-postcode">Postcode is required</a>
       </li>
       <li>
-        <a href="#address-postcode">First name is required</a>
+        <a href="#first-name">First name is required</a>
       </li>
       <li>
-        <a href="#address-postcode">Last name is required</a>
+        <a href="#last-name">Last name is required</a>
       </li>
       <li>
-        <a href="#address-postcode">Date of birth is required</a>
+        <a href="#example-day">Date of birth is required</a>
       </li>
       <li>
-        <a href="#address-postcode">Email address is required</a>
+        <a href="#contact-email">Email address is required</a>
       </li>
       <li>
-        <a href="#address-postcode">Telephone number is required</a>
+        <a href="#contact-phone">Telephone number is required</a>
       </li>
       <li>
-        <a href="#address-postcode">Start date is required</a>
+        <a href="#datemin">Start date is required</a>
       </li>
       <li>
-        <a href="#address-postcode">Certificate fulfillment is required</a>
+        <a href="#certificate-fulfillment">Certificate fulfillment is required</a>
       </li>
     </ul>
   </div>
@@ -147,10 +144,23 @@
           Applicant address
         </h2>
       </legend>
+
+      <div class="nhsuk-form-group nhsuk-form-group--error">
+        <label class="nhsuk-label" for="search-postcode">Search postcode</label>
+        <span class="nhsuk-error-message" id="name-error">
+          <span class="nhsuk-u-visually-hidden">Error:</span> Enter a postcode
+        </span>
+        <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="search-postcode" name="search-postcode" type="text">
+        <a href="get-address"><button id="search-postcode-button" class="nhsuk-button" role="button" style="background-color: #025eb8; height: 36px; line-height: 10px;">
+          Get address (P)
+        </button></a>
+      </div>
+
+      <hr style="margin-top: -10px" />
     
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="address-line-1">
-          Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+          Address line 1 (D) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
         </label>
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Address line 1 is required
@@ -158,19 +168,16 @@
         <input class="nhsuk-input nhsuk-input--error" id="address-line-1" name="address-line-1" type="text">
       </div>
     
-      <div class="nhsuk-form-group nhsuk-form-group--error">
+      <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-line-2">
-          Address line 2 (2)
+          Address line 2 (Optional) (F)
         </label>
-        <span class="nhsuk-error-message" id="name-error">
-          <span class="nhsuk-u-visually-hidden">Error:</span> Address line 2 is required
-        </span>
-        <input class="nhsuk-input nhsuk-input--error" id="address-line-2" name="address-line-2" type="text">
+        <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
       </div>
     
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="address-town">
-          Town or city (3)
+          Town or city (G)
         </label>
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Town or city is required
@@ -178,24 +185,14 @@
         <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="address-town" name="address-town" type="text">
       </div>
     
-      <div class="nhsuk-form-group ">
-        <label class="nhsuk-label" for="address-county">
-          County (optional) (4)
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds " id="address-county" name="address-county" type="text">
-      </div>
-    
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="address-postcode">
-          Postcode
+          Postcode (Z)
         </label>
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Postcode is required
         </span>
-        <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="address-postcode" name="address-postcode" type="text" value="TR110TS">
-        <a href="get-address"><button class="nhsuk-button" type="submit" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">
-          Get address (P)
-        </button></a>
+        <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="address-postcode" name="address-postcode" type="text">
       </div>
       <details class="nhsuk-details" style="margin-top: 10px;">
         <summary class="nhsuk-details__summary">
@@ -221,13 +218,13 @@
         </h2>
       </legend>
       <div class="nhsuk-form-group nhsuk-form-group--error">
-        <label class="nhsuk-label" for="example">
+        <label class="nhsuk-label" for="first-name">
           First name (S)
         </label>
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> First name is required
         </span>
-        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example" name="example" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="first-name" name="first-name" type="text">
       </div>
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="example">
@@ -236,7 +233,7 @@
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Last name is required
         </span>
-        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example" name="example" type="text" value="Doe">
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="last-name" name="last-name" type="text">
       </div>
 
       
@@ -261,7 +258,7 @@
                 <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                   Day
                 </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric" value="28">
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="nhsuk-date-input__item">
@@ -269,7 +266,7 @@
                 <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
                   Month
                 </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric" value="11">
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
             <div class="nhsuk-date-input__item">
@@ -277,7 +274,7 @@
                 <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
                   Year
                 </label>
-                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric" value="70">
+                <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
               </div>
             </div>
         </div>
@@ -303,12 +300,12 @@
 
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="example">
-          Email (G)
+          Email (E)
         </label>
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Email address is required
         </span>
-        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example" name="example" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="contact-email" name="contact-email" type="text">
       </div>
       <div class="nhsuk-form-group nhsuk-form-group--error">
         <label class="nhsuk-label" for="example">
@@ -317,7 +314,7 @@
         <span class="nhsuk-error-message" id="name-error">
           <span class="nhsuk-u-visually-hidden">Error:</span> Telephone number is required
         </span>
-        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="example" name="example" type="text">
+        <input class="nhsuk-input nhsuk-input--width-20 nhsuk-input--error" id="contact-phone" name="contact-phone" type="text">
       </div>
 
 
@@ -351,7 +348,7 @@
 <div class="nhsuk-form-group">
   <div class="nhsuk-form-group nhsuk-form-group--error">
     <label class="nhsuk-label" for="example">
-      Start date (E)
+      Start date (H)
     </label>
     
     <div class="nhsuk-hint" id="example-with-hint-text-hint">
@@ -360,7 +357,7 @@
     <span class="nhsuk-error-message" id="name-error">
       <span class="nhsuk-u-visually-hidden">Error:</span> Start date is required
     </span>
-    <input style="width:200px;" class="nhsuk-input nhsuk-input--error" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-11-20" max="2022-12-20">
+    <input style="width:200px;" class="nhsuk-input nhsuk-input--error" type="date" id="datemin" name="datemin">
   </div>
       
       </div>
@@ -381,7 +378,7 @@
            Important information
           </span>
         </h3>
-        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.</p>
+        <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £19.30 at this time.</p>
       </div>
 
       
@@ -401,14 +398,14 @@
         <fieldset class="nhsuk-fieldset">
           <div class="nhsuk-radios nhsuk-radios--inline">
             <label class="nhsuk-label" for="example">
-              Fulfillment (F)
+              Email (L) or post (N)
             </label>
             <span class="nhsuk-error-message" id="name-error">
               <span class="nhsuk-u-visually-hidden">Error:</span> Certificate fulfillment is required
             </span>
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input nhsuk-input--error" id="example-1" name="example" type="radio" value="yes">
+              <input class="nhsuk-radios__input nhsuk-input--error" id="certificate-fulfillment" name="certificate-fulfillment" type="radio" value="yes">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-1">
                 Email (L)
               </label>
@@ -418,7 +415,7 @@
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input nhsuk-input--error" id="example-2" name="example" type="radio" value="no">
               <label class="nhsuk-label nhsuk-radios__label" for="example-inline-2">
-                Post (M)
+                Post (N)
               </label>
             </div>
       
