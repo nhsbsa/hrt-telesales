@@ -57,31 +57,21 @@
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h2 class="nhsuk-fieldset__heading">Applicant address</h2>
         </legend>
+      
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-line-1"> Address line 1 (D) <span class="nhsuk-u-visually-hidden">line 1 of 2</span> </label>
-          <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text" value="101 Test Road"/>
-        </div>
+          <label class="nhsuk-label" for="address-postcode"> Postcode </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="TR110TS" />
+          <a href="get-address" id="select-address" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">Get address (P)</a>    
+        </div>        
 
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-line-2"> Address line 2 (Optional) (F) </label>
-          <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="Goldcrest"/>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-town"> Town or city (G) </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text" value="Test City"/>
-        </div>
-
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-postcode"> Postcode (Z) </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="TR110TS">
-        </div>
-
-          <div>
-            <a href="postcode-finder" id="get-address-button" class="nhsuk-button" role="button" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 15px">Get address using postcode search (P)</a>
-          </div>
-
+        <a href="customer-details" id="enter-manually" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 15px;">Enter address manually (N)</a>
+  
+        
+  
+  
+  
+    
         <details class="nhsuk-details" style="margin-top: 10px">
           <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text"> They don't know which address to use? </span>
@@ -97,7 +87,7 @@
           </div>
         </details>
       </fieldset>
-
+      
       <hr style="margin-top: -10px" />
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
         <h2 class="nhsuk-fieldset__heading">Applicant name</h2>
@@ -251,7 +241,7 @@
                 Important information
               </span>
             </h3>
-            <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £18.70 at this time.</p>
+            <p>Advise the customer that payments for a 12 month HRT PPC can only be made in a single credit or debit card payment of £19.30 at this time.</p>
           </div>
 
           <hr style="margin-top: -10px" />
@@ -317,11 +307,45 @@
   const appStartDay = document.querySelector("[name=start-day]");
   const appNotes = document.querySelector("[name=app-notes]");
 
+  const addressDrop = document.querySelector("[name=address-drop]");
+
+  //Populate address text input on dropdown select
+
+  function selectAddress(){
+    var addressDropDown = document.getElementById('address-drop-down');
+    var displayText = addressDropDown.options[addressDropDown.selectedIndex].text;
+    var separatedArray = displayText.split(', ');
+
+    //Selection contains optional Address line 2
+    if (separatedArray.length > 3) {
+      addressLineOne.value = separatedArray[0];
+      addressLineTwo.value = separatedArray[1];
+      townOrCity.value = separatedArray[2];
+      postcode.value = separatedArray[3];
+    } 
+    //No Address line 2
+    else if (separatedArray.length = 3) {
+      addressLineOne.value = separatedArray[0];
+      addressLineTwo.value = "";
+      townOrCity.value = separatedArray[1];
+      postcode.value = separatedArray[2];
+    }
+
+    
+  }
+
   window.addEventListener("keydown", (event) => {
     // Address line 1
     if (event.altKey === true && event.code === "KeyD") {
       if (addressLineOne !== document.addressLineOne) {
         addressLineOne.focus();
+        event.preventDefault();
+      }
+    }
+
+    if (event.altKey === true && event.code === "KeyT") {
+      if (addressDrop !== document.addressDrop) {
+        addressDrop.focus();
         event.preventDefault();
       }
     }
@@ -426,6 +450,20 @@
     if (event.altKey === true && event.code === "KeyO") {
       document.getElementById("back-button").click();
     }
+
+    // Back button
+    if (event.altKey === true && event.code === "KeyZ") {
+      document.getElementById("edit-postcode").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyW") {
+      document.getElementById("select-address").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("enter-manually").click();
+    }
+     
   });
 </script>
 {% endblock %}
