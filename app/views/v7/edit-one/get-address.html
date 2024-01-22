@@ -53,22 +53,22 @@
 <div id="search">
   <div class="nhsuk-grid-row">
     <div class="nhsuk-width-container">
-      <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-          <h2 class="nhsuk-fieldset__heading">Applicant address</h2>
+          <h2 class="nhsuk-fieldset__heading" style="margin-bottom: 5px;">Applicant address</h2>
         </legend>
 
-        <p>Postcode: <strong>TR11 0TS</strong> <a href="customer-details" id="edit-postcode" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-top: -5px; margin-left: 5px; margin-bottom: -10px;">Edit postcode (Z) </a></p> 
-      
-
+        
+        <div class="nhsuk-form-group" style="display: flex; flex-wrap: wrap;">
+        <p style="margin-right: 10px;">Postcode: <strong>TR11 0TS</strong> </p> 
+        <a href="postcode-search" id="edit-postcode" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-top: -10px; margin-bottom: -5px;">Edit postcode (Z) </a>
+       
+        </div>
 
         
-
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-postcode">
               Select address (T)
           </label>
-          <div class="nhsuk-form-group">
             
             <select class="nhsuk-select" id="address-drop-down" name="address-drop">
               <option value="0">Select applicant address</option>
@@ -80,18 +80,14 @@
               <option value="6">6 Test Road, Town, NE1 OLD</option>
               <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
             </select>
-          
-          </div>
-  
-          
-        </div>
 
-        <a href="get-address-selected" id="select-address" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 15px;">Select address (W) </a>
-        <a href="customer-details" id="enter-manually" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 15px;">Enter address manually (N)</a>
-  
-        
-  
-  
+          </div>
+
+
+            <a href="get-address-selected" id="select-address" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 20px;">Select address (W) </a>
+            <a href="customer-details" id="enter-manually" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 20px;">Enter address manually (N)</a>
+
+
   
     
         <details class="nhsuk-details" style="margin-top: 10px">
@@ -108,7 +104,6 @@
             <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they should use the address that their GP holds for them.</p>
           </div>
         </details>
-      </fieldset>
       
       <hr style="margin-top: -10px" />
       <legend class="nhsuk-fieldset__legend nhsuk-label--l">
