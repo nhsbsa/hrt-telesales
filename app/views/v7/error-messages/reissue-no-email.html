@@ -208,10 +208,10 @@
           <dl class="govuk-summary-list">
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Certificate number
+                Certificate reference
               </dt>
               <dd class="govuk-summary-list__value">
-                10000005941
+                HRTAF4A488E
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -366,9 +366,9 @@
    
     
 
-    <div class="govuk-summary-card">
+    <div class="govuk-summary-card" aria-label="Activity log">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Payment history</h2>
+        <h2 class="govuk-summary-card__title">Activity log</h2>
        
       </div>
       <div class="govuk-summary-card__content">
@@ -386,7 +386,10 @@
                   Type
                 </th>
                 <th role="columnheader" class="" scope="col">
-                  Amount
+                  From
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  To
                 </th>
                 <th role="columnheader" class="" scope="col">
                   Description
@@ -396,42 +399,148 @@
             </thead>
             <tbody class="nhsuk-table__body" >
               <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">06/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Active</td>
+                <td class="nhsuk-table__cell ">Cancelled</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Active</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Card payment</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Success</td>
+                <td class="nhsuk-table__cell ">Updated payment status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">02/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">02/04/2023</td>
                 <td class="nhsuk-table__cell ">Card payment</td>
-                <td class="nhsuk-table__cell ">£19.80</td>
-                <td class="nhsuk-table__cell ">Cleared</td>
-                
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell " style="color: red;">Failed</td>
+                <td class="nhsuk-table__cell ">Updated payment status</td>
               </tr>
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">02/04/2023</td>
-                <td class="nhsuk-table__cell ">Card payment</td>
-                <td class="nhsuk-table__cell ">£19.80</td>
-                <td class="nhsuk-table__cell ">Awaiting authorization</td>
-                
-              </tr>
-             
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">01/04/2023</td>
-                <td class="nhsuk-table__cell ">Card payment failed</td>
-                <td class="nhsuk-table__cell " style="color: red;">£19.80</td>
-                <td class="nhsuk-table__cell ">Aborted credit card payment</td>
-                
-              </tr>
-      
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">01/04/2023</td>
-                <td class="nhsuk-table__cell ">Card payment failed</td>
-                <td class="nhsuk-table__cell " style="color: red;">£19.80</td>
-                <td class="nhsuk-table__cell ">Aborted credit card payment</td>
-                
-              </tr> 
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">01/04/2023</td>
-                <td class="nhsuk-table__cell ">Card payment failed</td>
-                <td class="nhsuk-table__cell " style="color: red;">£19.80</td>
-                <td class="nhsuk-table__cell ">Aborted credit card payment</td>
-                
-              </tr>
+              
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">29/03/2023</td>
+                  <td class="nhsuk-table__cell ">Certificate details</td>
+                  <td class="nhsuk-table__cell ">22/01/2023</td>
+                  <td class="nhsuk-table__cell ">01/01/2023</td>
+                  <td class="nhsuk-table__cell ">Updated certificate start date</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Jay</td>
+                  <td class="nhsuk-table__cell ">Jane</td>
+                  <td class="nhsuk-table__cell ">Updated first name</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Do</td>
+                  <td class="nhsuk-table__cell ">Doe</td>
+                  <td class="nhsuk-table__cell ">Updated last name</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">101 Test</td>
+                  <td class="nhsuk-table__cell ">101 Test Lane</td>
+                  <td class="nhsuk-table__cell ">Updated address line 1</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Stella</td>
+                  <td class="nhsuk-table__cell "> </td>
+                  <td class="nhsuk-table__cell ">Removed address line 2</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Ste</td>
+                  <td class="nhsuk-table__cell ">Stella</td>
+                  <td class="nhsuk-table__cell ">Updated address line 2</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Gold</td>
+                  <td class="nhsuk-table__cell ">Goldcrest</td>
+                  <td class="nhsuk-table__cell ">Updated town</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">TR1</td>
+                  <td class="nhsuk-table__cell ">TR110TS</td>
+                  <td class="nhsuk-table__cell ">Updated postcode</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">14/05/1972</td>
+                  <td class="nhsuk-table__cell ">28/11/1970</td>
+                  <td class="nhsuk-table__cell ">Updated date of birth</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Jane.doe@hot<br>mail.com<br></td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell ">Removed email address</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Janedoe@mail.com</td>
+                  <td class="nhsuk-table__cell ">Jane.doe@hot<br>mail.com<br></td>
+                  <td class="nhsuk-table__cell ">Updated email address</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">1234567890</td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell ">Removed NHS number</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">0123456789</td>
+                  <td class="nhsuk-table__cell ">1234567890</td>
+                  <td class="nhsuk-table__cell ">Updated NHS number</td>
+                </tr>
             </tbody>
           </table>
           </div>

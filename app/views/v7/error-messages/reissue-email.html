@@ -65,7 +65,7 @@
     
     <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
       <li>
-        <a href="#example-error-1">You must enter email address</a>
+        <a href="#email">You must enter email address</a>
       </li>
     </ul>
   </div>
@@ -193,12 +193,10 @@
               <span class="nhsuk-u-visually-hidden">Error:</span> You must enter email address
             </span>
          
-          <dd class="govuk-summary-list__value">
-            <input class="nhsuk-input" id="email" name="email" type="text" value="Jane.doe@hotmail.com">
+            <input class="nhsuk-input nhsuk-input--error" id="email" name="email" type="text" value="Jane.doe@hotmail.com">
 
-          </dd>
-        </div>
-        <br>
+          </div>
+          <br>
         </div>
        
         <div class="govuk-summary-list__row">
@@ -216,6 +214,7 @@
   
 
   <div style="margin-top: -10px; margin-bottom: -50px;">
+    <a href="edit-information-get-address" id="get-address-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Edit address using postcode search (S)</a>
     <a href="exemption-information" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Back (O)</a>
     <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Submit (I)</a>
     
