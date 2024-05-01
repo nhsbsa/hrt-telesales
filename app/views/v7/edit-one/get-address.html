@@ -7,7 +7,7 @@
 -->
 
 <!-- Set the page title -->
-{% block pageTitle %} Applicant details {% endblock %}
+{% block pageTitle %} Postcode search results {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
@@ -57,12 +57,11 @@
           <h2 class="nhsuk-fieldset__heading" style="margin-bottom: 5px;">Postcode search</h2>
         </legend>
 
-        
-        <div class="nhsuk-form-group" style="display: flex; flex-wrap: wrap;">
-        <p style="margin-right: 10px;">Postcode: <strong>TR11 0TS</strong> </p> 
-        <a href="postcode-search" id="edit-postcode" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-top: -10px; margin-bottom: -5px;">Edit postcode (Z) </a>
-       
-        </div>
+
+        <label class="nhsuk-label" for="postcode"> Postcode (Z) </label>
+        <p>TR11 0TS &nbsp; 
+          <a href="postcode-search">Change</a>
+        </p>
 
         
         <div class="nhsuk-form-group">
@@ -72,13 +71,13 @@
             
             <select class="nhsuk-select" id="address-drop-down" name="address-drop">
               <option value="0">Select applicant address</option>
-              <option value="1">101 Test Road, Goldcrest, TR110TS</option>
-              <option value="2">2 Test Road, Town, NE1 OLD</option>
-              <option value="3">3 Test Road, Town, NE1 OLD</option>
-              <option value="4">4 Test Road, Town, NE1 OLD</option>
-              <option value="5">5 Test Road, Town, NE1 OLD</option>
-              <option value="6">6 Test Road, Town, NE1 OLD</option>
-              <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
+              <option value="1">101 Test Road, Goldcrest</option>
+              <option value="2">2 Test Road, Town</option>
+              <option value="3">3 Test Road, Town</option>
+              <option value="4">4 Test Road, Town</option>
+              <option value="5">5 Test Road, Town</option>
+              <option value="6">6 Test Road, Town</option>
+              <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test</option>
             </select>
 
           </div>
