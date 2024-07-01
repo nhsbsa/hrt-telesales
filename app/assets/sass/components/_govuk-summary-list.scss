@@ -260,6 +260,8 @@
 }
 
 .govuk-summary-card__content {
+    @include nhsuk-font($size: 19);
+
     padding: nhsuk-spacing(3) nhsuk-spacing(3) 0;
 
     @include mq($from: "tablet") {

@@ -2,13 +2,14 @@
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
 
 
+@import "node_modules/govuk-frontend/govuk/all";
+
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
 @import 'components/related-nav';
 @import 'components/govuk-summary-list';
 @import 'components/full-width';
-@import 'components/nhsbsa-manage';
 
 
 ///////////////////////////////////////////
