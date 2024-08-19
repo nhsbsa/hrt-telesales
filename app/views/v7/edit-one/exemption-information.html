@@ -98,6 +98,7 @@ Certificate summary - HRT PPC Telesales
    
     width: 100%;
     display: flex;
+    overflow: auto;
     
   }
   
@@ -193,12 +194,13 @@ Certificate summary - HRT PPC Telesales
         
       
       
-      <div class="govuk-summary-card" aria-label="Certificate details">
+      <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Certificate details</h2>
+          <h1 class="govuk-summary-card__title">Certificate details</h1>
           <ul class="govuk-summary-card__actions">
-            <li class="govuk-summary-card__action"> <a class="govuk-link" href="edit-certificate">
-                Change (C)
+            <li class="govuk-summary-card__action"> 
+              <a href="edit-certificate">
+                Change<span class="nhsuk-u-visually-hidden"> certificate details</span>  (C)
               </a>
             </li>
             
@@ -286,12 +288,13 @@ Certificate summary - HRT PPC Telesales
     <div class="column">
       
       
-      <div class="govuk-summary-card" aria-label="Personal details">
+      <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Personal details</h2>
+          <h1 class="govuk-summary-card__title">Personal details</h1>
           <ul class="govuk-summary-card__actions">
-            <li class="govuk-summary-card__action"> <a class="govuk-link" href="edit-information">
-                Edit (E)
+            <li class="govuk-summary-card__action"> 
+              <a href="edit-information">
+                Change<span class="nhsuk-u-visually-hidden"> personal details</span>  (P)
               </a>
             </li>
             
@@ -366,15 +369,14 @@ Certificate summary - HRT PPC Telesales
    
     
 
-    <div class="govuk-summary-card" aria-label="Activity log">
+    <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Activity log</h2>
+        <h1 class="govuk-summary-card__title">Activity log</h1>
        
       </div>
       <div class="govuk-summary-card__content">
-        <dl class="nhsuk-summary-list">
           
-          <div class="table-container">
+          <div class="table-container" aria-labelledby="Activity log">
           <table class="nhsuk-table" style="margin-bottom:-10px; ">
     
             <thead role="rowgroup" class="nhsuk-table__head" >
@@ -544,7 +546,6 @@ Certificate summary - HRT PPC Telesales
             </tbody>
           </table>
           </div>
-        </dl>
       </div>
     </div>
       
@@ -563,9 +564,9 @@ Certificate summary - HRT PPC Telesales
 
   <div class="column">
     
-    <div class="govuk-summary-card" aria-label="Notes">
+    <div class="govuk-summary-card" style="width: 100%;" aria-label="Notes">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Notes</h2>
+        <h1 class="govuk-summary-card__title">Notes</h1>
         <ul class="govuk-summary-card__actions">
           <li class="govuk-summary-card__action"> <a class="govuk-link" href="add-note">
               Add note (N)
@@ -575,9 +576,8 @@ Certificate summary - HRT PPC Telesales
         </ul>
       </div>
       <div class="govuk-summary-card__content">
-        <dl class="nhsuk-summary-list">
           
-          <div class="table-container">
+          <div class="table-container" aria-labelledby="Notes">
           <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px;">
 
             <thead role="rowgroup" class="nhsuk-table__head" >
@@ -606,14 +606,16 @@ Certificate summary - HRT PPC Telesales
           
             overflow: auto;
           }
+
+          .table-container:focus {
+            background: #ffeb3b;
+          }
           
           th {
             position: sticky;
             top: 0;
             background: #f0f4f5;
           }
-          
-          
           
           
           
@@ -670,7 +672,6 @@ Certificate summary - HRT PPC Telesales
             </tbody>
           </table>
           </div>
-        </dl>
       </div>
     </div>
 
@@ -688,9 +689,9 @@ Certificate summary - HRT PPC Telesales
   </div>
   <div style="margin-bottom:-50px; padding-top: 10px;">
     <div class="form-group">
-      <a href="search" id="back-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Back (O)</a>
-      <a href="reissue-cya" id="reissue-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Reissue (K)</a>
-      <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
+      <a href="search" id="back-button" class="nhsuk-button" role="button">Back (O)</a>
+      <a href="reissue-cya" id="reissue-button" class="nhsuk-button" role="button">Reissue (K)</a>
+      <a href="start" id="cancel-button" class="nhsuk-button" role="button">Cancel (M)</a>
     </div>
     
     
@@ -699,6 +700,21 @@ Certificate summary - HRT PPC Telesales
 
 </div>
 </div>
+
+<style>
+
+  .nhsuk-button {
+    background: #025eb8;
+  }
+
+  .nhsuk-button:focus {
+    background: #ffeb3b;
+}
+  .nhsuk-button:hover {
+    background: #025eb8;
+}
+
+</style>
       
       <!-- ==================================================================================== -->
       <!-- END OF SEARCH BOX -->

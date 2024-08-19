@@ -64,12 +64,12 @@ Edit personal details - Postcode search - HRT PPC Telesales
   <!-- ==================================================================================== -->
  <h1>Edit personal details</h1>
   <div class="nhsuk-warning-callout" >
-    <h3 class="nhsuk-warning-callout__label">
+    <h2 class="nhsuk-warning-callout__label">
       <span role="text">
         <span class="nhsuk-u-visually-hidden">Important: </span>
         Remember
       </span>
-    </h3>
+    </h2>
     <p>You must make a note of the changes before you end the call with the customer.</p>
   </div>
 
@@ -84,12 +84,12 @@ Edit personal details - Postcode search - HRT PPC Telesales
         
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Postcode (P)
+            <label for="postcode">Postcode (P)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="postcode" name="postcode" type="text">
             <div style="margin-top: 20px;">
-            <a href="edit-information-postcode-search" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; margin-bottom: 25px; ">Get address (G)</a>
+            <a href="edit-information-postcode-search" id="submit-button" class="nhsuk-button" role="button" style="margin-bottom: 25px; ">Get address (G)</a>
             <br>
             <a href="edit-information">Edit address manually</a>
           </div>
@@ -100,8 +100,19 @@ Edit personal details - Postcode search - HRT PPC Telesales
     </div>
   </div>
   
+
+  <style>
+    .nhsuk-button {
+      background: #025eb8;
+    }
+    .nhsuk-button:focus {
+      background: #ffeb3b;
+    }
+    .nhsuk-button:hover {
+      background: #025eb8;
+    }
+  </style>
  
-  
 
 
  

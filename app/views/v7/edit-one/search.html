@@ -64,6 +64,7 @@
   <h2>Search Results</h2>
   <!-- <div class="nhsuk-hint" id="contact-hint">Search results will only show HRT Prescription Prepayment Certificates.</div> -->
 
+  <div class="table-container">
   <table role="table" class="nhsuk-table-responsive">
     <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -198,6 +199,7 @@
     </tbody>
     
   </table>
+</div>
 
 
   
@@ -223,12 +225,28 @@
 
 
   <div>
-    <a href="start" class="nhsuk-button" id="back-button" role="button" style="background-color: #025eb8">Back (O)</a>
-    <a href="customer-details" class="nhsuk-button" id="new-application-button" role="button" style="background-color: #025eb8">New application (Y)</a>
+    <a href="start" class="nhsuk-button" id="back-button" role="button">Back (O)</a>
+    <a href="customer-details" class="nhsuk-button" id="new-application-button" role="button">New application (Y)</a>
   </div>
 </div>
 
 {% endblock %} {% block pageScripts %}
+<style>
+  .table-container {
+    overflow: auto;
+  }
+
+  .nhsuk-button {
+    background: #025eb8;
+  }
+  .nhsuk-button:focus {
+    background: #ffeb3b;
+  }
+  .nhsuk-button:hover {
+    background: #025eb8;
+  }
+  
+</style>
 <script>
   // Search results
 

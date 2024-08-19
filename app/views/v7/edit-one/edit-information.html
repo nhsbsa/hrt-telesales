@@ -64,12 +64,12 @@ Edit personal details - HRT PPC Telesales
   <!-- ==================================================================================== -->
  <h1>Edit personal details</h1>
   <div class="nhsuk-warning-callout" >
-    <h3 class="nhsuk-warning-callout__label">
+    <h2 class="nhsuk-warning-callout__label">
       <span role="text">
         <span class="nhsuk-u-visually-hidden">Important: </span>
         Remember
       </span>
-    </h3>
+    </h2>
     <p>You must make a note of the changes before you end the call with the customer.</p>
   </div>
 
@@ -83,7 +83,7 @@ Edit personal details - HRT PPC Telesales
       <dl class="nhsuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            First name (F)
+            <label for="first-name"> First name (F)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="first-name" name="first-name" type="text" value="Jane">
@@ -91,7 +91,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Last name (L)
+            <label for="last-name">Last name (L)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="last-name" name="last-name" type="text" value="Doe" />
@@ -99,7 +99,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Address line 1 (1)
+            <label for="address-line-1">Address line 1 (1)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text" value="101 Test Lane">
@@ -107,7 +107,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Address line 2 (2)
+            <label for="address-line-2">Address line 2 (2)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="Stella">
@@ -115,7 +115,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Town (T)
+            <label for="town">Town (T)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="town" name="town" type="text" value="Goldcrest">
@@ -123,7 +123,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Postcode (P)
+            <label for="postcode">Postcode (P)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="postcode" name="postcode" type="text" value="TR110TS">
@@ -131,7 +131,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Telephone number (N)
+            <label for="telephone-number">Telephone number (N)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="telephone-number" name="telephone" type="text" value="07123456789">
@@ -139,11 +139,11 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Date of birth (D)
+            <label for="date-of-birth">Date of birth (D)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <div class="nhsuk-date-input" id="date-of-birth" name="date-of-birth">
-              <div class="nhsuk-date-input__item">
+              <div class="nhsuk-date-input__item" aria-label="Date of birth (D)">
                 <div class="nhsuk-form-group" id="date-of-birth">
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                     Day
@@ -173,7 +173,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Email address (E)
+            <label for="email">Email address (E)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="email" name="email" type="text" value="Jane.doe@hotmail.com">
@@ -182,7 +182,7 @@ Edit personal details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            NHS number (H)
+            <label for="nhs-number">NHS number (H)</label>
           </dt>
           <dd class="govuk-summary-list__value">
             <input class="nhsuk-input" id="nhs-number" name="nhs-number" type="text" value="1234567890">
@@ -195,13 +195,25 @@ Edit personal details - HRT PPC Telesales
   
 
   <div style="margin-top: -10px; margin-bottom: -50px;">
-    <a href="edit-information-get-address" id="get-address-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Edit address using postcode search (S)</a>
-    <a href="exemption-information" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Back (O)</a>
-    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Submit (I)</a>
+    <a href="exemption-information" id="cancel-button" class="nhsuk-button" role="button">Back (O)</a>
+    <a href="edit-information-get-address" id="get-address-button" class="nhsuk-button" role="button">Edit address using postcode search (S)</a>
+    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button">Submit (I)</a>
     
 </div>
  
   
+
+<style>
+  .nhsuk-button {
+    background: #025eb8;
+  }
+  .nhsuk-button:focus {
+    background: #ffeb3b;
+  }
+  .nhsuk-button:hover {
+    background: #025eb8;
+  }
+</style>
 
 
  

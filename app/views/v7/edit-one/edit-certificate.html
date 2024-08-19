@@ -63,13 +63,14 @@ Edit certificate details - HRT PPC Telesales
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
   <h1>Edit certificate details</h1>
-  <div class="nhsuk-warning-callout" >
-    <h3 class="nhsuk-warning-callout__label">
+
+  <div class="nhsuk-warning-callout">
+    <h2 class="nhsuk-warning-callout__label">
       <span role="text">
         <span class="nhsuk-u-visually-hidden">Important: </span>
         Remember
       </span>
-    </h3>
+    </h2>
     <p>You must make a note of the changes before you end the call with the customer.</p>
   </div>
 
@@ -118,18 +119,18 @@ Edit certificate details - HRT PPC Telesales
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" >
-            Certificate fulfillment (C)
+          <dt class="govuk-summary-list__key">
+            Certificate fulfillment
           </dt>
           <dd class="govuk-summary-list__value">
             <div class="nhsuk-radios nhsuk-radios--inline">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes">
+                <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes" aria-label="Certificate fulfillment - Email (L)">
                 <label class="nhsuk-label nhsuk-radios__label" for="cert-1"> Email (L) </label>
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no">
+                <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no" aria-label="Certificate fulfillment - Post (N)">
                 <label class="nhsuk-label nhsuk-radios__label" for="cert-2"> Post (N) </label>
               </div>
             </div>
@@ -137,12 +138,12 @@ Edit certificate details - HRT PPC Telesales
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Certificate Start
+            Certificate start
           </dt>
           <dd class="govuk-summary-list__value">
-            <div class="nhsuk-date-input" id="date-of-birth" name="date-of-birth">
+            <div class="nhsuk-date-input" id="start-date" name="date-of-birth">
               <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group" id="date-of-birth">
+                <div class="nhsuk-form-group" id="date-of-birth" aria-label="Certificate start date">
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                     Day
                   </label>
@@ -150,7 +151,7 @@ Edit certificate details - HRT PPC Telesales
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
+                <div class="nhsuk-form-group" aria-label="Certificate start date">
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
                     Month
                   </label>
@@ -158,7 +159,7 @@ Edit certificate details - HRT PPC Telesales
                 </div>
               </div>
               <div class="nhsuk-date-input__item">
-                <div class="nhsuk-form-group">
+                <div class="nhsuk-form-group" aria-label="Certificate start date">
                   <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
                     Year
                   </label>
@@ -196,11 +197,22 @@ Edit certificate details - HRT PPC Telesales
   
 
   <div style="margin-top: -10px; margin-bottom: -50px;">
-    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Submit (I)</a>
+    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button">Submit (I)</a>
     <a href="exemption-information" id="cancel-button" class="nhsuk-button nhsuk-button--secondary" role="button">Cancel (M)</a>
     </div>
  
   
+    <style>
+      .nhsuk-button {
+        background: #025eb8;
+      }
+      .nhsuk-button:focus {
+        background: #ffeb3b;
+      }
+      .nhsuk-button:hover {
+        background: #025eb8;
+      }
+    </style>
 
 
  

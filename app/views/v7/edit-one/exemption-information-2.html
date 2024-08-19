@@ -98,6 +98,7 @@ Certificate summary - HRT PPC Telesales
    
     width: 100%;
     display: flex;
+    overflow: auto;
     
   }
   
@@ -193,9 +194,9 @@ Certificate summary - HRT PPC Telesales
         
       
       
-      <div class="govuk-summary-card">
+      <div class="govuk-summary-card" aria-label="Certificate details">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Certificate details</h2>
+          <h1 class="govuk-summary-card__title">Certificate details</h1>
           
         </div>
         <div class="govuk-summary-card__content">
@@ -280,9 +281,9 @@ Certificate summary - HRT PPC Telesales
     <div class="column">
       
       
-      <div class="govuk-summary-card">
+      <div class="govuk-summary-card" aria-label="Personal details">
         <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Personal details</h2>
+          <h1 class="govuk-summary-card__title">Personal details</h1>
           
         </div>
         <div class="govuk-summary-card__content">
@@ -356,11 +357,10 @@ Certificate summary - HRT PPC Telesales
 
     <div class="govuk-summary-card" aria-label="Activity log">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Activity log</h2>
+        <h1 class="govuk-summary-card__title">Activity log</h1>
        
       </div>
       <div class="govuk-summary-card__content">
-        <dl class="nhsuk-summary-list">
           
           <div class="table-container">
           <table class="nhsuk-table" style="margin-bottom:-10px; ">
@@ -532,7 +532,6 @@ Certificate summary - HRT PPC Telesales
             </tbody>
           </table>
           </div>
-        </dl>
       </div>
     </div>
       
@@ -554,27 +553,38 @@ Certificate summary - HRT PPC Telesales
   overflow: auto;
 }
 
+.table-container:focus {
+            background: #ffeb3b;
+          }
+
 th {
   position: sticky;
   top: 0;
   background: #f0f4f5;
 }
 
+.nhsuk-button {
+  background: #025eb8;
+}
 
+.nhsuk-button:focus {
+  background: #ffeb3b;
+}
+.nhsuk-button:hover {
+  background: #025eb8;
+}
 
+</style>
 
-
-  </style>
 
   <div class="column">
     
-    <div class="govuk-summary-card">
+    <div class="govuk-summary-card" style="width: 100%;" aria-label="Notes">
       <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">Notes</h2>
+        <h1 class="govuk-summary-card__title">Notes</h1>
         
       </div>
       <div class="govuk-summary-card__content">
-        <dl class="nhsuk-summary-list">
           
           <div class="table-container">
           <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px;">
@@ -652,7 +662,6 @@ th {
             </tbody>
           </table>
           </div>
-        </dl>
       </div>
     </div>
 
@@ -667,10 +676,10 @@ th {
   
   <div style="margin-bottom:-50px; padding-top: 10px;">
     <div class="form-group">
-      <a href="search" id="back-button" class="nhsuk-button" role="button" style="box-shadow: 0 4px 0 #093e73; background-color: #025eb8" onclick="document.location.href='s12-users-edit-user-delete-cya'"
+      <a href="search" id="back-button" class="nhsuk-button" role="button" onclick="document.location.href='s12-users-edit-user-delete-cya'"
       onMouseOver="this.style.backgroundColor='#07325d'"
       onMouseOut="this.style.backgroundColor='#025eb8'">Back (O)</a>
-     <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="box-shadow: 0 4px 0 #093e73; background-color: #025eb8" onclick="document.location.href='s12-users-edit-user-delete-cya'"
+     <a href="start" id="cancel-button" class="nhsuk-button" role="button" onclick="document.location.href='s12-users-edit-user-delete-cya'"
       onMouseOver="this.style.backgroundColor='#07325d'"
       onMouseOut="this.style.backgroundColor='#025eb8'">Cancel (M)</a>
       
