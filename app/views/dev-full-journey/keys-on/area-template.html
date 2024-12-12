@@ -1,0 +1,140 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Content page example - NHS.UK prototype kit
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<!--
+<script>
+  document.body.addEventListener("keydown", function (event) {
+    if (event.key === "i") {
+        window.location.replace("/keys-on/name");
+    }
+    else if (event.key === "m") {
+        window.location.replace("/keys-on/start");
+    }
+});
+</script>-->
+
+
+<!--
+<div id="search" style="margin:-10px;">
+  <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+    <h1 class="nhsuk-fieldset__heading">
+      Personal details
+    </h1>
+  </legend>
+</div>
+<br><br>-->
+
+
+
+
+<div id="search" style="margin:-10px;">
+  <div>
+    <h1>Certificate Manager
+
+      <button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button>
+    </h1>
+  </div>
+  
+  <hr>
+   <h2>Search users</h2>
+
+
+   <div class="nhsuk-grid-column-one-half">
+          
+          
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="select-1">
+        Search by:
+      </label>
+      <select class="nhsuk-select" id="select-1" name="select-1">
+        <option value="1">Certificate number</option>
+        <option value="2">Name, date of birth or postcode</option>
+        
+        <option value="3">NHS number or email address</option>
+        
+      </select>
+    </div>
+    
+
+  </div>
+  <div class="nhsuk-grid-column-one-half">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        Keywords:
+      </label>
+      <textarea class="nhsuk-textarea" id="example" name="example" rows="3" aria-describedby="example-hint"></textarea>
+    </div>
+  </div>
+ 
+  <div>
+      <br> 
+    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Search (I)
+    </button></a>
+    <a href="customer-details"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      New Application (Y)
+    </button></a>
+    <a href=""><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+      Cancel (M)
+    </button></a>
+</div>
+
+
+
+  
+  </div>
+{% endblock %}

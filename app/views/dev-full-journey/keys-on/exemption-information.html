@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-Certificate summary - HRT PPC Telesales
+Exemption information - HRT PPC
 {% endblock %}
 
 <!-- For the skip link -->
@@ -36,9 +36,6 @@ Certificate summary - HRT PPC Telesales
            <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
               <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
                  <ul class="nhsuk-secondary-navigation__list">
-                  <li class="nhsuk-secondary-navigation__item">
-                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
-                  </li>
                   
                   <li class="nhsuk-secondary-navigation__item login-details">
                     <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
@@ -195,10 +192,8 @@ Certificate summary - HRT PPC Telesales
   <!-- ==================================================================================== -->
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
- 
-  <h1>Certificate summary</h1>
- 
-<div>
+  
+  <div>
     
     
   <div class="flex-container" style="margin-top: -30px;" >
@@ -228,7 +223,7 @@ Certificate summary - HRT PPC Telesales
                 Certificate reference
               </dt>
               <dd class="govuk-summary-list__value">
-                HRTCF4R477W
+                HRTAF4A488E
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -236,7 +231,7 @@ Certificate summary - HRT PPC Telesales
                 Certificate type
               </dt>
               <dd class="govuk-summary-list__value">
-                <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--green">
+                <span class="govuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--green">
                   HRT PPC
                 </strong>
               </dd>
@@ -246,7 +241,7 @@ Certificate summary - HRT PPC Telesales
                 Certificate status
               </dt>
               <dd class="govuk-summary-list__value">
-              PENDING
+              ACTIVE  
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -254,7 +249,7 @@ Certificate summary - HRT PPC Telesales
                 Certificate channel
               </dt>
               <dd class="govuk-summary-list__value">
-                Online 
+                HRT_ONLINE 
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -267,7 +262,7 @@ Certificate summary - HRT PPC Telesales
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Certificate Start
+                Certificate start
               </dt>
               <dd class="govuk-summary-list__value">
                 01/01/2023
@@ -306,6 +301,14 @@ Certificate summary - HRT PPC Telesales
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">Personal details</h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action"> 
+              <a href="edit-information">
+                Edit<span class="nhsuk-u-visually-hidden"> personal details</span>  (E)
+              </a>
+            </li>
+            
+          </ul>
         </div>
         <div class="govuk-summary-card__content">
           <dl class="nhsuk-summary-list">
@@ -330,14 +333,14 @@ Certificate summary - HRT PPC Telesales
               </dd>
             </div>
             
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Telephone number 
               </dt>
               <dd class="govuk-summary-list__value">
                 07123456789
               </dd>
-            </div>
+            </div> -->
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Date of birth 
@@ -382,8 +385,8 @@ Certificate summary - HRT PPC Telesales
        
       </div>
       <div class="govuk-summary-card__content">
-
-          <div class="table-container" aria-label="Activity log">
+          
+          <div class="table-container" aria-labelledby="Activity log">
           <table class="nhsuk-table" style="margin-bottom:-10px; ">
     
             <thead role="rowgroup" class="nhsuk-table__head" >
@@ -407,6 +410,30 @@ Certificate summary - HRT PPC Telesales
               </tr>
             </thead>
             <tbody class="nhsuk-table__body" >
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">06/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Active</td>
+                <td class="nhsuk-table__cell ">Cancelled</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Active</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Card payment</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Success</td>
+                <td class="nhsuk-table__cell ">Updated payment status</td>
+              </tr>
+
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">02/04/2023</td>
                 <td class="nhsuk-table__cell ">Certificate details</td>
@@ -532,12 +559,22 @@ Certificate summary - HRT PPC Telesales
       </div>
     </div>
       
+      
+    
+      
+      
+    
+      
+  
+
+      
+      
   </div>
   
 
   <div class="column">
     
-    <div class="govuk-summary-card" style="width: 100%;">
+    <div class="govuk-summary-card" style="width: 100%;" aria-label="Notes">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">Notes</h2>
         <ul class="govuk-summary-card__actions">
@@ -550,8 +587,8 @@ Certificate summary - HRT PPC Telesales
       </div>
       <div class="govuk-summary-card__content">
           
-        <div class="table-container" aria-label="Notes">
-          <table class="nhsuk-table " style="margin-bottom: -10px;">
+          <div class="table-container" aria-labelledby="Notes">
+          <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px;">
 
             <thead role="rowgroup" class="nhsuk-table__head" >
               <tr role="row">
@@ -572,20 +609,29 @@ Certificate summary - HRT PPC Telesales
               </tr>
             </thead>
             
+      
+            <style>
+              .table-container {
+            max-height: 400px;
+          
+            overflow: auto;
+          }
+
+          .table-container:focus {
+            background: #ffeb3b;
+          }
+          
+          th {
+            position: sticky;
+            top: 0;
+            background: #f0f4f5;
+          }
+          
+          
+          
+            </style>
             
-           <tbody class="nhsuk-table__body">
-              <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">01-06-2024</td>
-                <td class="nhsuk-table__cell ">14:29</td>
-                <td class="nhsuk-table__cell ">JoeBloggs</td>
-                <td class="nhsuk-table__cell ">Advised cert details</td>
-              </tr>
-              <!-- <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">01-06-2024</td>
-                <td class="nhsuk-table__cell ">14:29</td>
-                <td class="nhsuk-table__cell ">JoeBloggs</td>
-                <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
-              </tr>
+            <tbody class="nhsuk-table__body">
               <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">01-06-2024</td>
                 <td class="nhsuk-table__cell ">14:29</td>
@@ -597,7 +643,8 @@ Certificate summary - HRT PPC Telesales
                 <td class="nhsuk-table__cell ">14:29</td>
                 <td class="nhsuk-table__cell ">JoeBloggs</td>
                 <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
-              </tr><tr role="row" class="nhsuk-table__row">
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">01-06-2024</td>
                 <td class="nhsuk-table__cell ">14:29</td>
                 <td class="nhsuk-table__cell ">JoeBloggs</td>
@@ -619,54 +666,62 @@ Certificate summary - HRT PPC Telesales
                 <td class="nhsuk-table__cell ">14:29</td>
                 <td class="nhsuk-table__cell ">JoeBloggs</td>
                 <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
-              </tr> -->
+              </tr><tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Advised cert details</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+              </tr>
               
             </tbody>
           </table>
-        </div>
+          </div>
       </div>
     </div>
+
+    
+        
+        
+        
+        
+      </div>
   </div>
-</div>
   <br>
- 
+  <!-- <div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>You must add a note if you are reissuing a certificate.</p>
+  </div> -->
   <div style="margin-bottom:-50px; padding-top: 10px;">
     <div class="form-group">
       <a href="search" id="back-button" class="nhsuk-button" role="button">Back (O)</a>
-      <a href="check-your-answers-retry-payment" id="reissue-button" class="nhsuk-button" role="button"> Retry payment</a>
+      <a href="reissue-cya" id="reissue-button" class="nhsuk-button" role="button">Reissue (K)</a>
       <a href="start" id="cancel-button" class="nhsuk-button" role="button">Cancel (M)</a>
     </div>
-        
-  </div>
+    
+    
+    
+</div>
+
 </div>
 </div>
 
 <style>
-  .table-container {
-max-height: 400px;
 
-overflow: auto;
+  .nhsuk-button {
+    background: #025eb8;
+  }
+
+  .nhsuk-button:focus {
+    background: #ffeb3b;
 }
-
-.table-container:focus {
-            background: #ffeb3b;
-          }
-
-th {
-position: sticky;
-top: 0;
-background: #f0f4f5;
-}
-
-.nhsuk-button {
-  background: #025eb8;
-}
-
-.nhsuk-button:focus {
-  background: #ffeb3b;
-}
-.nhsuk-button:hover {
-  background: #025eb8;
+  .nhsuk-button:hover {
+    background: #025eb8;
 }
 
 </style>
