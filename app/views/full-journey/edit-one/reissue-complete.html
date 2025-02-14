@@ -1,0 +1,151 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-narrow.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Reissue certificate - HRT PPC Telesales
+{% endblock %}
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row" style="display: inline;">
+    <div class="govuk-panel govuk-panel--confirmation">
+            <h1 class="govuk-panel__title">
+              The HRT PPC has been reissued
+            </h1>
+    </div>
+  </div>
+
+  <h3>HRT PPC details</h3>
+  <p>We have sent the certificate to 
+    <strong>Jane.doe@nhs.net</strong>.
+  </p>
+
+  <dl class="nhsuk-summary-list">
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Jane Doe
+      </dd>
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Certificate reference
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        HRTAF4A488E
+      </dd>
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Certificate start
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        01/01/2024
+      </dd>
+  
+    </div>
+  
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Certificate expiry
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        01/01/2025
+      </dd>
+  
+    </div>
+  
+  </dl>
+
+    <div class="form-group">
+      <a href="exemption-information" class="nhsuk-button" role="button">View certificate summary (V)</a>
+      <a href="/v6-mvp/keys-on/start-reissue" class="nhsuk-button" role="button">Search for a certificate (S)</a>
+    </div>
+
+</div>
+
+<style>
+  .nhsuk-button {
+    background: #025eb8;
+  }
+  .nhsuk-button:focus {
+    background: #ffeb3b;
+  }
+  .nhsuk-button:hover {
+    background: #025eb8;
+  }
+</style>
+
+     
+<!-- End of content -->
+
+  
+
+{% endblock %}

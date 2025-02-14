@@ -1,0 +1,720 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Certificate summary - HRT PPC Telesales
+{% endblock %}
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<!--
+<style>
+  
+.nhsuk-summary-list__key, .nhsuk-summary-list__value, .nhsuk-summary-list__actions {
+    border-bottom: 1px solid darkgray;
+    display: table-cell;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-top: 8px;
+}
+
+
+
+
+</style>-->
+
+<!--<legend class="nhsuk-fieldset__legend nhsuk-label--l">
+  <h1 class="nhsuk-fieldset__heading">
+    Certificate summary
+    <p style="float:right;"><a href="exemption-information-2">Alternative design</a></p>
+  </h1>
+  
+</legend>-->
+
+
+
+<!--<div id="search" style="margin-top: -25px; margin-bottom: -25px;">-->
+<div>
+<style>
+  .flex-container{
+    width: 100%;
+    min-height: 300px;
+    margin: 0 auto;
+    display: -webkit-flex; /* Safari */		
+    display: flex; /* Standard syntax */
+    border-radius: 0px;
+    
+    
+  }
+  .flex-container .column{
+   
+    margin: 5px 5px -40px 0px;
+   
+   
+    width: 100%;
+    display: flex;
+    
+  }
+  
+  
+  
+
+
+
+
+</style>
+
+<script>
+  // Start page
+
+  const changeInput = document.querySelector("[name=change]");
+  const lastNameInput = document.querySelector("[name=last-name]");
+  const dobDayInput = document.querySelector("[name=dob-day]");
+  const postcodeInput = document.querySelector("[name=postcode]");
+
+  window.addEventListener("keydown", (event) => {
+    // Certificate number input
+    if (event.altKey === true && event.code === "KeyT") {
+      if (certificateNumberInput !== document.activeElement) {
+        certificateNumberInput.focus();
+        event.preventDefault();
+      }
+    }
+    // Last name input
+    //if (event.altKey === true && event.code === "KeyZ") {
+    //  if (lastNameInput !== document.activeElement) {
+    ///    lastNameInput.focus();
+    //    event.preventDefault();
+    //  }
+    //}
+    // DOB day input
+    if (event.altKey === true && event.code === "KeyX") {
+      if (dobDayInput !== document.activeElement) {
+        dobDayInput.focus();
+        event.preventDefault();
+      }
+    }
+    // Postcode input
+    //if (event.altKey === true && event.code === "KeyC") {
+    //  if (postcodeInput !== document.activeElement) {
+    //    postcodeInput.focus();
+    //    event.preventDefault();
+    //  }
+   // }
+    // change button
+    if (event.altKey === true && event.code === "KeyC") {
+      document.getElementById("change-button").click();
+    }
+    // back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+    // Reissue button
+    if (event.altKey === true && event.code === "KeyK") {
+      document.getElementById("reissue-button").click();
+    }
+    // Edit button
+    if (event.altKey === true && event.code === "KeyE") {
+      document.getElementById("edit-button").click();
+    }
+    // Add note button
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("add-note-button").click();
+    }
+    // Cancel button
+    if (event.altKey === true && event.code === "KeyM") {
+      document.getElementById("cancel-button").click();
+    }
+  });
+</script>
+
+
+  <!-- Change the page heading -->
+  
+
+  <!-- ==================================================================================== -->
+  <!-- SEARCH BOX -->
+  <!-- ==================================================================================== -->
+ 
+  <h1>Certificate summary</h1>
+ 
+  <div>
+    
+    
+  <div class="flex-container" style="margin-top: -30px;" >
+    <div class="column">
+
+      
+      
+        
+      
+      
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Certificate details</h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action"> <a class="govuk-link" href="edit-certificate">
+                Change (C)
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="nhsuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate reference
+              </dt>
+              <dd class="govuk-summary-list__value">
+                HRTGF2R408T
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate type
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--green">
+                  HRT PPC
+                </strong>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate status
+              </dt>
+              <dd class="govuk-summary-list__value">
+                ACTIVE
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate channel
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Online 
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate fulfillment
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Post
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate Start
+              </dt>
+              <dd class="govuk-summary-list__value">
+                01/01/2023
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Certificate expiry
+              </dt>
+              <dd class="govuk-summary-list__value">
+                	
+                01/01/2024
+              </dd>
+              <dd class="govuk-summary-list__value" style="text-wrap: nowrap;">
+                <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--blue">
+                  Renewal notification sent by post
+                </strong>
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Application date
+              </dt>
+              <dd class="govuk-summary-list__value">
+               	
+              01/01/2023
+    
+              </dd>
+            </div>
+            
+          </dl>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="column">
+      
+      
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Personal details</h2>
+          <ul class="govuk-summary-card__actions">
+            <li class="govuk-summary-card__action"> <a class="govuk-link" href="edit-information">
+                Edit (E)
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="nhsuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name 
+              </dt>
+              <dd class="govuk-summary-list__value">
+             Josh Doe
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                101 Test Lane<br>
+                Stella<br>
+                Goldcrest<br>
+                TR110TS
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                02/12/1973
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address 
+              </dt>
+              <dd class="govuk-summary-list__value">
+         
+    
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                NHS number 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                0987654321
+    
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      
+    </div>
+</div>
+
+<div class="flex-container">
+  <div class="column">
+   
+    
+
+    <div class="govuk-summary-card" aria-label="Activity log">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Activity log</h2>
+       
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="nhsuk-summary-list">
+          
+          <div class="table-container">
+          <table class="nhsuk-table" style="margin-bottom:-10px; ">
+    
+            <thead role="rowgroup" class="nhsuk-table__head" >
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Date
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Type
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  From
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  To
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Description
+                </th>
+                
+              </tr>
+            </thead>
+            <tbody class="nhsuk-table__body" >
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Sent</td>
+                <td class="nhsuk-table__cell ">Renewal notification sent by post</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Active</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">05/04/2023</td>
+                <td class="nhsuk-table__cell ">Card payment</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Success</td>
+                <td class="nhsuk-table__cell ">Updated payment status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">02/04/2023</td>
+                <td class="nhsuk-table__cell ">Certificate details</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell ">Updated certificate status</td>
+              </tr>
+
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">02/04/2023</td>
+                <td class="nhsuk-table__cell ">Card payment</td>
+                <td class="nhsuk-table__cell ">Pending</td>
+                <td class="nhsuk-table__cell " style="color: red;">Failed</td>
+                <td class="nhsuk-table__cell ">Updated payment status</td>
+              </tr>
+              
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">29/03/2023</td>
+                  <td class="nhsuk-table__cell ">Certificate details</td>
+                  <td class="nhsuk-table__cell ">22/01/2023</td>
+                  <td class="nhsuk-table__cell ">01/01/2023</td>
+                  <td class="nhsuk-table__cell ">Updated certificate start date</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Jay</td>
+                  <td class="nhsuk-table__cell ">Jane</td>
+                  <td class="nhsuk-table__cell ">Updated first name</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Do</td>
+                  <td class="nhsuk-table__cell ">Doe</td>
+                  <td class="nhsuk-table__cell ">Updated last name</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">101 Test</td>
+                  <td class="nhsuk-table__cell ">101 Test Lane</td>
+                  <td class="nhsuk-table__cell ">Updated address line 1</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Stella</td>
+                  <td class="nhsuk-table__cell "> </td>
+                  <td class="nhsuk-table__cell ">Removed address line 2</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Ste</td>
+                  <td class="nhsuk-table__cell ">Stella</td>
+                  <td class="nhsuk-table__cell ">Updated address line 2</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Gold</td>
+                  <td class="nhsuk-table__cell ">Goldcrest</td>
+                  <td class="nhsuk-table__cell ">Updated town</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">TR1</td>
+                  <td class="nhsuk-table__cell ">TR110TS</td>
+                  <td class="nhsuk-table__cell ">Updated postcode</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">14/05/1972</td>
+                  <td class="nhsuk-table__cell ">28/11/1970</td>
+                  <td class="nhsuk-table__cell ">Updated date of birth</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Jane.doe@hot<br>mail.com<br></td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell ">Removed email address</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">Janedoe@mail.com</td>
+                  <td class="nhsuk-table__cell ">Jane.doe@hot<br>mail.com<br></td>
+                  <td class="nhsuk-table__cell ">Updated email address</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">1234567890</td>
+                  <td class="nhsuk-table__cell "></td>
+                  <td class="nhsuk-table__cell ">Removed NHS number</td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">27/03/2023</td>
+                  <td class="nhsuk-table__cell ">Personal details</td>
+                  <td class="nhsuk-table__cell ">0123456789</td>
+                  <td class="nhsuk-table__cell ">1234567890</td>
+                  <td class="nhsuk-table__cell ">Updated NHS number</td>
+                </tr>
+            </tbody>
+          </table>
+          </div>
+        </dl>
+      </div>
+    </div>
+    
+      
+      
+    
+      
+  
+
+      
+      
+  </div>
+  
+
+  <div class="column">
+    
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Notes</h2>
+        <ul class="govuk-summary-card__actions">
+          <li class="govuk-summary-card__action"> <a class="govuk-link" href="add-note">
+              Add note (N)
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="nhsuk-summary-list">
+          
+          <div class="table-container">
+          <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px;">
+
+            <thead role="rowgroup" class="nhsuk-table__head" >
+              <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                  Date
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Time
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Agent
+                </th>
+                <th role="columnheader" class="" scope="col">
+                  Description
+                </th>
+                
+                
+              </tr>
+            </thead>
+            
+      
+            <style>
+              .table-container {
+            max-height: 400px;
+          
+            overflow: auto;
+          }
+          
+          th {
+            position: sticky;
+            top: 0;
+            background: #f0f4f5;
+          }
+          
+          
+          
+          
+          
+            </style>
+            
+            <tbody class="nhsuk-table__body">
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Advised cert details</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Advised cert details</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+              </tr><tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Advised cert details</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+              </tr><tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Advised cert details</td>
+              </tr>
+              <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">01-06-2024</td>
+                <td class="nhsuk-table__cell ">14:29</td>
+                <td class="nhsuk-table__cell ">JoeBloggs</td>
+                <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+              </tr>
+              
+            </tbody>
+          </table>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    
+        
+        
+        
+        
+      </div>
+  </div>
+  <br>
+  
+  <div style="margin-bottom:-50px; padding-top: 10px;">
+    <div class="form-group">
+      <a href="search" id="back-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Back (O)</a>
+      <a href="" id="reissue-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Reissue (K)</a>      
+      <a href="start" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Cancel (M)</a>
+    </div>
+    
+    
+    
+</div>
+
+</div>
+</div>
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  
+
+{% endblock %}

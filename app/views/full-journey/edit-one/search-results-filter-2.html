@@ -1,0 +1,427 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %} Search results - HRT PPC {% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<style>
+ 
+</style>
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-secondary-navigation__container">
+        <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+          <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+            <ul class="nhsuk-secondary-navigation__list">
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="access-keys">Access Keys: ON</a>
+              </li>
+
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %} {% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div>
+  <h1 style="margin-bottom: 10px">
+    Certificate Manager
+
+    <!--<a href="access-keys"><button class="nhsuk-button" type="submit" formaction="/access-keys" style="background-color: #025eb8; float: right;">
+        Access Keys
+      </button></a>-->
+  </h1>
+</div>
+
+<div id="search">
+  <h2>Search Results</h2>
+  <!-- <div class="nhsuk-hint" id="contact-hint">Search results will only show HRT Prescription Prepayment Certificates.</div> -->
+
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-one-half">
+          <form>
+
+            <div class="nhsuk-form-group">
+          
+              <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
+                <p style="margin-bottom: 10px;">
+                  Filter by certificate type:
+                </p>
+          
+                <div class="nhsuk-checkboxes">
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="HRTPPC">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact" style="margin-right:10px ;">
+                      HRT PPC
+                    </label>
+                  </div>
+                  
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="PPC">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-2" style="margin-right:10px;">
+                      PPC
+                    </label>
+                  </div>
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="MED">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3" style="margin-right:10px;">
+                      MED
+                    </label>
+                  </div>
+        
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="MED">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-4">
+                      TAX
+                    </label>
+                  </div>
+          
+                </div>
+              </fieldset>
+          
+            </div>
+          
+          </form>
+        </div>
+
+        <div class="nhsuk-grid-column-one-half">
+          <form>
+
+            <div class="nhsuk-form-group">
+          
+              <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
+                <p style="margin-bottom: 10px;">
+                  Filter by status:
+                </p>
+          
+                <div class="nhsuk-checkboxes">
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-5" name="contact" type="checkbox" value="active">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-5" style="margin-right:10px ;">
+                      Active
+                    </label>
+                  </div>
+                  
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-6" name="contact" type="checkbox" value="pending">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-6" style="margin-right:10px;">
+                      Pending
+                    </label>
+                  </div>
+          
+                  <div class="nhsuk-checkboxes__item">
+                    <input class="nhsuk-checkboxes__input" id="contact-7" name="contact" type="checkbox" value="cancelled">
+                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-7" style="margin-right:10px;">
+                      Cancelled
+                    </label>
+                  </div>
+                  
+                </div>
+              </fieldset>
+          
+            </div>
+          
+          </form>
+        </div>
+      </div>
+
+
+      <style>
+        .nhsuk-checkboxes__item {
+    @media (min-width: 500px) {
+        display: inline-flex;
+        flex-direction: row;
+    }
+}
+      </style>
+
+
+<table role="table" class="nhsuk-table-responsive">
+  <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">Certificate reference</th>
+      <th role="columnheader" class="" scope="col">Name</th>
+      <th role="columnheader" class="" scope="col">Address</th>
+      <th role="columnheader" class="" scope="col">Postcode</th>
+      <th role="columnheader" class="" scope="col">Date of birth</th>
+      <th role="columnheader" class="" scope="col">Email address</th>
+      <th role="columnheader" class="" scope="col">NHS number</th>
+      <th role="columnheader" class="" scope="col">Type</th>
+      <th role="columnheader" class="" scope="col">Status</th>
+      <th role="columnheader" class="" scope="col">Start date</th>
+      <th role="columnheader" class="" scope="col">Expiry date</th>
+    </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information">HRTAF4A488E</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>101 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Active</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/01/2023</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/01/2024</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-no-email">HRTCF4R477W</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JOSEPH DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>101 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>02/12/1973</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Pending </td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/01/2023</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/01/2024</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-fullfilment-none">HRTJQ7T219G</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JO DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>101 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>16/03/1972</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jo.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Active</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/01/2023</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/01/2024</td>
+    </tr>
+
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-no-email-2">HRTGF2R408T</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JOSH DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>102 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>14/09/1975</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span> </td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Active</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/01/2023</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/01/2024</td>
+    </tr>
+
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTMU1P22CN</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Expired</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>30/09/2016</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>30/09/2017</td>
+    </tr>
+    
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTUD8C243M</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Cancelled</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/09/2016</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTAH1V234K</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Cancelled</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/09/2016</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTXS3M718R</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Cancelled</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/09/2016</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTHF2X058J</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Cancelled</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/09/2016</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTLO2T904E</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Cancelled</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/09/2016</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span><a href="exemption-information-2">HRTUG1W654Q</a></td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JANE DOE</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST ROAD</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>28/11/1970</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jane.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>HRT PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Cancelled</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>01/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>01/09/2016</td>
+    </tr>
+    
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span>987654321</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JAN DOE</td>      
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>105 TEST</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TR110TS</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>15/03/1984</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jan.doe@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>PPC</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Expired</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>30/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>02/12/2015</td>
+    </tr>
+    
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span>768271622</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JAY DEO</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>67 TEST STREET</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TE55EST</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>15/03/1984</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jay.deo@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>MED</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Expired</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>30/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>02/12/2015</td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Certificate reference</span>768271622</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Name</span>JAY DEO</td>      
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Address</span>67 TEST STREET</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Postcode</span>TE55EST</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Date of birth</span>15/03/1984</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Email address</span>Jay.deo@hotmail.com</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">NHS number</span>1234567890</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>TAX</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>Expired</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Start date</span>30/09/2015</td>
+      <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Expiry date</span>02/12/2015</td>
+    </tr>
+    
+  </tbody>
+  
+</table>
+
+
+  
+
+  <br />
+  <nav class="nhsuk-pagination" id="pagination-label" style="margin-top: -10px;">
+            <p class="nhsuk-u-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+            <ul class="nhsuk-pagination__list">
+              <li class="nhsuk-pagination__item  nhsuk-pagination__item--prev">
+                <a class="nhsuk-pagination__link" href="">Previous<span class="nhsuk-u-visually-hidden"> set of
+                    pages</span></a>
+              </li>
+              <li class="nhsuk-pagination__item nhsuk-pagination__item--active">1</li>
+              <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="#">2</a></li>
+              <li class="nhsuk-pagination__item"><a class="nhsuk-pagination__link" href="#">3</a></li>
+              <li class="nhsuk-pagination__item  nhsuk-pagination__item--next">
+                <a class="nhsuk-pagination__link" href="">Next<span class="nhsuk-u-visually-hidden"> set of
+                    pages</span></a>
+              </li>
+            </ul>
+            <p class="nhsuk-pagination__results">Showing <b>1</b> to <b>10</b> of <b>30</b> results</p>
+          </nav>
+
+
+  <div>
+    <a href="start" class="nhsuk-button" id="back-button" role="button" style="background-color: #025eb8">Back (O)</a>
+    <a href="customer-details" class="nhsuk-button" id="new-application-button" role="button" style="background-color: #025eb8">New application (Y)</a>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %}
+<script>
+  // Search results
+
+  window.addEventListener("keydown", (event) => {
+    // Back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+    // New application button
+    if (event.altKey === true && event.code === "KeyY") {
+      document.getElementById("new-application-button").click();
+    }
+  });
+</script>
+{% endblock %}

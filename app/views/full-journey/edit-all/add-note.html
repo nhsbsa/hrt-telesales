@@ -1,0 +1,242 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Certificate Summary
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+
+
+  
+
+  <!-- ==================================================================================== -->
+  <!-- SEARCH BOX -->
+  <!-- ==================================================================================== -->
+ 
+  <style>
+    .table-container {
+  max-height: 300px;
+
+  overflow: auto;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: #f0f4f5;
+}
+
+
+
+
+
+  </style>
+
+
+  <div class="govuk-summary-card" style="margin-top: -25px;">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Notes</h2>
+      
+    </div>
+    <div class="govuk-summary-card__content" width="100%">
+      <dl class="govuk-summary-list">
+        
+        <div class="table-container">
+        <table class="nhsuk-table " style="padding-top: px; margin-bottom: 10px; width: 100%;">
+
+          <thead role="rowgroup" class="nhsuk-table__head" >
+            <tr role="row">
+              <th role="columnheader" class="" scope="col">
+                Date
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Time
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Agent
+              </th>
+              <th role="columnheader" class="" scope="col">
+                Description
+              </th>
+              
+              
+            </tr>
+          </thead>
+          
+    
+         
+          
+          <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Advised cert details</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Advised cert details</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+            </tr><tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Advised cert details</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+            </tr><tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Advised cert details</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">01-06-2024</td>
+              <td class="nhsuk-table__cell ">14:29</td>
+              <td class="nhsuk-table__cell ">JoeBloggs</td>
+              <td class="nhsuk-table__cell ">Certificate reissued by user 'LAUGO' on 1-Jun-2024.<br>Additional information - reissue.</td>
+            </tr>
+            
+          </tbody>
+        </table>
+        </div>
+        <br>
+
+        <div class="nhsuk-form-group">
+
+          <label class="nhsuk-label" for="add-note" id="add-note-label">
+            <h3 style="margin-bottom: 0px;">Add note (N)</h3>
+          </label>
+          
+          
+          
+         
+          <div id="addNoteDescription" hidden="">Add a note</div>
+          <textarea class="nhsuk-textarea" id="add-note" name="add-note" rows="5" aria-describedby="addNoteDescription"></textarea>
+        
+          
+        </div>
+      </dl>
+    </div>
+  </div>
+  
+
+  <div style="margin-top: -10px; margin-bottom: -50px;">
+    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Submit (I)</a>
+    <a href="exemption-information" id="cancel-button" class="nhsuk-button nhsuk-button--secondary" role="button">Cancel (M)</a>
+   </div> 
+ 
+  
+
+
+ 
+    <script>
+      // Start page
+    
+      const addNoteInput = document.querySelector("[name=add-note]");
+      
+      
+      
+      
+    
+      window.addEventListener("keydown", (event) => {
+        if (event.altKey === true && event.code === "KeyN") 
+        {
+        if (addNoteInput !== document.activeElement) {
+          addNoteInput.focus();
+          event.preventDefault();
+        }
+      }
+      
+        // submit button
+        if (event.altKey === true && event.code === "KeyI") {
+          document.getElementById("submit-button").click();
+        }
+       
+        // Cancel button
+        if (event.altKey === true && event.code === "KeyM") {
+          document.getElementById("cancel-button").click();
+        }
+      });
+    </script>
+  
+
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  
+
+{% endblock %}

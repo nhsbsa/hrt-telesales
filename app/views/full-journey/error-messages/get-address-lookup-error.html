@@ -1,0 +1,295 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %} Applicant details {% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-secondary-navigation__container">
+        <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+          <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+            <ul class="nhsuk-secondary-navigation__list">
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+              </li>
+
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %} {% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+  <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="nhsuk-error-summary__body">
+    <ul class="nhsuk-list nhsuk-error-summary__list" role="list">
+      <li>
+        <a href="#search-postcode">An error has occurred. Search postcode again or enter the address manually.</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<h1 style="margin-bottom: 10px">Applicant details</h1>
+
+<div id="search">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h2 class="nhsuk-fieldset__heading">Postcode search</h2>
+        </legend>
+      
+
+        <div class="nhsuk-form-group nhsuk-form-group--error">
+          <label class="nhsuk-label" for="search-postcode"> Postcode (Z) </label>
+          <span class="nhsuk-error-message" id="postcode-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> An error has occurred. Search postcode again or enter the address manually.
+
+          </span>
+          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="search-postcode" name="search-postcode" type="text" value="TR11 0TS"/>
+        </div>  
+
+        <div class="nhsuk-form-group">
+          <a href="get-address" id="select-address" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 15px;">Get address (P)</a>    
+          <a href="customer-details" id="enter-manually" class="nhsuk-button" role="button"  style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 10px;">Enter address manually (N)</a>
+
+        </div>
+  
+  
+    
+        <details class="nhsuk-details" style="margin-top: 10px">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text"> They don't know which address to use? </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h3>If they have more than one address</h3>
+            <p>
+              They should use the address that their GP or dentist holds for them. For example, if they're a student living away from home, this could be their home or term time
+              address.
+            </p>
+            <h3>If they don't have a permanent address</h3>
+            <p>If they're homeless and living in temporary accommodation (for example, a long term hostel), they should use the address that their GP holds for them.</p>
+          </div>
+        </details>
+      </fieldset>
+      
+     <br>
+
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+      <!-- End of content -->
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %}
+<script>
+  // Customer details
+
+  const addressLineOne = document.querySelector("[name=address-line-1]");
+  const addressLineTwo = document.querySelector("[name=address-line-2]");
+  const townOrCity = document.querySelector("[name=address-town]");
+  const postcode = document.querySelector("[name=address-postcode]");
+  const appFirstName = document.querySelector("[name=app-first-name]");
+  const appLastName = document.querySelector("[name=app-last-name]");
+  const appDobDay = document.querySelector("[name=app-dob-day]");
+  const appEmail = document.querySelector("[name=app-email]");
+  const appTelephone = document.querySelector("[name=app-telephone]");
+  const appNhsNumber = document.querySelector("[name=app-nhs-number]");
+  const appStartDay = document.querySelector("[name=start-day]");
+  const appNotes = document.querySelector("[name=app-notes]");
+
+  const addressDrop = document.querySelector("[name=address-drop]");
+
+  //Populate address text input on dropdown select
+
+  function selectAddress(){
+    var addressDropDown = document.getElementById('address-drop-down');
+    var displayText = addressDropDown.options[addressDropDown.selectedIndex].text;
+    var separatedArray = displayText.split(', ');
+
+    //Selection contains optional Address line 2
+    if (separatedArray.length > 3) {
+      addressLineOne.value = separatedArray[0];
+      addressLineTwo.value = separatedArray[1];
+      townOrCity.value = separatedArray[2];
+      postcode.value = separatedArray[3];
+    } 
+    //No Address line 2
+    else if (separatedArray.length = 3) {
+      addressLineOne.value = separatedArray[0];
+      addressLineTwo.value = "";
+      townOrCity.value = separatedArray[1];
+      postcode.value = separatedArray[2];
+    }
+
+    
+  }
+
+  window.addEventListener("keydown", (event) => {
+    // Address line 1
+    if (event.altKey === true && event.code === "KeyD") {
+      if (addressLineOne !== document.addressLineOne) {
+        addressLineOne.focus();
+        event.preventDefault();
+      }
+    }
+
+    if (event.altKey === true && event.code === "KeyT") {
+      if (addressDrop !== document.addressDrop) {
+        addressDrop.focus();
+        event.preventDefault();
+      }
+    }
+    // Address line 2
+    if (event.altKey === true && event.code === "KeyF") {
+      if (addressLineTwo !== document.activeElement) {
+        addressLineTwo.focus();
+        event.preventDefault();
+      }
+    }
+    // Town or city
+    if (event.altKey === true && event.code === "KeyG") {
+      if (townOrCity !== document.activeElement) {
+        townOrCity.focus();
+        event.preventDefault();
+      }
+    }
+    // postcode
+    if (event.altKey === true && event.code === "KeyZ") {
+      if (postcode !== document.activeElement) {
+        postcode.focus();
+        event.preventDefault();
+      }
+    }
+    // Get address button
+    if (event.altKey === true && event.code === "KeyP") {
+      document.getElementById("get-address-button").click();
+    }
+    // Applicant first name
+    if (event.altKey === true && event.code === "KeyS") {
+      if (appFirstName !== document.activeElement) {
+        appFirstName.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant last name
+    if (event.altKey === true && event.code === "KeyA") {
+      if (appLastName !== document.activeElement) {
+        appLastName.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant DOB
+    if (event.altKey === true && event.code === "KeyX") {
+      if (appDobDay !== document.activeElement) {
+        appDobDay.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant email address
+    if (event.altKey === true && event.code === "KeyE") {
+      if (appEmail !== document.activeElement) {
+        appEmail.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant telephone number
+    if (event.altKey === true && event.code === "KeyC") {
+      if (appTelephone !== document.activeElement) {
+        appTelephone.focus();
+        event.preventDefault();
+      }
+    }
+    // Applicant NHS number
+    if (event.altKey === true && event.code === "KeyV") {
+      if (appNhsNumber !== document.activeElement) {
+        appNhsNumber.focus();
+        event.preventDefault();
+      }
+    }
+    // Certificate start date
+    if (event.altKey === true && event.code === "KeyH") {
+      if (appStartDay !== document.activeElement) {
+        appStartDay.focus();
+        event.preventDefault();
+      }
+    }
+    // Cert fulfillment email
+    if (event.altKey === true && event.code === "KeyL") {
+      document.getElementById("cert-1").click();
+    }
+    // Cert fulfillment post
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("cert-2").click();
+    }
+    // Applicant notes
+    if (event.altKey === true && event.code === "KeyB") {
+      if (appNotes !== document.activeElement) {
+        appNotes.focus();
+        event.preventDefault();
+      }
+    }
+    // Submit button
+    if (event.altKey === true && event.code === "KeyI") {
+      document.getElementById("submit-button").click();
+    }
+    // Cancel button
+    if (event.altKey === true && event.code === "KeyM") {
+      document.getElementById("cancel-button").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+
+    // Back button
+    if (event.altKey === true && event.code === "KeyZ") {
+      document.getElementById("edit-postcode").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyW") {
+      document.getElementById("select-address").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyN") {
+      document.getElementById("enter-manually").click();
+    }
+     
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,242 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Edit certificate details - HRT PPC Telesales
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+     <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-secondary-navigation__container">
+           <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+              <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+                 <ul class="nhsuk-secondary-navigation__list">
+                  <li class="nhsuk-secondary-navigation__item">
+                    <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+                  </li>
+                  
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+                  </li>
+                  <li class="nhsuk-secondary-navigation__item login-details">
+                    <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+                  </li> 
+     
+                  
+                 </ul>
+              </nav>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+
+
+  
+
+  <!-- ==================================================================================== -->
+  <!-- SEARCH BOX -->
+  <!-- ==================================================================================== -->
+ 
+  <div class="nhsuk-warning-callout" >
+    <h3 class="nhsuk-warning-callout__label">
+      <span role="text">
+        <span class="nhsuk-u-visually-hidden">Important: </span>
+        Remember
+      </span>
+    </h3>
+    <p>You must make a note of the changes before you end the call with the customer.</p>
+  </div>
+
+
+
+
+  <div class="govuk-summary-card" >
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title" style="font-family: Frutiger; font-size: 20px;">Certificate details</h2>
+      
+    </div>
+    <div class="govuk-summary-card__content">
+      <dl class="nhsuk-summary-list">
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate reference
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            HRTJQ7T219G
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate type
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <span class="nhsuk-table-responsive__heading"></span><strong class="nhsuk-tag nhsuk-tag--green">
+              HRT PPC
+            </strong>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate status
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            ACTIVE
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate channel
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Online 
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key" >
+            Certificate fulfillment
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <div class="nhsuk-radios nhsuk-radios--inline" >
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes">
+                <label class="nhsuk-label nhsuk-radios__label" for="cert-1"> Email (L) </label>
+              </div>
+
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="cert-2"> Post (N) </label>
+              </div>
+            </div>
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate start
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            01/01/2023
+          </dd>
+        </div>
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate expiry
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+              
+            01/01/2024
+          </dd>
+        </div>
+        
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Application date
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+             
+          01/01/2023
+
+          </dd>
+        </div>
+        
+      </dl>
+    </div>
+  </div>
+  
+
+  <div style="margin-top: -10px; margin-bottom: -50px;">
+    <a href="exemption-information2" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Submit (I)</a>
+    <a href="exemption-information" id="cancel-button" class="nhsuk-button nhsuk-button--secondary" role="button" style="background-color: #025eb8;">Cancel (M)</a>
+    </div>
+ 
+  
+
+
+ 
+    <script>
+      // Start page
+      const certInput = document.querySelector("[name=email-option]");
+      
+      const addressDrop = document.querySelector("[name=address-drop]");
+      
+      
+    
+      window.addEventListener("keydown", (event) => {
+  
+  
+        if (event.altKey === true && event.code === "KeyT") {
+        if (addressDrop !== document.addressDrop) {
+          addressDrop.focus();
+          event.preventDefault();
+        }
+      }
+  
+  
+        if (event.altKey === true && event.code === "KeyY") 
+        {
+        if (certInput !== document.activeElement) {
+          certInput.click();
+          event.preventDefault();
+        }
+      }
+        // submit button
+        if (event.altKey === true && event.code === "KeyI") {
+          document.getElementById("submit-button").click();
+        }
+       
+        // Cancel button
+        if (event.altKey === true && event.code === "KeyM") {
+          document.getElementById("cancel-button").click();
+        }
+  
+  
+        // Cert fulfillment email
+      if (event.altKey === true && event.code === "KeyL") {
+        document.getElementById("cert-1").click();
+      }
+      // Cert fulfillment post
+      if (event.altKey === true && event.code === "KeyN") {
+        document.getElementById("cert-2").click();
+      }
+        
+      });
+    </script>
+  
+
+      
+      <!-- ==================================================================================== -->
+      <!-- END OF SEARCH BOX -->
+      <!-- ==================================================================================== -->
+
+
+     
+      <!-- End of content -->
+
+  
+
+{% endblock %}

@@ -1,0 +1,100 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-full-width.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %} Card payment - HRT PPC Telesales {% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+<div class="nhsuk-secondary-navigation">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <div class="nhsuk-secondary-navigation__container">
+        <div class="nhsuk-secondary-navigation__nav" style="width: 100%">
+          <nav class="nhsuk-secondary-navigation" aria-label="Primary navigation">
+            <ul class="nhsuk-secondary-navigation__list">
+              <li class="nhsuk-secondary-navigation__item">
+                <a class="nhsuk-secondary-navigation__link" href="/access-keys">Access Keys: ON</a>
+              </li>
+
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link" href="#">Sign out</a>
+              </li>
+              <li class="nhsuk-secondary-navigation__item login-details">
+                <a class="nhsuk-secondary-navigation__link">joe.bloggs@nhs.net</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %} {% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<h1 style="margin-bottom: 10px">Card payment</h1>
+<div id="search">
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-width-container">
+      <h2>Payment provider number to call</h2>
+      <br />
+
+      <div>
+        <p>Payment provider reference number: <strong style="font-size: xx-large">43567</strong></p>
+      </div>
+
+      <br /><br />
+
+      <div>
+        <a href="check-your-answers" id="back-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Back (O)</a>
+        <a href="start" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8">Submit (I)</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %} {% block pageScripts %}
+<script>
+  // Check your answers
+
+  window.addEventListener("keydown", (event) => {
+    // Submit button
+    if (event.altKey === true && event.code === "KeyI") {
+      document.getElementById("submit-button").click();
+    }
+    // Back button
+    if (event.altKey === true && event.code === "KeyO") {
+      document.getElementById("back-button").click();
+    }
+  });
+</script>
+{% endblock %}
