@@ -11,6 +11,22 @@
 Edit certificate details - HRT PPC Telesales
 {% endblock %}
 
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
@@ -63,13 +79,16 @@ Edit certificate details - HRT PPC Telesales
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
  
+
+  <h1>Edit certificate details</h1>
+
   <div class="nhsuk-warning-callout" >
-    <h3 class="nhsuk-warning-callout__label">
+    <h2 class="nhsuk-warning-callout__label">
       <span role="text">
         <span class="nhsuk-u-visually-hidden">Important: </span>
         Remember
       </span>
-    </h3>
+    </h2>
     <p>You must make a note of the changes before you end the call with the customer.</p>
   </div>
 
