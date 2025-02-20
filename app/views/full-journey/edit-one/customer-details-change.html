@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Applicant details
+  Applicant details - HRT PPC Telesales
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -111,21 +111,21 @@
       
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-line-1">
-            Address line 1 (1) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+            Address line 1 (D) <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
           </label>
           <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
         </div>
       
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-line-2">
-            Address line 2 (Optional) (2)
+            Address line 2 (Optional) (F)
           </label>
           <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
         </div>
       
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-town">
-            Town or city (3)
+            Town or city (G)
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
         </div>
@@ -133,13 +133,13 @@
     
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="address-postcode">
-          Postcode
+          Postcode (Z)
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="TR110TS">
+        <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
       </div>
       <div>
         <a href="postcode-search" id="get-address-button" class="nhsuk-button" role="button" style="background-color: #025eb8; height: 35px; line-height: 10px; margin-bottom: 15px"
-        >Get address using postcode search</a>
+        >Get address using postcode search (P)</a>
       </div>
       <details class="nhsuk-details" style="margin-top: 10px;">
         <summary class="nhsuk-details__summary">
@@ -240,7 +240,7 @@
 
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="example">
-          Email (G)
+          Email (E)
         </label>
         <input class="nhsuk-input nhsuk-input--width-20" id="example" name="example" type="text" value="Jane.doe@hotmail.com">
       </div>
@@ -282,12 +282,12 @@
 <div class="nhsuk-form-group">
   <div class="nhsuk-form-group">
     <label class="nhsuk-label" for="example">
-      Start date (E)
+      Start date (H)
     </label>
     <div class="nhsuk-hint" id="example-with-hint-text-hint">
       The start date of the HRT PPC must be 30 days in the past or the future.
     </div>
-    <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-10-20" max="2022-12-20">
+    <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2025-02-26" name="datemin" min="2022-10-20" max="2022-12-20">
   </div>
       
       </div>
@@ -326,6 +326,8 @@
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset">
+          <label class="nhsuk-label nhsuk-input__label" for="fulfillment">Email (L) or post (N) </label>
+
           <div class="nhsuk-radios nhsuk-radios--inline">
       
             <div class="nhsuk-radios__item">
@@ -338,7 +340,7 @@
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="post">
               <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                Post (M)
+                Post (N)
               </label>
             </div>
       
@@ -363,11 +365,12 @@
       
       <div>
         
-        <a href="check-your-answers"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
-          Submit (I)
-        </button></a>
+
         <a href="javascript:history.go(-1)"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
           Back (O)
+        </button></a>
+        <a href="check-your-answers"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
+          Submit (I)
         </button></a>
         <a href="start"><button class="nhsuk-button" type="submit" formaction="access-keys" style="background-color: #025eb8;">
           Cancel (M)

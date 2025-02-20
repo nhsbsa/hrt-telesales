@@ -11,7 +11,6 @@
 Edit certificate details - HRT PPC Telesales
 {% endblock %}
 
-
 <!-- For the skip link -->
 {% block skipLink %}
 <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
@@ -77,12 +76,9 @@ Edit certificate details - HRT PPC Telesales
   <!-- ==================================================================================== -->
   <!-- SEARCH BOX -->
   <!-- ==================================================================================== -->
- 
-
   <h1>Edit certificate details</h1>
 
-
-  <div class="nhsuk-warning-callout" >
+  <div class="nhsuk-warning-callout">
     <h2 class="nhsuk-warning-callout__label">
       <span role="text">
         <span class="nhsuk-u-visually-hidden">Important: </span>
@@ -107,7 +103,7 @@ Edit certificate details - HRT PPC Telesales
             Certificate reference
           </dt>
           <dd class="nhsuk-summary-list__value">
-            HRTCF4R477W
+            HRTGF2R408T
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -125,7 +121,7 @@ Edit certificate details - HRT PPC Telesales
             Certificate status
           </dt>
           <dd class="nhsuk-summary-list__value">
-            PENDING
+            ACTIVE
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
@@ -137,18 +133,18 @@ Edit certificate details - HRT PPC Telesales
           </dd>
         </div>
         <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key" >
+          <dt class="nhsuk-summary-list__key">
             Certificate fulfillment
           </dt>
           <dd class="nhsuk-summary-list__value">
-            <div class="nhsuk-radios nhsuk-radios--inline" >
+            <div class="nhsuk-radios nhsuk-radios--inline">
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes" checked>
+                <input class="nhsuk-radios__input" id="cert-1" name="certificate-fulfillment" type="radio" value="yes" aria-label="Certificate fulfillment - Email (L)">
                 <label class="nhsuk-label nhsuk-radios__label" for="cert-1"> Email (L) </label>
               </div>
 
               <div class="nhsuk-radios__item">
-                <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no">
+                <input class="nhsuk-radios__input" id="cert-2" name="certificate-fulfillment" type="radio" value="no" aria-label="Certificate fulfillment - Post (N)" checked>
                 <label class="nhsuk-label nhsuk-radios__label" for="cert-2"> Post (N) </label>
               </div>
             </div>
@@ -189,11 +185,22 @@ Edit certificate details - HRT PPC Telesales
   
 
   <div style="margin-top: -10px; margin-bottom: -50px;">
-    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Submit (I)</a>
-    <a href="exemption-information" id="cancel-button" class="nhsuk-button" role="button" style="background-color: #025eb8; ">Cancel (M)</a>
+    <a href="exemption-information" id="submit-button" class="nhsuk-button" role="button">Submit (I)</a>
+    <a href="exemption-information" id="cancel-button" class="nhsuk-button nhsuk-button--secondary" role="button">Cancel (M)</a>
     </div>
  
   
+    <style>
+      .nhsuk-button {
+        background: #025eb8;
+      }
+      .nhsuk-button:focus {
+        background: #ffeb3b;
+      }
+      .nhsuk-button:hover {
+        background: #025eb8;
+      }
+    </style>
 
 
  
