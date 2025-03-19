@@ -13,6 +13,19 @@
 
 }
 
+.full-width {
+
+    header.nhsuk-header .nhsuk-header__container {
+        @include nhsuk-width-container-fluid;
+
+        @include mq($until: tablet) {
+            padding-left: nhsuk-spacing(0);
+            padding-right: nhsuk-spacing(0);
+        }
+    }
+
+}
+
 //NHS BSA Full Width Footer
 
 .NHSBSA-full-width-footer {
@@ -22,4 +35,12 @@
     }
 
 } 
+
+.full-width {
+
+    footer .nhsuk-width-container {
+        @include nhsuk-width-container-fluid;
+    }
+
+}
 

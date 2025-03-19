@@ -7,6 +7,8 @@
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "template-full-width.html" %}
 
+{% set bodyClasses = 'full-width' %}
+
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
 <link href="/css/main.css" rel="stylesheet" />
@@ -23,25 +25,24 @@ endblock %}
 <!-- Footer goes inside the footer block -->
 <!-- More info and code for the footer can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/footer -->
 {% block footer %}
-<footer role="contentinfo">
-  <div class="nhsuk-footer" id="nhsuk-footer">
-    <div class="nhsuk-width-container-fluid">
-      <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-      <ul class="nhsuk-footer__list">
-        <li class="nhsuk-footer__list-item">
-          <a class="nhsuk-footer__list-item-link" href="https://nhsbsauk.sharepoint.com/sites/Accessibility/SitePages/Accessibility-statement-for-Single-User-View.aspx"
-            >Accessibility</a
-          >
-        </li>
-      </ul>
+  {{ footer({
+    links: [
+      {
+        URL: 'https://nhsbsauk.sharepoint.com/sites/Accessibility/SitePages/Accessibility-statement-for-Single-User-View.aspx',
+        label: 'Accessibility'
+      }
+    ]
+  })}}
+{% endblock %} 
 
-      <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
-    </div>
-  </div>
-</footer>
-{% endblock %} {% block bodyEnd %} {% block scripts %}
-<!-- Custom JavaScript files can be added to this file -->
-{% include "includes/scripts.html" %}
+{% block bodyEnd %}
+  {% block scripts %}
+    
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include 'includes/scripts.html' %}
+    
+    <!-- For adding page specific JavsScript -->
+    {% block pageScripts %}{% endblock %}
 
-<!-- For adding page specific JavsScript -->
-{% block pageScripts %}{% endblock %} {% endblock %} {% endblock %}
+  {% endblock %}
+{% endblock %}

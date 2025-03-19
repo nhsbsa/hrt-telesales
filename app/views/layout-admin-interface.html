@@ -7,6 +7,8 @@
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "template-admin-interface.html" %}
 
+{% set bodyClasses = 'full-width' %}
+
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
   <link href="/css/main.css" rel="stylesheet">
@@ -55,25 +57,23 @@
 <!-- More info and code for the footer can be found at https://beta.nhs.uk/service-manual/styles-components-patterns/footer -->
 {% block footer %}
   {{ footer({
-    "links": [
+    links: [
       {
-        "URL": "/",
-        "label": "Home"
-      },
-      {
-        "URL": "/page-example",
-        "label": "Example page"
+        URL: 'https://nhsbsauk.sharepoint.com/sites/Accessibility/SitePages/Accessibility-statement-for-Single-User-View.aspx',
+        label: 'Accessibility'
       }
-    ],
-    "classes": "NHSBSA-full-width-footer"
+    ]
   })}}
-{% endblock %}
+{% endblock %} 
 
 {% block bodyEnd %}
   {% block scripts %}
+    
     <!-- Custom JavaScript files can be added to this file -->
-    {% include "includes/scripts.html" %}
+    {% include 'includes/scripts.html' %}
+    
     <!-- For adding page specific JavsScript -->
     {% block pageScripts %}{% endblock %}
+
   {% endblock %}
 {% endblock %}
