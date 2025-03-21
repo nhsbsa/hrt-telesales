@@ -1,0 +1,332 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
+    <div class="nhsuk-width-container">
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+
+
+
+                <h1 class="nhsuk-heading-l">Copy/paste dates</h1>
+
+                <p class="nhsuk-body">Click the links below to copy the dates to your clipboard. The functionality will trigger across any field you copy/paste the date into.</p>
+                <p class="nhsuk-body">The functionality will not trigger if the date is deemed to be invalid, and you will just copy/paste an incorrect value into the field.</p>
+
+
+                {{ summaryList({
+                    attributes: { 'id': 'dates' },
+                    rows: [{
+                        key: { text: 'dd/mm/yyyy' },
+                        value: { text: '02/04/2025' },
+                        actions: {
+                            items: [{
+                                    href: '#',
+                                    text: 'Copy',
+                                    visuallyHiddenText: 'dd/mm/yyyy'
+                                }]
+                            }
+                        },{
+                        key: { text: 'dd-mm-yyyy' },
+                        value: { text: '20-2-1965' },
+                        actions: {
+                            items: [{
+                                    href: '#',
+                                    text: 'Copy',
+                                    visuallyHiddenText: 'dd-mm-yyyy'
+                                }]
+                            }
+                        },{
+                        key: { text: 'dd month yyyy' },
+                        value: { text: '3 May 1997' },
+                        actions: {
+                            items: [{
+                                    href: '#',
+                                    text: 'Copy',
+                                    visuallyHiddenText: 'dd month yyyy'
+                                }]
+                            }
+                        }, {
+                        key: { text: 'dd.mmm.yyyy' },
+                        value: { text: '4.Dec.1990' },
+                        actions: {
+                            items: [{
+                                    href: '#',
+                                    text: 'Copy',
+                                    visuallyHiddenText: 'dd.mmm.yyyy'
+                                }]
+                            }
+                        }, {
+                        key: { text: 'month dd, yyyy' },
+                        value: { text: 'September 25th, 2001' },
+                        actions: {
+                            items: [{
+                                    href: '#',
+                                    text: 'Copy',
+                                    visuallyHiddenText: 'month dd, yyyy'
+                                }]
+                            }
+                        }
+                    ]
+                    }) }}
+
+
+                <!-- THE CLIPBOARD LINKS FUNCTIONALITY -->
+                <script>
+
+                    const ClipboardLinks = ( function(){
+
+                        //
+                        // INIT FUNCTION
+                        //
+                        function _init(){
+
+                            console.log( 'ClipboardLinks.init()' );
+
+                            document.querySelectorAll('#dates a[href="#"]').forEach(function( el ){
+
+                                el.addEventListener('click', function( e ){
+
+                                    const t = e.target;
+                                    const txt = t.parentElement.previousElementSibling.innerText;
+
+                                    navigator.clipboard.writeText( txt ).then(() => {
+                                        
+                                        t.classList.remove( 'added' );
+                                        void t.offsetWidth;
+                                        t.classList.add( 'added' );
+
+                                    });
+
+                                    e.preventDefault();
+
+                                });
+
+                                el.addEventListener('keydown', function( e ) {
+                                     if (e.key === 'Enter') {
+                                        
+                                        e.target.click();
+
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                    }
+                                });
+
+                                el.addEventListener('blur', function( e ) {
+                                     e.target.classList.remove('added');
+                                });
+
+                            });
+
+                        }
+
+                        return {
+                            init: _init
+                        }
+
+                    })();
+
+                    document.addEventListener( 'DOMContentLoaded', function(){
+                        ClipboardLinks.init();
+                    });
+
+                </script>
+
+                <style>
+
+                    @keyframes added {
+                        0% { 
+                            background-color: #AEE881;
+                            box-shadow: 0 -2px #AEE881, 0 4px #212b32; 
+                        },
+                        100% { 
+                            background-color: #ffeb3b;
+                            box-shadow: 0 -2px #ffeb3b, 0 4px #212b32; 
+                        }
+                    }
+
+                    
+                    a.added:focus {
+                        animation: added 0.5s ease-out forwards;
+                    }
+
+                </style>
+
+
+
+                <form action="dob-copy-paste" method="post" novalidate>
+
+                    {{ dateInput({
+                        id: 'dateOfBirth',
+                        namePrefix: 'dateOfBirth',
+                        fieldset: {
+                            legend: {
+                            text: 'What is your date of birth?',
+                            classes: 'nhsuk-label--m',
+                            isPageHeading: false
+                            }
+                        },
+                        hint: {
+                            text: 'For example, 15 3 1984'
+                        },
+                        items: [
+                            {
+                            name: 'day',
+                            value: data.dateOfBirth.day,
+                            classes: 'nhsuk-input--width-2'
+                            },
+                            {
+                            name: 'month',
+                            value: data.dateOfBirth.month,
+                            classes: 'nhsuk-input--width-2'
+                            },
+                            {
+                            name: 'year',
+                            value: data.dateOfBirth.year,
+                            classes: 'nhsuk-input--width-4'
+                            }
+                        ]
+                    }) }}
+
+                    {{ button({
+                        text: 'Continue'
+                    }) }}
+
+                </form>
+
+
+
+
+
+                <!-- THE DATE HANDLER JAVASCRIPT -->
+                <script>
+
+                    const DateHandler = (function(){
+
+                        //
+                        // INIT FUNCTION
+                        //
+                        function _init(){
+                            
+                            const dayField = document.querySelector('#dateOfBirth-day');
+                            const monthField = document.querySelector('#dateOfBirth-month');
+                            const yearField = document.querySelector('#dateOfBirth-year');
+
+                            _initField( dayField );
+                            _initField( monthField );
+                            _initField( yearField );
+
+                        }
+
+                        //
+                        // INIT FIELD FUNCTION
+                        //
+                        function _initField( el ){
+                            
+                            el.addEventListener('change', function( e ){
+
+                                const t = e.target;
+                                const val = t.value;
+                                const type = t.id.split('-')[1];
+
+                                if( val && !/^\d+$/.test(val) ){
+
+                                    const check = _isDateUKValid( val );
+                                    if( check.check ){
+
+                                        console.log( 'check UK: ' + val );
+
+                                        // Check for UK date first e.g. dd/mm/yyyy
+                                         _populateInputs(check.newValue );
+
+                                    } else {
+
+                                        console.log( 'check: ' + val );
+
+                                        // Remove 2nd, 3rd etc.
+                                        newVal = val.replace(/\b(\d{1,2})(st|nd|rd|th)\b/g, '$1');
+                                        
+                                        // Try something more international...
+                                        if( _isDateValid( newVal ) ){
+                                             _populateInputs( newVal );
+                                        }
+
+                                    }
+                                    
+                                }
+
+                            });
+
+                        }
+
+                        //
+                        // IS DATE VALID FUNCTION
+                        //
+                        function _isDateValid( date ){
+                            const timestamp = Date.parse( date );
+                            return !isNaN(timestamp);
+                        }
+
+                        //
+                        // IS DATE UK VALUE FUNCTION
+                        //
+                        function _isDateUKValid( date ){
+
+                            const regex = new RegExp( /^([0-3]?[0-9])[\s\/\.\-]([0-1]?[0-9])[\s\/\.\-]([12][0-9]{3})$/ );
+                            if( regex.test(date) ){
+                                date = date.replaceAll(' ','/').replaceAll('-','/').replaceAll('.', '/').split('/').reverse();
+                                check = _isDateValid( date.join('/') );
+                                if( check ){
+                                    date = date.join('/');
+                                }
+                            } else {
+                                check = false;
+                            }
+                            return { 'check': check, 'newValue': date };
+
+                        }
+
+                        //
+                        // POPULATE INPUTS FUNCTION
+                        //
+                        function _populateInputs( date ){
+                            
+                            let parsedDate = new Date( Date.parse( date ) );
+
+                            const dayField = document.querySelector('#dateOfBirth-day');
+                            const monthField = document.querySelector('#dateOfBirth-month');
+                            const yearField = document.querySelector('#dateOfBirth-year');
+
+                            dayField.value = parsedDate.getDate();
+                            monthField.value = parsedDate.getMonth() + 1;
+                            yearField.value = parsedDate.getFullYear();
+
+                            yearField.focus();
+
+                        }
+
+
+                        return {
+                            init: _init
+                        }
+
+                    })();
+
+                    document.addEventListener('DOMContentLoaded',function(){
+                        DateHandler.init();
+                    });
+
+
+                </script>
+
+
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
