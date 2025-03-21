@@ -82,8 +82,6 @@
                         //
                         function _init(){
 
-                            console.log( 'ClipboardLinks.init()' );
-
                             document.querySelectorAll('#dates a[href="#"]').forEach(function( el ){
 
                                 el.addEventListener('click', function( e ){
@@ -225,7 +223,8 @@
                         //
                         function _initField( el ){
                             
-                            el.addEventListener('change', function( e ){
+                            // Add change listener
+                            el.addEventListener( 'change', function( e ){
 
                                 const t = e.target;
                                 const val = t.value;
@@ -236,14 +235,10 @@
                                     const check = _isDateUKValid( val );
                                     if( check.check ){
 
-                                        console.log( 'check UK: ' + val );
-
                                         // Check for UK date first e.g. dd/mm/yyyy
                                          _populateInputs(check.newValue );
 
                                     } else {
-
-                                        console.log( 'check: ' + val );
 
                                         // Remove 2nd, 3rd etc.
                                         newVal = val.replace(/\b(\d{1,2})(st|nd|rd|th)\b/g, '$1');
@@ -256,8 +251,43 @@
                                     }
                                     
                                 }
-
                             });
+
+                            // Add paste listener
+                            el.addEventListener( 'paste', function( e ){
+
+                                navigator.clipboard.readText().then( function( val ){
+
+                                    const t = e.target;
+                                    const type = t.id.split('-')[1];
+
+                                    if( val && !/^\d+$/.test(val) ){
+
+                                        const check = _isDateUKValid( val );
+                                        if( check.check ){
+
+                                            // Check for UK date first e.g. dd/mm/yyyy
+                                            _populateInputs(check.newValue );
+                                            e.preventDefault();
+
+                                        } else {
+
+                                            // Remove 2nd, 3rd etc.
+                                            newVal = val.replace(/\b(\d{1,2})(st|nd|rd|th)\b/g, '$1');
+                                            
+                                            // Try something more international...
+                                            if( _isDateValid( newVal ) ){
+                                                _populateInputs( newVal );
+                                                e.preventDefault();
+                                            }
+
+                                        }
+                                        
+                                    }
+                                });
+                            });
+
+                                
 
                         }
 
@@ -265,6 +295,9 @@
                         // IS DATE VALID FUNCTION
                         //
                         function _isDateValid( date ){
+
+                            console.log( '_isDateValid(' + date + ')' );
+
                             const timestamp = Date.parse( date );
                             return !isNaN(timestamp);
                         }
@@ -273,6 +306,8 @@
                         // IS DATE UK VALUE FUNCTION
                         //
                         function _isDateUKValid( date ){
+
+                            console.log( '_isDateUKValid(' + date + ')' );
 
                             const regex = new RegExp( /^([0-3]?[0-9])[\s\/\.\-]([0-1]?[0-9])[\s\/\.\-]([12][0-9]{3})$/ );
                             if( regex.test(date) ){
