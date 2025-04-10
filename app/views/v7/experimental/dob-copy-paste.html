@@ -13,6 +13,7 @@
 
                 <p class="nhsuk-body">Click the links below to copy the dates to your clipboard. The functionality will trigger across any field you copy/paste the date into.</p>
                 <p class="nhsuk-body">The functionality will not trigger if the date is deemed to be invalid, and you will just copy/paste an incorrect value into the field.</p>
+                <p class="nhsuk-body">On a successful copy/paste, the day, month and year will be filled out and the year field will be focused.</p>
 
 
                 {{ summaryList({
@@ -173,17 +174,20 @@
                             {
                             name: 'day',
                             value: data.dateOfBirth.day,
-                            classes: 'nhsuk-input--width-2'
+                            classes: 'nhsuk-input--width-2',
+                            attributes: { autocomplete: 'off' }
                             },
                             {
                             name: 'month',
                             value: data.dateOfBirth.month,
-                            classes: 'nhsuk-input--width-2'
+                            classes: 'nhsuk-input--width-2',
+                            attributes: { autocomplete: 'off' }
                             },
                             {
                             name: 'year',
                             value: data.dateOfBirth.year,
-                            classes: 'nhsuk-input--width-4'
+                            classes: 'nhsuk-input--width-4',
+                            attributes: { autocomplete: 'off' }
                             }
                         ]
                     }) }}
