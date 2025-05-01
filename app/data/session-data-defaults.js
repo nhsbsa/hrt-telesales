@@ -1,4 +1,4 @@
 module.exports = {
-    NHSPrescriptionCost: '£10.15',
-    HRTPPCCost: '£20.30',
+    NHSPrescriptionCost: '£9.90',
+    HRTPPCCost: '£19.80',
 }
