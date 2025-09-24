@@ -33,4 +33,4 @@ $(document).ready(function () {
       console.log('hidden');
     }
   });
-});
+});//# sourceMappingURL=main.js.map
