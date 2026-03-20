@@ -19,6 +19,17 @@
                 {{ summaryList({
                     attributes: { 'id': 'dates' },
                     rows: [{
+                        key: { text: 'ddmmyyyy' },
+                        value: { text: '02031978' },
+                        actions: {
+                            items: [{
+                                    href: '#',
+                                    text: 'Copy',
+                                    visuallyHiddenText: 'ddmmyyyy'
+                                }]
+                            }
+                        },
+                        {
                         key: { text: 'dd/mm/yyyy' },
                         value: { text: '02/04/2025' },
                         actions: {
@@ -261,6 +272,8 @@
 
                                     const t = e.target;
                                     const type = t.id.split('-')[1];
+                                    
+                                    let newVal;
 
                                     if( val && !/^\d+$/.test(val) ){
 
@@ -284,7 +297,26 @@
 
                                         }
                                         
+                                    } else {
+                                        
+                                        // Smart agent format (ddmmyyyy)
+                                        if( /^\d{8}$/.test(val) ){
+
+                                            const day = val.slice(0, 2);
+                                            const month = val.slice(2, 4);
+                                            const year = val.slice(4, 8);
+
+                                            newVal = year + '/' + month + '/' + day;
+
+                                            if( _isDateValid( newVal ) ){
+                                                _populateInputs( newVal );
+                                                e.preventDefault();
+                                            }
+                                        }
+
                                     }
+
+
                                 });
                             });
 
